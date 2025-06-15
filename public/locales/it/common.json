@@ -1,0 +1,57 @@
+{
+  "urls": {
+    "home": "/",
+    "caseStudies": "/casi-studio",
+    "sectors": "/settori",
+    "contacts": "/contatti",
+    "privacy": "/informativa-privacy",
+    "cookie": "/informativa-cookie",
+    "terms": "/termini-di-servizio",
+    "ecommerce": "/settori/ecommerce"
+  },
+  "header": {
+    "home": "Home",
+    "sectors": "Settori",
+    "ecommerce": "E-commerce",
+    "caseStudies": "Case Studies",
+    "contacts": "Contatti",
+    "features": "Funzionalità",
+    "viewAllSectors": "Visualizza tutti i settori",
+    "login": "Accedi",
+    "trial": "Prova Gratis"
+  },
+  "footer": {
+    "company": "Leader24.it",
+    "slogan": "Automate without limits",
+    "allRightsReserved": "Tutti i diritti riservati",
+    "navigation": "Navigazione",
+    "infoAccess": "Info e Accesso",
+    "home": "Home",
+    "sectors": "Settori",
+    "ecommerce": "E-commerce",
+    "caseStudies": "Casi Studio",
+    "contacts": "Contatti",
+    "privacy": "Privacy Policy",
+    "cookie": "Cookie Policy",
+    "terms": "Termini di Servizio",
+    "login": "Accedi",
+    "freeTrail": "Prova Gratuita"
+  },
+
+  "language": {
+    "select": "Seleziona lingua",
+    "it": "Italiano",
+    "en": "English"
+  },
+  "cta": {
+    "contactUs": "Contattaci",
+    "learnMore": "Scopri di più",
+    "getStarted": "Inizia ora",
+    "readMore": "Leggi di più",
+    "freeDemo": "Prova gratuita"
+  },
+  "theme": {
+    "dark": "Tema scuro",
+    "light": "Tema chiaro"
+  }
+}

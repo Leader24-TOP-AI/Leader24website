@@ -1,0 +1,119 @@
+{
+  "hero": {
+    "title": {
+      "part1": "Agenti AI per",
+      "part2": "Livechat e Whatsapp",
+      "part3": "aziendali"
+    },
+    "subtitle": "Risparmi tempo e risorse automatizzando il supporto clienti 24/7 con Leader24",
+    "stats": {
+      "satisfaction": "+82% soddisfazione clienti",
+      "responseTime": "−60% tempo di risposta",
+      "costs": "−65% costi operativi"
+    },
+    "buttons": {
+      "freeTrial": "Prova Gratuita",
+      "learnMore": "Scopri di Più"
+    }
+  },
+  "introduction": {
+    "title": "Automatizza le Chat WhatsApp e Risparmia Tempo Prezioso",
+    "subtitle": "Lascia che Leader24 gestisca le chat, mentre tu ti concentri su ciò che conta davvero.",
+    "description": "Leader24 trasforma il tuo canale WhatsApp in uno strumento potente per la gestione clienti. Con la nostra intelligenza artificiale avanzata, ogni messaggio riceve una risposta personalizzata e professionale, come se fossi tu a scriverla personalmente. Il sistema è completamente personalizzato sui tuoi prodotti e servizi.",
+    "cards": {
+      "saveTime": {
+        "title": "Risparmia Tempo",
+        "description": "Automatizza le richieste dei clienti e dedica più tempo al tuo business."
+      },
+      "alwaysAvailable": {
+        "title": "Sempre Disponibile",
+        "description": "Rispondi ai clienti 24/7, anche quando non sei disponibile."
+      }
+    }
+  },
+  "features": {
+    "title": "Potenzia il Tuo Servizio Clienti",
+    "subtitle": "Le Funzionalità Principali di Leader24",
+    "conclusion": {
+      "title": "Essere Leader Significa Essere Sempre Pronti",
+      "description": "Con Leader24, la tua attività è sempre disponibile, offrendo risposte rapide e personalizzate ai tuoi clienti 24 ore su 24, 7 giorni su 7. Che tu sia un dentista, un albergatore, o un professionista, Leader24 ti consente di mantenere il contatto con i tuoi clienti, migliorare l'efficienza e rafforzare la tua reputazione come leader nel settore."
+    },
+    "buttons": {
+      "tryChat": "Prova a Chattare"
+    },
+    "aiAssistant": {
+      "title": "Prova il nostro Assistente AI",
+      "description": "Il nostro assistente virtuale è sempre disponibile sulla destra dello schermo per rispondere alle tue domande. Non esitare a chattare con lui!",
+      "note": "La stessa tecnologia può essere integrata nei tuoi canali di comunicazione aziendali."
+    },
+    "featuresList": [
+      {
+        "title": "Risposte Automatizzate",
+        "subtitle": "Risposte naturali e informate grazie all'AI",
+        "description": "Leader24 utilizza un'AI avanzata per rispondere ai messaggi in modo naturale, conoscendo i tuoi servizi e garantendo risposte precise."
+      },
+      {
+        "title": "Integrazione Multi-Canale",
+        "subtitle": "Connettiti ovunque siano i tuoi clienti",
+        "description": "Supporta la comunicazione su diverse piattaforme, come il sito web e WhatsApp, per un servizio clienti sempre disponibile."
+      },
+      {
+        "title": "Disponibilità Continua",
+        "subtitle": "Sempre a disposizione dei tuoi clienti",
+        "description": "Leader24 garantisce una presenza costante, rispondendo alle richieste dei clienti 24 ore su 24, 7 giorni su 7."
+      },
+      {
+        "title": "Supporto Multilingua",
+        "subtitle": "Comunica con clienti da tutto il mondo",
+        "description": "Leader24 gestisce richieste in diverse lingue, offrendo un'esperienza cliente senza barriere linguistiche o culturali."
+      },
+      {
+        "title": "Gestione Appuntamenti",
+        "subtitle": "Organizza e ottimizza il tuo tempo",
+        "description": "Automatizza la gestione degli appuntamenti, riducendo i tempi di attesa e migliorando la tua efficienza operativa."
+      },
+      {
+        "title": "Facilità d'Uso",
+        "subtitle": "Installazione semplice, gestione senza stress",
+        "description": "Leader24 è facile da configurare e usare, permettendoti di concentrarti sul business senza preoccupazioni tecniche."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Rivoluziona il tuo servizio clienti<br/>con gli agenti AI di Leader24",
+    "subtitle": "Risposte immediate, automatizzazione 24/7, riduzione dei costi fino al 70%",
+    "description": "I nostri agenti AI rispondono su livechat e WhatsApp come operatori umani.<br/><a href=\"https://dash.leader24.it/signup\" class=\"text-[#FF5722] hover:underline\">Prova gratis per 14 giorni</a> e scopri il potere dell'automazione intelligente.",
+    "button": "Automatizza il tuo supporto"
+  },
+  "testimonials": {
+    "badge": "Storie di Successo",
+    "title": "Case Study",
+    "subtitle": "Scopri come aziende di diversi settori hanno migliorato la loro comunicazione con i clienti grazie a Leader24.",
+    "readCaseStudy": "Leggi il Case Study",
+    "viewAllCaseStudies": "Visualizza tutti i case study",
+    "caseStudies": [
+      {
+        "company": "FiberNet Italia",
+        "titleStart": "Come FiberNet ha",
+        "titleHighlight": "aumentato del 40% la soddisfazione clienti",
+        "titleEnd": "con WhatsApp automatizzato",
+        "quote": "Grazie all'automazione WhatsApp di Leader24, offriamo assistenza immediata sulle richieste più comuni dei nostri abbonati. I tempi di risposta sono diminuiti del 90% e l'esperienza cliente è notevolmente migliorata.",
+        "person": {
+          "name": "Marco Rossi",
+          "title": "Direttore Customer Care"
+        }
+      },
+      {
+        "company": "Studio Dentistico Sorriso",
+        "titleStart": "Come uno studio dentistico gestisce",
+        "titleHighlight": "oltre 200 appuntamenti mensili",
+        "titleEnd": "in modo automatico",
+        "quote": "Leader24 ha trasformato la nostra gestione appuntamenti: i pazienti possono prenotare, spostare o annullare le visite tramite WhatsApp 24/7. Il personale è più concentrato sull'assistenza diretta e abbiamo ridotto le mancate presentazioni del 75%.",
+        "person": {
+          "name": "Dott.ssa Laura Bianchi",
+          "title": "Titolare Studio Dentistico"
+        }
+      }
+    ]
+  }
+}

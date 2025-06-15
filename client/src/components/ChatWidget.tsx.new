@@ -1,0 +1,617 @@
+import { Button } from '@/components/ui/button';
+import { Card } from '@/components/ui/card';
+import { MessageCircleMore, X, Send, Minimize2 } from 'lucide-react';
+import { useEffect, useState, useRef, FormEvent } from 'react';
+
+// Formato dei messaggi chat
+interface ChatMessage {
+  text: string;
+  isUser: boolean;
+  timestamp: string;
+}
+
+// Hook per rilevare se il dispositivo è mobile
+function useMobileDetect() {
+  // Imposta sempre a true per forzare la modalità mobile per il debug
+  const [isMobile, setIsMobile] = useState(true);
+  
+  useEffect(() => {
+    // Forza sempre la modalità mobile per il test
+    setIsMobile(true);
+    console.log("Rilevato come mobile:", true);
+  }, []);
+  
+  return isMobile;
+}
+
+export default function ChatWidget() {
+  // Rileva se il dispositivo è mobile
+  const isMobile = useMobileDetect();
+
+  // Stato per i messaggi
+  const [messages, setMessages] = useState<ChatMessage[]>([
+    {
+      text: "Buongiorno! Sono l'assistente AI di Leader24. Come posso aiutarti oggi?",
+      isUser: false,
+      timestamp: getCurrentTime()
+    }
+  ]);
+  const [inputMessage, setInputMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  
+  // Stato per la visibilità della chat
+  const [isMinimized, setIsMinimized] = useState(true);
+  const [isFirstLoad, setIsFirstLoad] = useState(true);
+  
+  // Stato per la connessione WebSocket
+  const [wsConnected, setWsConnected] = useState(false);
+  const wsRef = useRef<WebSocket | null>(null);
+  
+  // Riferimento per lo scroll
+  const chatEndRef = useRef<HTMLDivElement>(null);
+  
+  // Mostra la chat dopo 3 secondi al primo caricamento
+  useEffect(() => {
+    if (isFirstLoad) {
+      const timer = setTimeout(() => {
+        setIsMinimized(false);
+        setIsFirstLoad(false);
+      }, 3000);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [isFirstLoad]);
+  
+  // Configura la connessione WebSocket all'avvio
+  useEffect(() => {
+    // Crea l'URL del WebSocket
+    const protocol = window.location.protocol === "https:" ? "wss:" : "ws:";
+    const wsUrl = `${protocol}//${window.location.host}/ws`;
+    
+    // Crea la connessione
+    const socket = new WebSocket(wsUrl);
+    wsRef.current = socket;
+    
+    // Gestione eventi WebSocket
+    socket.onopen = () => {
+      console.log("WebSocket connesso");
+      setWsConnected(true);
+    };
+    
+    socket.onmessage = (event) => {
+      try {
+        const data = JSON.parse(event.data);
+        console.log("WebSocket messaggio ricevuto:", data);
+        
+        // Gestisci diversi tipi di messaggi
+        if (data.type === 'chat_response') {
+          const botMessage: ChatMessage = {
+            text: data.message,
+            isUser: false,
+            timestamp: getCurrentTime()
+          };
+          
+          setMessages(prev => [...prev, botMessage]);
+          setIsLoading(false);
+        } else if (data.type === 'error') {
+          const errorMessage: ChatMessage = {
+            text: data.message || "Si è verificato un errore di comunicazione",
+            isUser: false,
+            timestamp: getCurrentTime()
+          };
+          
+          setMessages(prev => [...prev, errorMessage]);
+          setIsLoading(false);
+        }
+      } catch (error) {
+        console.error("Errore nella gestione del messaggio WebSocket:", error);
+      }
+    };
+    
+    socket.onerror = (error) => {
+      console.error("Errore WebSocket:", error);
+      setWsConnected(false);
+    };
+    
+    socket.onclose = () => {
+      console.log("WebSocket disconnesso");
+      setWsConnected(false);
+    };
+    
+    // Cleanup al dismount del componente
+    return () => {
+      if (socket.readyState === WebSocket.OPEN) {
+        socket.close();
+      }
+    };
+  }, []);
+  
+  // Fallback URL - usiamo il proxy del server per evitare problemi CORS quando WebSocket non è disponibile
+  const PROXY_URL = "/api/chat-proxy";
+
+  // Funzione per formattare l'ora corrente (HH:MM)
+  function getCurrentTime() {
+    const now = new Date();
+    return `${now.getHours()}:${now.getMinutes().toString().padStart(2, '0')}`;
+  }
+
+  // Funzione per inviare messaggio al webhook tramite il nostro proxy
+  const sendMessageToWebhook = async (message: string) => {
+    try {
+      setIsLoading(true);
+      console.log("Invio messaggio tramite proxy:", message);
+      
+      // Costruzione di un payload più semplice, solo con il messaggio
+      const payload = { message };
+
+      console.log("Payload:", payload);
+
+      const response = await fetch(PROXY_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      console.log("Risposta status:", response.status);
+      
+      // Se la risposta non è 2xx, leggiamo l'errore per debug
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error(`Errore dal server (${response.status}):`, errorText);
+        throw new Error(`Errore nella risposta del server: ${response.status} ${errorText}`);
+      }
+
+      // Leggiamo la risposta come testo prima di provare a parsarla come JSON
+      const responseText = await response.text();
+      console.log("Risposta text:", responseText);
+
+      // Se la risposta è vuota, ritorniamo un messaggio predefinito
+      if (!responseText) {
+        return "Mi dispiace, non ho ricevuto una risposta dal server. Potresti ripetere?";
+      }
+
+      // Proviamo a parsare la risposta come JSON
+      try {
+        const data = JSON.parse(responseText);
+        return data.response || data.message || data.text || responseText;
+      } catch (jsonError) {
+        // Se non è JSON valido, ritorniamo il testo così com'è
+        console.log("Risposta non è JSON valido, uso testo grezzo:", responseText);
+        return responseText;
+      }
+    } catch (error) {
+      console.error('Errore durante l\'invio del messaggio:', error);
+      return "Mi dispiace, si è verificato un errore. Riprova più tardi.";
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  // Funzione per inviare messaggi tramite WebSocket
+  const sendMessageViaWebSocket = (message: string) => {
+    if (wsRef.current && wsConnected && wsRef.current.readyState === WebSocket.OPEN) {
+      wsRef.current.send(JSON.stringify({
+        type: 'chat_message',
+        text: message
+      }));
+      return true;
+    }
+    return false;
+  };
+
+  // Gestisce lo stato di visibilità della chat, impedendo lo scrolling del body quando aperta su mobile
+  useEffect(() => {
+    if (isMinimized || !isMobile) {
+      // Rimuovi blocker scroll
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.height = '';
+      document.body.style.width = '';
+    } else {
+      // Blocca scroll
+      document.body.style.overflow = 'hidden';
+      document.body.style.position = 'fixed';
+      document.body.style.height = '100%';
+      document.body.style.width = '100%';
+    }
+    
+    return () => {
+      // Cleanup
+      document.body.style.overflow = '';
+      document.body.style.position = '';
+      document.body.style.height = '';
+      document.body.style.width = '';
+    };
+  }, [isMinimized, isMobile]);
+  
+  // Gestisce l'invio del messaggio
+  const handleSendMessage = async (e?: FormEvent) => {
+    if (e) e.preventDefault();
+    
+    if (!inputMessage.trim() || isLoading) return;
+    
+    // Aggiungi il messaggio dell'utente alla chat
+    const userMessage: ChatMessage = {
+      text: inputMessage,
+      isUser: true,
+      timestamp: getCurrentTime()
+    };
+    
+    setMessages(prev => [...prev, userMessage]);
+    const messageTxt = inputMessage;
+    setInputMessage("");
+    setIsLoading(true);
+    
+    // Prima prova ad inviare tramite WebSocket, altrimenti usa REST
+    const messageSent = sendMessageViaWebSocket(messageTxt);
+    
+    // Se WebSocket non è disponibile, utilizza il metodo HTTP tradizionale
+    if (!messageSent) {
+      console.log("WebSocket non disponibile, utilizzo fallback HTTP");
+      
+      // Invia il messaggio al webhook e aspetta la risposta
+      const botResponse = await sendMessageToWebhook(messageTxt);
+      
+      // Aggiungi la risposta del bot alla chat
+      const botMessage: ChatMessage = {
+        text: botResponse,
+        isUser: false,
+        timestamp: getCurrentTime()
+      };
+      
+      setMessages(prev => [...prev, botMessage]);
+    }
+    // Se è stato inviato via WebSocket, la risposta arriverà tramite l'evento onmessage
+  };
+
+  // Scorre automaticamente la chat verso il basso quando arrivano nuovi messaggi
+  useEffect(() => {
+    if (chatEndRef.current) {
+      chatEndRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [messages]);
+
+  // Stampo nella console per debug
+  console.log("Stato chat:", {isMobile, isMinimized, isFirstLoad});
+
+  // Versione mobile completamente separata dalla versione desktop
+  if (isMobile && !isMinimized) {
+    return (
+      <div 
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          width: '100vw',
+          height: '100vh',
+          margin: 0,
+          padding: 0,
+          zIndex: 9999,
+          backgroundColor: '#121218',
+          display: 'flex',
+          flexDirection: 'column',
+          overflow: 'hidden'
+        }}
+      >
+        {/* Header */}
+        <div 
+          style={{
+            position: 'sticky',
+            top: 0,
+            left: 0,
+            right: 0,
+            width: '100%',
+            backgroundColor: 'rgb(255, 87, 34)',
+            backgroundImage: 'linear-gradient(to right, rgb(255, 87, 34), rgb(255, 160, 122))',
+            padding: '16px',
+            zIndex: 20
+          }}
+        >
+          <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+            <div style={{display: 'flex', alignItems: 'center'}}>
+              <div style={{
+                width: '40px', 
+                height: '40px', 
+                backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginRight: '12px'
+              }}>
+                <MessageCircleMore color="white" size={24} />
+              </div>
+              <div>
+                <h3 style={{
+                  fontWeight: 600,
+                  fontSize: '18px',
+                  color: 'white',
+                  margin: 0
+                }}>Leader24 Assistant</h3>
+                <p style={{
+                  fontSize: '12px',
+                  color: 'rgba(255, 255, 255, 0.7)',
+                  margin: 0
+                }}>AI - Sempre Online</p>
+              </div>
+            </div>
+            <button 
+              style={{
+                backgroundColor: 'transparent',
+                border: 'none',
+                borderRadius: '50%',
+                padding: '8px',
+                cursor: 'pointer'
+              }}
+              onClick={() => setIsMinimized(true)}
+            >
+              <X color="white" size={20} />
+            </button>
+          </div>
+        </div>
+        
+        {/* Corpo messaggi */}
+        <div style={{
+          flex: 1,
+          overflowY: 'auto',
+          padding: '16px',
+          marginBottom: '65px' // Spazio per l'input in basso
+        }}>
+          {messages.map((message, index) => (
+            <div key={index} style={{
+              display: 'flex',
+              justifyContent: message.isUser ? 'flex-end' : 'flex-start',
+              marginBottom: '16px'
+            }}>
+              <div style={{
+                backgroundColor: message.isUser 
+                  ? 'rgba(98, 0, 234, 0.2)'
+                  : 'rgba(255, 87, 34, 0.1)',
+                padding: '12px',
+                maxWidth: '80%',
+                borderRadius: '8px',
+                borderTopRightRadius: message.isUser ? 0 : '8px',
+                borderTopLeftRadius: message.isUser ? '8px' : 0
+              }}>
+                {!message.isUser && (
+                  <div style={{
+                    width: '24px',
+                    height: '24px',
+                    backgroundColor: 'rgb(255, 87, 34)',
+                    backgroundImage: 'linear-gradient(to right, rgb(255, 87, 34), rgb(255, 160, 122))',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '8px'
+                  }}>
+                    <MessageCircleMore color="white" size={12} />
+                  </div>
+                )}
+                <p style={{
+                  fontSize: '14px',
+                  color: 'white',
+                  margin: 0,
+                  whiteSpace: 'pre-wrap'
+                }}>{message.text}</p>
+                <p style={{
+                  fontSize: '10px',
+                  color: '#BBBBBB',
+                  marginTop: '4px',
+                  margin: 0
+                }}>{message.timestamp}</p>
+              </div>
+            </div>
+          ))}
+          <div ref={chatEndRef} />
+        </div>
+        
+        {/* Input in basso */}
+        <div style={{
+          position: 'fixed',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          padding: '12px',
+          backgroundColor: '#121218',
+          borderTop: '1px solid rgba(255, 255, 255, 0.1)'
+        }}>
+          <form onSubmit={handleSendMessage} style={{display: 'flex', gap: '8px'}}>
+            <input 
+              type="text" 
+              placeholder={isLoading ? "Attendere..." : "Scrivi un messaggio..."} 
+              value={inputMessage}
+              onChange={(e) => setInputMessage(e.target.value)}
+              disabled={isLoading}
+              style={{
+                flex: 1,
+                backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                borderRadius: '6px',
+                padding: '8px 16px',
+                fontSize: '14px',
+                color: 'white',
+                outline: 'none'
+              }}
+            />
+            <button 
+              type="submit" 
+              disabled={!inputMessage.trim() || isLoading}
+              style={{
+                backgroundColor: isLoading ? '#4a4a4a' : 'rgb(255, 87, 34)',
+                backgroundImage: isLoading ? 'none' : 'linear-gradient(to right, rgb(255, 87, 34), rgb(255, 160, 122))',
+                borderRadius: '6px',
+                padding: '8px',
+                border: 'none',
+                cursor: 'pointer',
+                opacity: (!inputMessage.trim() || isLoading) ? 0.5 : 1
+              }}
+            >
+              {isLoading ? (
+                <div style={{
+                  width: '20px',
+                  height: '20px',
+                  border: '2px solid white',
+                  borderTopColor: 'transparent',
+                  borderRadius: '50%',
+                  animation: 'spin 1s linear infinite'
+                }}></div>
+              ) : (
+                <Send color="white" size={20} />
+              )}
+            </button>
+          </form>
+        </div>
+      </div>
+    );
+  }
+  
+  // Versione desktop normale
+  return (
+    <div 
+      className={`fixed z-50 shadow-2xl shadow-black/30 transition-all duration-500 ease-in-out transform-gpu ${
+        isMinimized 
+          ? 'right-6 bottom-6' 
+          : 'right-6 bottom-0'
+      }`}
+      style={{
+        width: isMinimized ? 'auto' : '380px',
+        maxHeight: isMinimized ? 'auto' : '540px',
+        opacity: isFirstLoad ? 0 : 1,
+        transform: isFirstLoad ? 'translateY(20px)' : 'translateY(0)'
+      }}
+    >
+      {/* Header della chat - visibile solo quando è aperta */}
+      {!isMinimized && (
+        <div 
+          className="bg-gradient-to-r from-[#FF5722] to-[#FFA07A] p-4 rounded-t-lg cursor-pointer"
+          onClick={() => setIsMinimized(!isMinimized)}
+        >
+          <div className="flex items-center justify-between">
+            <div className="flex items-center">
+              <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center mr-3">
+                <MessageCircleMore className="w-6 h-6 text-white" />
+              </div>
+              <div>
+                <h3 className="font-semibold text-lg text-white">Leader24 Assistant</h3>
+                <p className="text-xs text-white/70">AI - Sempre Online</p>
+              </div>
+            </div>
+            <button 
+              className="rounded-full p-2 hover:bg-white/10 transition-colors"
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsMinimized(!isMinimized);
+              }}
+              aria-label="Minimizza chat"
+            >
+              <Minimize2 className="w-5 h-5 text-white" />
+            </button>
+          </div>
+        </div>
+      )}
+      
+      {/* Bottone floating quando è minimizzato */}
+      {isMinimized && (
+        <div 
+          className="p-0 rounded-full cursor-pointer group relative overflow-hidden"
+          onClick={() => setIsMinimized(false)}
+        >
+          <div className="relative">
+            {/* Sfondo scuro per il bottone */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#121218] to-[#1a1a22] z-10"></div>
+            
+            {/* Bottone principale con testo - aggiunta animazione bordo */}
+            <div className="flex items-center rounded-full p-2 relative z-20 animate-border-glow overflow-visible">
+              <div className="flex items-center px-4 py-2">
+                <div className="w-10 h-10 bg-white/15 rounded-full flex items-center justify-center mr-3 backdrop-blur-sm">
+                  <MessageCircleMore className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-base text-white drop-shadow-md">Chatta con noi</h3>
+                  <div className="flex items-center">
+                    <span className="w-2 h-2 bg-green-400/60 rounded-full inline-block mr-1" style={{ animation: 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite' }}></span>
+                    <p className="text-xs text-white/90">Online</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Ombra radiale con animazione personalizzata */}
+          <div className="absolute inset-0 rounded-full" style={{ 
+            animation: 'shadow-pulse 5s ease-in-out infinite'
+          }}></div>
+          
+          {/* Effetto overlay al passaggio del mouse - opacità ridotta e transizione più lenta */}
+          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-green-400/20 to-green-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-in-out z-0"></div>
+        </div>
+      )}
+      
+      {/* Corpo della chat */}
+      <Card 
+        className={`${!isMinimized ? 'rounded-t-none border-t-0' : 'hidden'} overflow-hidden border-white/10 transition-all duration-500`}
+        style={{ 
+          maxHeight: isMinimized ? '0' : '540px',
+          opacity: isMinimized ? 0 : 1
+        }}
+      >
+        <div className="bg-[#121218] flex flex-col h-[500px]">
+          <div className="flex-grow overflow-y-auto space-y-4 p-4 scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-transparent">
+            {messages.map((message, index) => (
+              <div key={index} className={`flex justify-${message.isUser ? 'end' : 'start'} animate-in fade-in slide-in-from-${message.isUser ? 'right' : 'left'} duration-300`}>
+                <div className={`
+                  ${message.isUser 
+                    ? 'bg-[#6200EA]/20 rounded-lg rounded-tr-none' 
+                    : 'bg-[#FF5722]/10 rounded-lg rounded-tl-none'
+                  } p-3 max-w-[80%] backdrop-blur-sm
+                `}>
+                  {!message.isUser && (
+                    <div className="w-6 h-6 bg-gradient-to-r from-[#FF5722] to-[#FFA07A] rounded-full flex items-center justify-center mb-2">
+                      <MessageCircleMore className="w-3 h-3 text-white" />
+                    </div>
+                  )}
+                  <p className="text-sm text-white whitespace-pre-wrap">{message.text}</p>
+                  <p className="text-xs text-[#BBBBBB] mt-1">{message.timestamp}</p>
+                </div>
+              </div>
+            ))}
+            <div ref={chatEndRef} />
+          </div>
+          
+          <div className="p-3 border-t border-white/10">
+            <form onSubmit={handleSendMessage} className="flex gap-2">
+              <input 
+                type="text" 
+                placeholder={isLoading ? "Attendere..." : "Scrivi un messaggio..."} 
+                value={inputMessage}
+                onChange={(e) => setInputMessage(e.target.value)}
+                disabled={isLoading}
+                className="flex-grow bg-white/5 border border-white/10 rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#FF5722]/50 text-white disabled:opacity-50"
+                onFocus={() => setIsMinimized(false)}
+              />
+              <button 
+                type="submit" 
+                disabled={!inputMessage.trim() || isLoading}
+                className={`relative overflow-hidden ${isLoading ? 'bg-gray-600' : 'bg-gradient-to-r from-[#FF5722] to-[#FFA07A]'} rounded-md p-2 group disabled:opacity-50`}
+              >
+                {isLoading ? (
+                  <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                ) : (
+                  <>
+                    <Send className="w-5 h-5 text-white relative z-10" />
+                    <span className="absolute inset-0 bg-gradient-to-r from-[#FFA07A] to-[#FF5722] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out"></span>
+                  </>
+                )}
+              </button>
+            </form>
+          </div>
+        </div>
+      </Card>
+    </div>
+  );
+}

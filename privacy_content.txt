@@ -1,0 +1,240 @@
+					<main id="main" class="site-main">
+				<article
+class="post-464 page type-page status-publish ast-article-single" id="post-464" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
+	
+				<header class="entry-header ast-no-thumbnail ast-no-title ast-header-without-markup">
+							</header> <!-- .entry-header -->
+		
+<div class="entry-content clear"
+	itemprop="text">
+
+	
+			<div data-elementor-type="wp-page" data-elementor-id="464" class="elementor elementor-464" data-elementor-post-type="page">
+				<div class="elementor-element elementor-element-7697355 e-flex e-con-boxed e-con e-parent" data-id="7697355" data-element_type="container">
+					<div class="e-con-inner">
+				<div class="elementor-element elementor-element-13ca213 elementor-widget elementor-widget-heading" data-id="13ca213" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Informativa Privacy</h2>				</div>
+				</div>
+					</div>
+				</div>
+		<div class="elementor-element elementor-element-f6032ad e-flex e-con-boxed e-con e-parent" data-id="f6032ad" data-element_type="container">
+					<div class="e-con-inner">
+				<div class="elementor-element elementor-element-9373dc7 elementor-widget elementor-widget-html" data-id="9373dc7" data-element_type="widget" data-widget_type="html.default">
+				<div class="elementor-widget-container">
+					<br><span>Ultimo Aggiornamento il 24-Ago-2024</span>
+<br><span>Data di Entrata in Vigore 25-Ago-2024</span>
+
+<p>
+    Questa Informativa sulla Privacy descrive le politiche di
+
+    Sevedo Co. Ltd.,
+    291 Vichitsongkram Road,
+    Phuket
+    83120,
+    Thailandia,
+    email: info@leader24.it,
+    telefono: +393762493961
+
+    riguardo la raccolta,
+    l'uso e la divulgazione delle informazioni che raccogliamo
+    quando utilizzi il nostro sito web (leader24.it).
+    (il “Servizio”). Accedendo o utilizzando
+    il
+    Servizio, acconsenti alla raccolta, all'uso e
+    alla divulgazione delle tue informazioni in conformità con questa
+    Informativa sulla Privacy. Se non acconsenti a quanto sopra,
+    ti preghiamo di non accedere o utilizzare il Servizio.
+</p>
+
+<p>
+    Potremmo modificare questa Informativa sulla Privacy in qualsiasi momento senza
+    previo avviso e pubblicheremo la versione aggiornata
+    sul Servizio. La nuova Politica entrerà
+    in vigore 180 giorni dopo la sua
+    pubblicazione sul Servizio e il tuo
+    accesso o utilizzo continuato del Servizio dopo tale data
+    costituirà l'accettazione della nuova Informativa sulla Privacy. Ti consigliamo pertanto di
+    rivedere periodicamente questa pagina.
+</p>
+
+<ol>
+    <li>
+        <h5>Informazioni che Raccogliamo:</h5>
+        <p>
+            Raccoglieremo e tratteremo le seguenti
+            informazioni personali:
+        </p>
+        <ol>
+            <li>Nome</li>
+            <li>Email</li>
+            <li>Numero di telefono</li>
+        </ol>
+    </li>
+
+    <li>
+        <h5>Come Utilizziamo le Tue Informazioni:</h5>
+        <p>
+            Utilizzeremo le informazioni che raccogliamo
+            su di te per i seguenti scopi:
+        </p>
+        <ol>
+            <li>Marketing/Promozionale</li>
+            <li>Creazione di un account utente</li>
+            <li>Elaborazione dei pagamenti</li>
+            <li>Gestione delle informazioni amministrative</li>
+            <li>Gestione degli ordini dei clienti</li>
+        </ol>
+        <p>
+            Se desideriamo utilizzare le tue informazioni per qualsiasi altro
+            scopo, ti chiederemo il consenso e utilizzeremo
+            le tue informazioni solo dopo aver ricevuto il
+            tuo consenso e solo per lo scopo/i per cui
+            hai dato il consenso, salvo obblighi di legge contrari.
+        </p>
+    </li>
+    
+    <li>
+        <h5>Come Condividiamo le Tue Informazioni:</h5>
+        <p>
+            Non trasferiremo le tue informazioni personali
+            a terzi senza il tuo consenso, 
+            salvo in circostanze limitate descritte 
+            di seguito:
+        </p>
+        <ol>
+            <li>Servizi pubblicitari</li>
+            <li>Analisi</li>
+        </ol>
+        <p>
+            Richiediamo a tali terzi di utilizzare
+            le informazioni personali che trasferiamo a loro solo
+            per lo scopo per cui sono state trasferite e
+            di non conservarle per un periodo più lungo di quello necessario per
+            soddisfare lo scopo dichiarato.
+        </p>
+        <p>
+            Potremmo anche divulgare le tue informazioni personali
+            per i seguenti motivi: (1) per conformarci alle leggi 
+            applicabili, regolamenti, ordini del tribunale o altri processi legali; (2) per far rispettare gli accordi con te, 
+            inclusa questa Informativa sulla Privacy; o (3) per rispondere 
+            a reclami che il tuo utilizzo del Servizio violi 
+            i diritti di terzi. Se il Servizio o la nostra 
+            azienda viene fusa o acquisita da un'altra 
+            azienda, le tue informazioni saranno una delle 
+            risorse trasferite al nuovo proprietario.
+        </p>
+    </li>
+    
+    <li>
+        <h5>Conservazione delle Tue Informazioni:</h5>
+        <p>
+            Conserveremo le tue informazioni personali con noi
+            per un periodo
+            di 90 giorni fino a 2 anni dopo la chiusura dell'account da parte degli utenti
+            o per quanto
+            necessario a soddisfare gli scopi per cui
+            sono state raccolte come dettagliato in questa
+            Informativa sulla Privacy. Potremmo dover conservare determinate
+            informazioni per periodi più lunghi come
+            richiesto dalla legge o per altri motivi legittimi
+            come l'applicazione dei diritti legali, la prevenzione delle frodi, ecc. Le informazioni anonime residue
+            e le informazioni aggregate, che non ti identificano 
+            (direttamente o indirettamente), possono essere
+            conservate indefinitamente.
+        </p>
+    </li>
+    
+    <li>
+        <h5>I Tuoi Diritti:</h5>
+        <p>
+            A seconda della legge applicabile, potresti avere
+            il diritto di accedere, rettificare o cancellare i tuoi
+            dati personali o ricevere una copia dei tuoi dati personali, limitare o opporsi al trattamento attivo dei tuoi dati, chiederci di trasferire 
+            le tue informazioni personali a un'altra entità, 
+            revocare qualsiasi consenso che ci hai fornito 
+            per trattare i tuoi dati, il diritto di presentare un reclamo 
+            presso un'autorità competente e altri diritti 
+            pertinenti secondo le leggi applicabili. Per 
+            esercitare questi diritti, puoi scriverci all'indirizzo 
+            info@leader24.it.
+            Risponderemo alla tua
+            richiesta in conformità con la legge applicabile.
+        </p>
+
+        
+        <p>
+            Tieni presente che se non ci consenti di raccogliere
+            o elaborare le informazioni personali richieste o 
+            revochi il consenso a trattare le stesse per 
+            gli scopi richiesti, potresti non essere in grado di accedere
+            o utilizzare i servizi per i quali le tue informazioni 
+            sono state richieste.
+        </p>
+    </li>
+    
+    <li>
+        <h5>Cookie ecc.</h5>
+        <p>
+            Per saperne di più su come utilizziamo questi
+            strumenti e sulle tue scelte riguardo a queste tecnologie di tracciamento, consulta la nostra
+            <a href="leader24.it">Politica sui Cookie.</a>
+        </p>
+    </li>
+    
+    <li>
+        <h5>Sicurezza:</h5>
+        <p>
+            La sicurezza delle tue informazioni è importante per
+            noi e utilizzeremo misure di sicurezza ragionevoli
+            per prevenire la perdita, l'uso improprio o l'alterazione non autorizzata delle tue informazioni sotto il nostro
+            controllo. Tuttavia, dato il rischio intrinseco, non
+            possiamo garantire una sicurezza assoluta e, di conseguenza, non possiamo garantire la sicurezza di
+            qualsiasi informazione che ci trasmetti e lo fai a tuo rischio.
+        </p>
+    </li>
+
+    <li>
+        <h5>Collegamenti a Terze Parti & Uso delle Tue Informazioni:</h5>
+        <p>
+            Il nostro Servizio può contenere collegamenti ad altri siti web
+            che non sono gestiti da noi. Questa Informativa sulla Privacy
+            non affronta la politica sulla privacy e altre
+            pratiche di terze parti, inclusi eventuali
+            terzi che operano qualsiasi sito web o servizio
+            a cui si può accedere tramite un collegamento sul
+            Servizio. Ti consigliamo vivamente di esaminare
+            l'informativa sulla privacy di ogni sito che visiti. Non abbiamo
+            controllo e non ci assumiamo alcuna responsabilità per
+            il contenuto, le politiche sulla privacy o le pratiche di
+            siti o servizi di terze parti.
+        </p>
+    </li>
+    
+    <li>
+        <h5>Responsabile della Protezione dei Dati:</h5>
+        <p>
+            Se hai domande o preoccupazioni riguardo al
+            trattamento delle tue informazioni da parte nostra,
+            puoi inviare un'email al nostro Responsabile della Protezione dei Dati presso
+            Sevedo Co. Ltd.,
+            291 Vichitsongkram Road,
+            email: info@leader24.it.
+            Affronteremo le tue preoccupazioni in conformità con la legge applicabile.
+        </p>
+    </li>
+</ol>				</div>
+				</div>
+					</div>
+				</div>
+				</div>
+		
+	
+	
+</div><!-- .entry-content .clear -->
+
+	
+	
+</article><!-- #post-## -->
+
+			</main><!-- #main -->

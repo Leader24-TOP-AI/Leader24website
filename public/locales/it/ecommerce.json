@@ -1,0 +1,88 @@
+{
+  "badge": "Soluzioni AI per E-commerce",
+  "title": "Customer Care AI del futuro <br />per il tuo E-commerce",
+  "subtitle": "Aumenta vendite e soddisfazione clienti con un assistente AI sempre disponibile, perfettamente aggiornato su ordini e catalogo completo. Risposte immediate, personalizzate e precise 24/7.",
+  "startDemo": "Inizia con una demo gratuita",
+  "discoverHow": "Scopri come funziona",
+  "statsCards": {
+    "sales": "Aumento delle vendite",
+    "satisfaction": "Soddisfazione clienti",
+    "reduction": "Riduzione costi supporto"
+  },
+  "benefits": "Vantaggi per il settore E-commerce",
+  "requestDemo": "Richiedi una demo personalizzata",
+  "automationSteps": {
+    "tracking": {
+      "title": "Tracking ordini in tempo reale",
+      "description": "Assistente AI sempre aggiornato sullo stato di ogni ordine, che fornisce informazioni precise su spedizioni, consegne e ritardi, riducendo l'ansia d'attesa del cliente."
+    },
+    "catalog": {
+      "title": "Conoscenza totale del catalogo",
+      "description": "L'AI conosce ogni dettaglio di tutti i prodotti, suggerisce alternative, confronta caratteristiche e guida l'acquisto in modo personalizzato, aumentando le conversioni del 37%."
+    },
+    "availability": {
+      "title": "Disponibilità 24/7 senza attese",
+      "description": "Risposte immediate a qualsiasi ora, eliminando frustrazione e abbandoni. Il 78% dei clienti apprezza poter ricevere assistenza anche fuori orario lavorativo."
+    },
+    "personalized": {
+      "title": "Assistenza personalizzata",
+      "description": "L'AI ricorda preferenze, acquisti passati e comportamenti dell'utente, offrendo un'esperienza su misura che aumenta fidelizzazione e lifetime value del cliente del 42%."
+    }
+  },
+  "caseStudiesTitle": "Casi di successo E-commerce",
+  "caseStudies": {
+    "catalog": {
+      "title": "Incremento vendite del 43% grazie all'assistenza catalogo",
+      "description": "Un e-commerce di elettronica ha implementato un assistente AI con conoscenza dettagliata di tutti i prodotti, capace di guidare gli utenti nella scelta in base alle loro esigenze, aumentando conversioni e valore medio degli ordini."
+    },
+    "tracking": {
+      "title": "Soddisfazione cliente salita al 97% con tracking AI",
+      "description": "Un marketplace di moda ha integrato un assistente AI sempre aggiornato sullo stato degli ordini, che fornisce informazioni precise 24/7 riducendo ansia post-acquisto e aumentando il tasso di riacquisto del 58%."
+    }
+  },
+  "shopify": {
+    "title": "Shopify",
+    "description": "Integrazione nativa con Shopify per accesso completo a prodotti, varianti, ordini e clienti in tempo reale."
+  },
+  "woocommerce": {
+    "title": "WooCommerce",
+    "description": "Sincronizzazione perfetta con WordPress e WooCommerce per gestire catalogo e ordini automaticamente."
+  },
+  "testimonial": {
+    "quote": "Leader24 si integra senza problemi con il nostro Shopify Plus. L'AI ha accesso immediato a tutto il catalogo e stato ordini senza ritardi o configurazioni complesse.",
+    "source": "— E-commerce manager, settore moda"
+  },
+  "caseStudy": {
+    "testimonial": "\"Con Leader24 abbiamo automatizzato la gestione dei lead sul sito e su WhatsApp, migliorando l'efficienza commerciale senza dover ampliare il team vendite.\"",
+    "client": "Cliente E-commerce",
+    "readMore": "Leggi altri casi"
+  },
+  "howItWorks": "Come Leader24 trasforma il tuo E-commerce",
+  "finalCta": {
+    "title": "Un customer care AI che conosce ogni tuo prodotto",
+    "description": "Immagina un assistente virtuale che conosce perfettamente ogni dettaglio del tuo catalogo, lo stato di ogni ordine e risponde in tempo reale 24/7. Leader24 aiuta i tuoi clienti a trovare esattamente ciò che cercano e trasforma la loro soddisfazione in vendite.",
+    "requestDemo": "Richiedi una demo gratuita",
+    "contactUs": "Contattaci per maggiori informazioni"
+  },
+  "faq": {
+    "title": "Domande frequenti su E-commerce",
+    "questions": {
+      "implementation": {
+        "question": "Quanto tempo serve per implementare Leader24 nel mio e-commerce?",
+        "answer": "L'implementazione base richiede solo 3-5 giorni lavorativi. Le personalizzazioni avanzate possono richiedere 1-2 settimane aggiuntive, a seconda della complessità e delle integrazioni necessarie."
+      },
+      "integration": {
+        "question": "Leader24 si integra con la mia piattaforma e-commerce esistente?",
+        "answer": "Sì, Leader24 offre integrazioni native con Shopify e WooCommerce, garantendo una sincronizzazione perfetta del catalogo, inventario e stato degli ordini. Il sistema si collega tramite API ufficiali, senza necessità di modifiche al codice esistente o sviluppo personalizzato."
+      },
+      "satisfaction": {
+        "question": "In che modo l'AI migliora la soddisfazione dei clienti e-commerce?",
+        "answer": "Un customer care AI sempre disponibile elimina le frustrazioni da attese, fornisce risposte precise su prodotti e ordini, e accompagna il cliente in ogni fase dell'acquisto. Questo migliora drasticamente l'esperienza utente, con un aumento medio della soddisfazione dell'82% e un conseguente incremento delle vendite del 37%."
+      },
+      "catalog": {
+        "question": "Come fa l'AI a conoscere il mio intero catalogo prodotti?",
+        "answer": "Leader24 si integra direttamente con il tuo sistema e-commerce, sincronizzando automaticamente ogni prodotto, variante, disponibilità e prezzo. Ogni modifica al catalogo viene immediatamente appresa dall'AI, che può quindi fornire informazioni sempre aggiornate e precise ai clienti, migliorando la loro esperienza d'acquisto e incrementando le vendite."
+      }
+    }
+  }
+}

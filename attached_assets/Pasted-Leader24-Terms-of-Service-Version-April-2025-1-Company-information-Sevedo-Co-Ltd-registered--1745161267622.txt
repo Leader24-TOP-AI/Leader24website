@@ -1,0 +1,45 @@
+Leader24 – Terms of Service
+Version: April 2025
+
+1. Company information
+Sevedo Co. Ltd., registered office at 291 Vichitsongkram Road, Phuket, Thailand (hereinafter "Leader24", "we", "our"). Official contact: info@leader24.it.
+2. Definitions
+"Services": the Leader24 SaaS platform for creating and managing artificial‑intelligence agents devoted to customer care, hotel/restaurant reservations and e‑commerce order tracking.
+3. Scope of agreement
+By accessing or using the Services, you agree to be bound by these Terms. If you act on behalf of an entity, you represent that you have authority to bind that entity.
+4. Plans, free trial and billing
+Leader24 offers (a) a limited free plan and (b) paid plans billed in Euro (EUR) on a monthly or annual basis. Fees are due in advance; subscriptions renew automatically until cancelled. No refunds are provided for fees already paid.
+5. Acceptable use
+You must not: (i) use the Services for unlawful activities or spam; (ii) perform reverse engineering or bypass security measures; (iii) infringe third‑party rights.
+6. Third‑party services
+AI Agents may integrate with WhatsApp Business, Stripe, OpenAI, Google Cloud and other external services. Leader24 does not guarantee continuous availability of such services and is not liable for any outage, malfunction or policy change attributable to them.
+7. Availability and support
+Availability: 99 % monthly uptime target, excluding scheduled maintenance (at least 24 h notice).
+
+
+Credits: no credit or refund if the target is not met.
+
+
+Support: automated channels available 24/7; tickets are acknowledged within 24 hours.
+
+
+8. Intellectual property
+Leader24 owns all rights to the Services; you retain rights to your uploaded content.
+9. Confidentiality
+Each party shall keep confidential all proprietary information of the other party, except as required to fulfil contractual or legal obligations.
+10. Privacy and data protection
+Personal‑data processing is governed by the Privacy Notice available at https://leader24.it/informativa-privacy. As part of the staff is located in Thailand, remote access to EU users’ data constitutes an international transfer; such transfers are governed by the EU Standard Contractual Clauses (Decision 2021/914) hereby incorporated.
+11. Warranties and disclaimers
+The Services are provided "as is" and "as available". Leader24 disclaims all warranties, express or implied, including merchantability, fitness for a particular purpose and non‑infringement.
+12. Limitation of liability
+To the fullest extent permitted by law, Leader24 shall not be liable for any direct, indirect, special, incidental or consequential damages, including loss of data or profits, even if advised of the possibility of such damages. The aggregate liability of Leader24 to the User shall be €0, except where such limitation is prohibited by law.
+13. Indemnification
+You agree to indemnify and hold harmless Leader24 from any claim arising out of your misuse of the Services.
+14. Term and termination
+You may terminate at any time by deleting your account; Leader24 may suspend or terminate the Services for breach of these Terms. Data may be deleted 30 days after termination.
+15. Governing law and venue
+These Terms are governed by the laws of Thailand. Any dispute shall be submitted to the exclusive jurisdiction of the courts of Bangkok, without prejudice to mandatory consumer rights in the EU.
+16. Miscellaneous
+If any provision is held invalid, the remaining provisions will remain in effect. Leader24 may assign the agreement upon notice; you may not assign rights without written consent.
+End of Terms of Service
+

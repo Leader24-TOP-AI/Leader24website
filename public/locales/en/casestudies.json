@@ -1,0 +1,136 @@
+{
+  "title": "Leader24 Success Stories",
+  "subtitle": "Discover how companies of different sizes and sectors have transformed their customer communication with our solutions.",
+  "stats": {
+    "customerSatisfaction": {
+      "value": "+40%",
+      "text": "Average customer satisfaction"
+    },
+    "timeReduction": {
+      "value": "-65%",
+      "text": "Request handling time"
+    },
+    "support": {
+      "value": "24/7",
+      "text": "Automated support"
+    }
+  },
+  "cta": "I want similar results",
+  "trustedBy": "Leader24 is the trusted choice for companies across various industries",
+  "companies": {
+    "count": "200+",
+    "label": "Companies"
+  },
+  "sectors": {
+    "count": "12",
+    "label": "Sectors"
+  },
+  "countries": {
+    "count": "8",
+    "label": "Countries"
+  },
+  "languages": {
+    "count": "20+",
+    "label": "Supported languages"
+  },
+  "caseStudies": [
+    {
+      "company": "FiberNet Italia",
+      "titleStart": "How FiberNet",
+      "titleHighlight": "increased customer satisfaction by 40%",
+      "titleEnd": "with automated WhatsApp",
+      "quote": "Thanks to Leader24's WhatsApp automation, we offer immediate assistance on our subscribers' most common requests. Response times have decreased by 90% and the customer experience has significantly improved.",
+      "person": {
+        "name": "Giovanni C.",
+        "title": "Customer Care Director"
+      },
+      "fullTitle": "How FiberNet Italia increased customer satisfaction by 40% with automated WhatsApp",
+      "industry": "Telecommunications",
+      "challenges": [
+        "High response times (over 24 hours) for customer support requests",
+        "High number of calls for simple and repetitive problems",
+        "Difficult management of request peaks",
+        "Staff overloaded with handling basic requests"
+      ],
+      "solution": "FiberNet implemented Leader24 to automate responses to frequent questions from their subscribers via WhatsApp. The system responds instantly 24/7 to questions about invoices, common connection problems, service updates, and automatically handles the first stages of reports. More complex cases are forwarded to human operators with all the information already collected.",
+      "results": [
+        "90% reduction in response times",
+        "40% increase in customer satisfaction",
+        "35% decrease in call center call volume",
+        "50% increase in operational efficiency"
+      ],
+      "testimonial": "The implementation of Leader24 has revolutionized our approach to customer service. Our subscribers particularly appreciate the ability to receive immediate answers to their questions, even outside working hours. For our team, this has meant being able to focus on more complex cases, leaving technology to handle the most common requests. An investment that has quickly demonstrated its value, both in terms of operational efficiency and customer satisfaction."
+    },
+    {
+      "company": "SmileCare Dental Studio",
+      "titleStart": "How a dental practice manages",
+      "titleHighlight": "over 200 monthly appointments",
+      "titleEnd": "automatically",
+      "quote": "Leader24 has transformed our appointment management: patients can book, reschedule or cancel appointments via WhatsApp 24/7. Staff is more focused on direct care and we've reduced no-shows by 75%.",
+      "person": {
+        "name": "Dr. Laura G.",
+        "title": "Dental Practice Owner"
+      },
+      "fullTitle": "How a dental practice manages over 200 monthly appointments automatically",
+      "industry": "Healthcare",
+      "challenges": [
+        "Time-consuming manual appointment management",
+        "High rate of no-shows",
+        "Inability to manage bookings outside opening hours",
+        "Office staff overwhelmed with calls for rescheduling and cancellations"
+      ],
+      "solution": "SmileCare Dental Studio integrated Leader24 to create an automated booking system on WhatsApp. Patients can book, reschedule or cancel appointments at any time. The system automatically sends reminders 48 hours before the appointment and allows immediate confirmations. In case of cancellation, the system can offer the slot to other patients on the waiting list.",
+      "results": [
+        "Management of over 200 monthly appointments automatically",
+        "75% reduction in no-shows",
+        "40% decrease in administrative workload",
+        "25% increase in patient satisfaction"
+      ],
+      "testimonial": "Before Leader24, managing appointments was a nightmare. Hours on the phone, constant rescheduling, and patients who simply didn't show up. Now everything has changed: patients manage their appointments when they prefer, receive automatic reminders, and our office staff can focus on more important tasks. Patients particularly appreciate how easily they can reschedule an appointment directly from WhatsApp, without having to call or wait for the practice to be open."
+    },
+    {
+      "company": "RentRush Car Rental",
+      "titleStart": "How a car rental company",
+      "titleHighlight": "reduced booking management time by 65%",
+      "titleEnd": "with an intelligent chatbot",
+      "quote": "Leader24 has transformed our booking management. The chatbot collects all the necessary information and checks availability in real time. Our staff only needs to confirm bookings that are already complete.",
+      "person": {
+        "name": "Vincenzo L.",
+        "title": "CEO"
+      },
+      "fullTitle": "How a car rental company reduced booking management time by 65% with an intelligent chatbot",
+      "industry": "Transportation and Mobility",
+      "challenges": [
+        "Manual booking process that took an average of 25 minutes per booking",
+        "Incomplete information collection causing delays in vehicle delivery",
+        "Inability to manage bookings outside working hours",
+        "Difficulty in managing bookings in languages other than Italian"
+      ],
+      "solution": "RentRush Car Rental implemented Leader24 to automate the booking process. The chatbot collects all the necessary information from the customer (dates, vehicle type, personal data, required documents), checks availability in real time, and provides immediate quotes. The system supports multiple languages and works 24/7, allowing bookings even during the night or on holidays.",
+      "results": [
+        "65% reduction in booking management time",
+        "30% increase in total bookings",
+        "40% increase in bookings from abroad",
+        "50% improvement in operational efficiency"
+      ],
+      "testimonial": "Before Leader24, each booking was a long and often frustrating process, both for us and for customers. We had to make multiple calls, send emails for documents, and often ended up with incomplete information. Now the chatbot guides the customer through a structured path, making sure they provide all the necessary information and documents. When the customer arrives to pick up the car, everything is already ready. This has allowed us to grow without having to hire new administrative staff."
+    }
+  ],
+  "chatDemo": {
+    "userMsg1": "Good morning, I'd like to know more about your services",
+    "botReply1": "Good morning! I'm the Leader24 virtual assistant. How can I help you today?",
+    "userMsg2": "How long does it take to integrate the service?",
+    "botReply2": "The basic implementation of Leader24 can be completed in a few hours. For more customized and complex solutions, the process may take a few days."
+  },
+  "detailsLabels": {
+    "challenges": "Challenges",
+    "solution": "Solution",
+    "results": "Results",
+    "testimonial": "Testimonial",
+    "industry": "Industry",
+    "readMore": "Read the full story",
+    "viewLess": "Show less",
+    "backToList": "Back to list",
+    "contact": "Contact us for a similar solution"
+  }
+}

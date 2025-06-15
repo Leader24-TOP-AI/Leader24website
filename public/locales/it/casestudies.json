@@ -1,0 +1,136 @@
+{
+  "title": "Storie di Successo Leader24",
+  "subtitle": "Scopri come aziende di diverse dimensioni e settori hanno trasformato la loro comunicazione con i clienti grazie alle nostre soluzioni.",
+  "stats": {
+    "customerSatisfaction": {
+      "value": "+40%",
+      "text": "Soddisfazione clienti in media"
+    },
+    "timeReduction": {
+      "value": "-65%",
+      "text": "Tempo di gestione richieste"
+    },
+    "support": {
+      "value": "24/7",
+      "text": "Assistenza automatizzata"
+    }
+  },
+  "cta": "Voglio risultati simili",
+  "trustedBy": "Leader24 è la scelta di fiducia per aziende in diversi settori",
+  "companies": {
+    "count": "200+",
+    "label": "Aziende"
+  },
+  "sectors": {
+    "count": "12",
+    "label": "Settori"
+  },
+  "countries": {
+    "count": "8",
+    "label": "Paesi"
+  },
+  "languages": {
+    "count": "20+",
+    "label": "Lingue supportate"
+  },
+  "caseStudies": [
+    {
+      "company": "FiberNet Italia",
+      "titleStart": "Come FiberNet ha",
+      "titleHighlight": "aumentato del 40% la soddisfazione clienti",
+      "titleEnd": "con WhatsApp automatizzato",
+      "quote": "Grazie all'automazione WhatsApp di Leader24, offriamo assistenza immediata sulle richieste più comuni dei nostri abbonati. I tempi di risposta sono diminuiti del 90% e l'esperienza cliente è notevolmente migliorata.",
+      "person": {
+        "name": "Giovanni C.",
+        "title": "Direttore Customer Care"
+      },
+      "fullTitle": "Come FiberNet Italia ha aumentato del 40% la soddisfazione clienti con WhatsApp automatizzato",
+      "industry": "Telecomunicazioni",
+      "challenges": [
+        "Tempi di risposta elevati (oltre 24 ore) per richieste di assistenza clienti",
+        "Elevato numero di chiamate per problemi semplici e ripetitivi",
+        "Gestione difficoltosa dei picchi di richieste",
+        "Personale sovraccarico per gestire richieste di base"
+      ],
+      "solution": "FiberNet ha implementato Leader24 per automatizzare le risposte alle domande frequenti dei propri abbonati tramite WhatsApp. Il sistema risponde istantaneamente 24/7 a domande su fatture, problemi di connessione comuni, aggiornamenti sui servizi, e gestisce in automatico le prime fasi delle segnalazioni. I casi più complessi vengono inoltrati agli operatori umani con tutte le informazioni già raccolte.",
+      "results": [
+        "Riduzione del 90% nei tempi di risposta",
+        "Aumento del 40% nella soddisfazione dei clienti",
+        "Diminuzione del 35% nel volume di chiamate al call center",
+        "Efficienza operativa aumentata del 50%"
+      ],
+      "testimonial": "L'implementazione di Leader24 ha rivoluzionato il nostro approccio all'assistenza clienti. I nostri abbonati apprezzano particolarmente la possibilità di ricevere risposte immediate alle loro domande, anche al di fuori dell'orario lavorativo. Per il nostro team, questo ha significato potersi concentrare sui casi più complessi, lasciando alla tecnologia il compito di gestire le richieste più comuni. Un investimento che ha rapidamente dimostrato il suo valore, sia in termini di efficienza operativa che di soddisfazione dei clienti."
+    },
+    {
+      "company": "Studio Dentistico SmileCare",
+      "titleStart": "Come uno studio dentistico gestisce",
+      "titleHighlight": "oltre 200 appuntamenti mensili",
+      "titleEnd": "in modo automatico",
+      "quote": "Leader24 ha trasformato la nostra gestione appuntamenti: i pazienti possono prenotare, spostare o annullare le visite tramite WhatsApp 24/7. Il personale è più concentrato sull'assistenza diretta e abbiamo ridotto le mancate presentazioni del 75%.",
+      "person": {
+        "name": "Dott.ssa Laura G.",
+        "title": "Titolare Studio Dentistico"
+      },
+      "fullTitle": "Come uno studio dentistico gestisce oltre 200 appuntamenti mensili in modo automatico",
+      "industry": "Sanità",
+      "challenges": [
+        "Gestione manuale degli appuntamenti estremamente dispendiosa in termini di tempo",
+        "Alto tasso di mancate presentazioni (no-show)",
+        "Impossibilità di gestire prenotazioni fuori dall'orario di apertura",
+        "Segreteria sovraccarica di chiamate per spostamenti e cancellazioni"
+      ],
+      "solution": "Lo Studio Dentistico SmileCare ha integrato Leader24 per creare un sistema di prenotazione automatizzato su WhatsApp. I pazienti possono prenotare, spostare o annullare appuntamenti in qualsiasi momento. Il sistema invia automaticamente promemoria 48 ore prima dell'appuntamento e consente conferme immediate. In caso di annullamento, il sistema può proporre lo slot ad altri pazienti in lista d'attesa.",
+      "results": [
+        "Gestione di oltre 200 appuntamenti mensili in modo automatico",
+        "Riduzione del 75% delle mancate presentazioni",
+        "Diminuzione del 40% del carico di lavoro amministrativo",
+        "Aumento del 25% della soddisfazione dei pazienti"
+      ],
+      "testimonial": "Prima di Leader24, gestire gli appuntamenti era un incubo. Ore al telefono, continui spostamenti, e pazienti che semplicemente non si presentavano. Ora tutto è cambiato: i pazienti gestiscono i loro appuntamenti quando preferiscono, ricevono promemoria automatici, e la nostra segreteria può dedicarsi a compiti più importanti. I pazienti apprezzano particolarmente la facilità con cui possono spostare un appuntamento direttamente da WhatsApp, senza dover telefonare o aspettare che lo studio sia aperto."
+    },
+    {
+      "company": "Autonoleggio RentRush",
+      "titleStart": "Come un'azienda di autonoleggio ha",
+      "titleHighlight": "ridotto del 65% il tempo di gestione delle prenotazioni",
+      "titleEnd": "con un chatbot intelligente",
+      "quote": "Leader24 ha trasformato la gestione delle nostre prenotazioni. Il chatbot raccoglie tutte le informazioni necessarie e verifica la disponibilità in tempo reale. Il nostro personale deve solo confermare le prenotazioni già complete.",
+      "person": {
+        "name": "Vincenzo L.",
+        "title": "Amministratore Delegato"
+      },
+      "fullTitle": "Come un'azienda di autonoleggio ha ridotto del 65% il tempo di gestione delle prenotazioni con un chatbot intelligente",
+      "industry": "Trasporti e Mobilità",
+      "challenges": [
+        "Processo di prenotazione manuale che richiedeva in media 25 minuti per prenotazione",
+        "Raccolta incompleta di informazioni che causava ritardi alla consegna dei veicoli",
+        "Impossibilità di gestire prenotazioni al di fuori dell'orario lavorativo",
+        "Difficoltà nella gestione di prenotazioni in lingue diverse dall'italiano"
+      ],
+      "solution": "Autonoleggio RentRush ha implementato Leader24 per automatizzare il processo di prenotazione. Il chatbot raccoglie tutte le informazioni necessarie dal cliente (date, tipo di veicolo, dati personali, documenti richiesti), verifica la disponibilità in tempo reale, e fornisce preventivi immediati. Il sistema supporta più lingue e funziona 24/7, permettendo prenotazioni anche durante la notte o nei giorni festivi.",
+      "results": [
+        "Riduzione del 65% nel tempo di gestione delle prenotazioni",
+        "Aumento del 30% delle prenotazioni totali",
+        "Incremento del 40% delle prenotazioni dall'estero",
+        "Miglioramento del 50% nell'efficienza operativa"
+      ],
+      "testimonial": "Prima di Leader24, ogni prenotazione era un processo lungo e spesso frustrante, sia per noi che per i clienti. Dovevamo fare più chiamate, mandare email per i documenti, e spesso ci ritrovavamo con informazioni incomplete. Ora il chatbot guida il cliente in un percorso strutturato, assicurandosi che fornisca tutte le informazioni e i documenti necessari. Quando il cliente arriva per ritirare l'auto, è tutto già pronto. Questo ci ha permesso di crescere senza dover assumere nuovo personale administrative."
+    }
+  ],
+  "chatDemo": {
+    "userMsg1": "Buongiorno, vorrei sapere di più sui vostri servizi",
+    "botReply1": "Buongiorno! Sono l'assistente virtuale di Leader24. Come posso aiutarti oggi?",
+    "userMsg2": "Quanto tempo serve per integrare il servizio?",
+    "botReply2": "L'implementazione base di Leader24 può essere completata in poche ore. Per soluzioni più personalizzate e complesse, il processo può richiedere alcuni giorni."
+  },
+  "detailsLabels": {
+    "challenges": "Sfide",
+    "solution": "Soluzione",
+    "results": "Risultati",
+    "testimonial": "Testimonianza",
+    "industry": "Settore",
+    "readMore": "Leggi la storia completa",
+    "viewLess": "Mostra meno",
+    "backToList": "Torna alla lista",
+    "contact": "Contattaci per una soluzione simile"
+  }
+}

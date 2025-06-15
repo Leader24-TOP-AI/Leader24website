@@ -1,0 +1,216 @@
+{
+  "title": "Settori di Applicazione",
+  "title2": "specifiche per il tuo settore",
+  "sidebarTitle": "Settori",
+  "benefits": "Vantaggi per",
+  "howItWorks": "Come funziona per",
+  "solutionsDesc": "Le nostre soluzioni per il settore {{industry}} sono progettate per affrontare le sfide specifiche che incontri ogni giorno. Leader24 integra le tue piattaforme esistenti e automatizza i flussi di lavoro ripetitivi, permettendoti di:",
+  "dedicated": "Dedicato",
+  "subtitle": "Leader24 si adatta perfettamente a qualsiasi settore che necessita di comunicazione con i clienti. Ecco alcuni degli ambiti in cui i nostri clienti hanno ottenuto risultati eccellenti.",
+  "badge": "Flessibilità di impiego",
+  "notFound": "Non trovi il tuo settore? Leader24 può essere personalizzato per qualsiasi tipo di business che necessiti di comunicazione con i clienti.",
+  "viewAllSectors": "Visualizza tutti i settori",
+  "requestCustomDemo": "Richiedi una Demo Personalizzata",
+  "selectedSector": "Settore selezionato:",
+  "details": "Dettagli",
+  "advantages": "Vantaggi per questo settore",
+  "discoverMore": "Scopri di più",
+  "backToSectors": "Torna ai settori",
+  "benefit1": "Migliorare l'esperienza cliente con risposte immediate 24/7",
+  "benefit2": "Ridurre il carico di lavoro manuale del tuo team",
+  "benefit3": "Incrementare l'efficienza operativa con processi automatizzati",
+  "requestDemo": "Richiedi una demo personalizzata",
+  "downloadBrochure": "Scarica brochure {{industry}}",
+  "caseStudyTitle": "Case Study: {{industry}}",
+  "caseStudyDesc": "Scopri come un'azienda del settore {{industry}} ha trasformato la propria comunicazione con i clienti grazie a Leader24.",
+  "testimonialQuote": "Leader24 ha trasformato completamente la nostra capacità di rispondere ai clienti. Ora offriamo assistenza 24/7 senza aumentare il nostro team.",
+  "testimonialSource": "Cliente {{industry}}",
+  "readCaseStudy": "Leggi altri Case Study",
+  "urls": {
+    "contacts": "/contatti",
+    "caseStudies": "/casi-studio",
+    "contactsFaq": "/contatti#Frequently asked questions"
+  },
+  "faqTitle": "FAQ: {{industry}}",
+  "faq1Title": "Quanto tempo ci vuole per implementare Leader24?",
+  "faq1Answer": "L'implementazione base richiede solo pochi giorni. Soluzioni più personalizzate potrebbero richiedere 1-2 settimane.",
+  "faq2Title": "Leader24 si integra con i nostri sistemi esistenti?",
+  "faq2Answer": "Sì, Leader24 si integra con la maggior parte dei CRM, ERP e piattaforme di e-commerce utilizzate nel settore {{industry}}.",
+  "faq3Title": "Quanto può risparmiare un'azienda del settore {{industry}}?",
+  "faq3Answer": "In media, i nostri clienti riportano una riduzione del 40-60% del tempo dedicato alle attività ripetitive e un aumento del 30% nella soddisfazione dei clienti.",
+  "moreFaq": "Altre domande frequenti",
+  "startNow": "Inizia oggi stesso con Leader24",
+  "ctaDescription": "Scopri come la nostra piattaforma può trasformare la comunicazione con i tuoi clienti e ottimizzare i processi nella tua azienda.",
+  "bookDemo": "Prenota una demo",
+  "contactUs": "Contattaci",
+  "testimonial": {
+    "quote": "Leader24 ha trasformato completamente la nostra capacità di rispondere ai clienti. Ora offriamo assistenza 24/7 senza aumentare il nostro team.",
+    "client": "Cliente"
+  },
+  "commonTags": {
+    "automation": "Automazione",
+    "twentyFourSeven": "24/7",
+    "customerSupport": "Assistenza Clienti",
+    "artificialIntelligence": "Intelligenza Artificiale"
+  },
+  "industryNames": {
+    "ecommerce": "E-commerce",
+    "insurance": "Assicurazioni",
+    "tourism": "Turismo",
+    "realEstate": "Immobiliare",
+    "marketing": "Agenzie Marketing/Web",
+    "automotive": "Automotive",
+    "health": "Salute e Benessere",
+    "it": "Servizi IT",
+    "education": "Educazione",
+    "hospitality": "Hospitality",
+    "finance": "Finance",
+    "professionalServices": "Servizi Professionali"
+  },
+  "industries": [
+    {
+      "name": "E-commerce",
+      "description": "Automatizza le risposte alle domande più frequenti e fornisci assistenza 24/7 ai tuoi clienti online.",
+      "icon": "shopping-cart",
+      "benefits": [
+        "Gestione automatica degli ordini",
+        "Tracciamento delle spedizioni",
+        "Risposte immediate sulle politiche di reso",
+        "Supporto clienti 24/7",
+        "Riduzione dei tempi di attesa"
+      ]
+    },
+    {
+      "name": "Assicurazioni",
+      "description": "Ottimizza la gestione delle richieste di assistenza e fornisci risposte immediate sulle polizze.",
+      "icon": "shield",
+      "benefits": [
+        "Risposte immediate su coperture e franchigie",
+        "Gestione automatizzata delle richieste",
+        "Aggiornamenti in tempo reale sullo stato dei sinistri",
+        "Supporto personalizzato ai clienti",
+        "Verifica rapida delle condizioni di polizza"
+      ]
+    },
+    {
+      "name": "Turismo",
+      "description": "Offri assistenza immediata per prenotazioni, modifiche e informazioni turistiche 24/7.",
+      "icon": "plane",
+      "benefits": [
+        "Gestione automatica delle prenotazioni",
+        "Risposte immediate a domande frequenti",
+        "Assistenza multilingua",
+        "Consigli personalizzati per i viaggiatori",
+        "Aggiornamenti in tempo reale su disponibilità"
+      ]
+    },
+    {
+      "name": "Immobiliare",
+      "description": "Gestisci richieste di informazioni su immobili e organizza visite e appuntamenti automaticamente.",
+      "icon": "home",
+      "benefits": [
+        "Qualificazione automatica dei lead",
+        "Organizzazione degli appuntamenti",
+        "Risposte immediate su disponibilità e caratteristiche",
+        "Follow-up automatici post-visita",
+        "Gestione efficiente delle richieste multiple"
+      ]
+    },
+    {
+      "name": "Agenzie Marketing/Web",
+      "description": "Migliora l'efficienza del tuo team gestendo richieste dei clienti e supporto tecnico in modo automatico.",
+      "icon": "megaphone",
+      "benefits": [
+        "Gestione delle richieste dei clienti",
+        "Assegnazione automatica ai team corretti",
+        "Risposte rapide alle domande tecniche comuni",
+        "Monitoraggio avanzamento progetti",
+        "Raccolta feedback in modo strutturato"
+      ]
+    },
+    {
+      "name": "Automotive",
+      "description": "Fornisci assistenza per prenotazioni test drive, manutenzione e informazioni su veicoli nuovi e usati.",
+      "icon": "car",
+      "benefits": [
+        "Prenotazione test drive automatizzata",
+        "Gestione appuntamenti per manutenzione",
+        "Aggiornamenti su disponibilità veicoli",
+        "Assistenza post-vendita immediata",
+        "Informazioni tecniche sui modelli disponibili"
+      ]
+    },
+    {
+      "name": "Salute e Benessere",
+      "description": "Gestisci appuntamenti, rispondi a domande su trattamenti e servizi, e fornisci supporto ai pazienti.",
+      "icon": "heart-pulse",
+      "benefits": [
+        "Prenotazione e modifica appuntamenti",
+        "Risposta a domande sui servizi offerti",
+        "Promemoria per visite e trattamenti",
+        "Raccolta dati preliminari",
+        "Follow-up post trattamento personalizzati"
+      ]
+    },
+    {
+      "name": "Servizi IT",
+      "description": "Offri supporto tecnico immediato, gestisci ticket e fornisci soluzioni ai problemi più comuni.",
+      "icon": "code",
+      "benefits": [
+        "Risposte immediate a problemi comuni",
+        "Escalation automatica per casi complessi",
+        "Raccolta informazioni diagnostiche",
+        "Monitoraggio stato dei ticket",
+        "Documentazione tecnica on-demand"
+      ]
+    },
+    {
+      "name": "Educazione",
+      "description": "Fornisci supporto a studenti e genitori, gestisci iscrizioni e offri informazioni su corsi e programmi.",
+      "icon": "graduation-cap",
+      "benefits": [
+        "Risposte immediate su offerta formativa",
+        "Gestione delle iscrizioni e scadenze",
+        "Supporto amministrativo 24/7",
+        "Informazioni su eventi e attività",
+        "Assistenza personalizzata per studenti e genitori"
+      ]
+    },
+    {
+      "name": "Hospitality",
+      "description": "Migliora l'esperienza degli ospiti con assistenza immediata per prenotazioni, servizi e informazioni.",
+      "icon": "hotel",
+      "benefits": [
+        "Check-in/check-out semplificato",
+        "Richieste di servizi in camera automatizzate",
+        "Informazioni su strutture e orari",
+        "Gestione prenotazioni ristorante",
+        "Risposte immediate a richieste frequenti"
+      ]
+    },
+    {
+      "name": "Finance",
+      "description": "Assistenza per operazioni bancarie, investimenti e consulenza finanziaria in modo sicuro e immediato.",
+      "icon": "banknote",
+      "benefits": [
+        "Informazioni su prodotti finanziari",
+        "Assistenza per operazioni bancarie",
+        "Verifica stato pratiche e richieste",
+        "Notifiche personalizzate",
+        "Protezione delle informazioni sensibili"
+      ]
+    },
+    {
+      "name": "Servizi Professionali",
+      "description": "Supporto per consulenze, appuntamenti e gestione delle richieste dei clienti in modo efficiente.",
+      "icon": "briefcase",
+      "benefits": [
+        "Prequalificazione automatica dei clienti",
+        "Programmazione consulenze e appuntamenti",
+        "Raccolta informazioni preliminari",
+        "Follow-up strutturati post-consulenza",
+        "Gestione efficiente del tempo"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,610 @@
+import { useState, useEffect, useCallback } from 'react';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { industries } from '@/data/industries';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import MobileMenu from '@/components/MobileMenu';
+import StarfieldBackground from '@/components/StarfieldBackground';
+import { Zap, ArrowRight, Check, ShoppingCart, TrendingUp, RefreshCw, Users, CreditCard, Sparkles, Rocket, Bot } from 'lucide-react';
+import { useTheme } from '@/components/ThemeProvider';
+
+// Ottieni i dati specifici per E-commerce
+const ecommerceData = industries.find(industry => industry.name === "E-commerce");
+
+export default function EcommercePage() {
+  const { theme } = useTheme();
+  const [gradientPosition, setGradientPosition] = useState({
+    x1: -40, 
+    y1: 40,
+    x2: -40, 
+    y2: -40,
+    x3: 70,  // Gradiente arancione
+    y3: 60,
+    x4: 30,  // Gradiente verde
+    y4: -50,
+    rotation1: 0,
+    rotation2: 0,
+    rotation3: 0,
+    rotation4: 0,
+    size1: 200,
+    size2: 180,
+    size3: 230,
+    size4: 190
+  });
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  
+  // Gestisce il movimento del mouse per aggiornare la posizione del gradiente
+  const handleMouseMove = useCallback((event: MouseEvent) => {
+    // Calcola la posizione relativa del mouse rispetto alla viewport
+    const { clientX, clientY } = event;
+    const windowWidth = window.innerWidth;
+    const windowHeight = window.innerHeight;
+    
+    // Normalizza le coordinate del mouse (da -1 a 1)
+    const normalizedX = (clientX / windowWidth) * 2 - 1;
+    const normalizedY = (clientY / windowHeight) * 2 - 1;
+    
+    setMousePosition({ x: normalizedX, y: normalizedY });
+  }, []);
+
+  useEffect(() => {
+    // Aggiungi event listener per il movimento del mouse
+    window.addEventListener('mousemove', handleMouseMove);
+    
+    // Funzione per l'animazione gradiente con movimento molto più ampio e casuale
+    const animateGradient = () => {
+      const animationFrame = () => {
+        const now = Date.now();
+        
+        setGradientPosition({
+          // Gradiente BLU - movimento lento e fluido
+          x1: -40 + Math.sin(now / 3000) * 100 + mousePosition.x * 50,
+          y1: 40 + Math.cos(now / 3000) * 100 + mousePosition.y * 50,
+          
+          // Gradiente VIOLA - movimento lento e fluido in direzione opposta
+          x2: -40 + Math.cos(now / 3500) * 110 - mousePosition.x * 50,
+          y2: -40 + Math.sin(now / 3500) * 110 - mousePosition.y * 50,
+          
+          // Gradiente ARANCIONE - movimento lento e fluido
+          x3: 70 + Math.sin(now / 4000) * 100 + mousePosition.y * 30,
+          y3: 60 + Math.cos(now / 4000) * 100 - mousePosition.x * 40,
+          
+          // Gradiente VERDE - movimento lento e fluido
+          x4: 30 + Math.cos(now / 3200) * 90 - mousePosition.y * 40,
+          y4: -50 + Math.sin(now / 3200) * 90 + mousePosition.x * 30,
+          
+          // Rotazioni lente nel tempo
+          rotation1: (Math.sin(now / 10000) * 10),
+          rotation2: (Math.cos(now / 12000) * 15),
+          rotation3: (Math.sin(now / 9000) * 12),
+          rotation4: (Math.cos(now / 11000) * 8),
+          
+          // Pulsazione lenta delle dimensioni
+          size1: 200 + Math.sin(now / 6000) * 30,
+          size2: 180 + Math.cos(now / 7000) * 40,
+          size3: 230 + Math.sin(now / 5000) * 35,
+          size4: 190 + Math.cos(now / 8000) * 30
+        });
+        
+        requestAnimationFrame(animationFrame);
+      };
+      
+      return requestAnimationFrame(animationFrame);
+    };
+    
+    const animationId = animateGradient();
+    
+    // Cleanup della funzione e dell'event listener
+    return () => {
+      cancelAnimationFrame(animationId);
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, [mousePosition, handleMouseMove]);
+
+  // I passaggi chiave del processo di customer care AI per e-commerce
+  const automationSteps = [
+    {
+      icon: <ShoppingCart className="h-8 w-8 text-[#FF5722]" />,
+      title: "Tracking ordini in tempo reale",
+      description: "Assistente AI sempre aggiornato sullo stato di ogni ordine, che fornisce informazioni precise su spedizioni, consegne e ritardi, riducendo l'ansia d'attesa del cliente."
+    },
+    {
+      icon: <TrendingUp className="h-8 w-8 text-[#FF5722]" />,
+      title: "Conoscenza totale del catalogo",
+      description: "L'AI conosce ogni dettaglio di tutti i prodotti, suggerisce alternative, confronta caratteristiche e guida l'acquisto in modo personalizzato, aumentando le conversioni del 37%."
+    },
+    {
+      icon: <RefreshCw className="h-8 w-8 text-[#FF5722]" />,
+      title: "Disponibilità 24/7 senza attese",
+      description: "Risposte immediate a qualsiasi ora, eliminando frustrazione e abbandoni. Il 78% dei clienti apprezza poter ricevere assistenza anche fuori orario lavorativo."
+    },
+    {
+      icon: <Users className="h-8 w-8 text-[#FF5722]" />,
+      title: "Assistenza personalizzata",
+      description: "L'AI ricorda preferenze, acquisti passati e comportamenti dell'utente, offrendo un'esperienza su misura che aumenta fidelizzazione e lifetime value del cliente del 42%."
+    }
+  ];
+
+  // Casi d'uso specifici per customer care AI in e-commerce
+  const ecommerceCaseStudies = [
+    {
+      title: "Incremento vendite del 43% grazie all'assistenza catalogo",
+      description: "Un e-commerce di elettronica ha implementato un assistente AI con conoscenza dettagliata di tutti i prodotti, capace di guidare gli utenti nella scelta in base alle loro esigenze, aumentando conversioni e valore medio degli ordini."
+    },
+    {
+      title: "Soddisfazione cliente salita al 97% con tracking AI",
+      description: "Un marketplace di moda ha integrato un assistente AI sempre aggiornato sullo stato degli ordini, che fornisce informazioni precise 24/7 riducendo ansia post-acquisto e aumentando il tasso di riacquisto del 58%."
+    }
+  ];
+
+  return (
+    <div className={`min-h-screen font-sans overflow-x-hidden ${theme === 'dark' ? 'bg-[#0A0A10]' : 'bg-gray-50'}`}>
+      <Header />
+      <MobileMenu />
+      
+      <StarfieldBackground 
+        starsCount={150} 
+        shootingStarsCount={5} 
+        galaxiesCount={3} 
+        className={`min-h-screen py-16 md:py-24 overflow-hidden ${theme === 'dark' ? 'bg-[#0A0A10]' : 'bg-gray-50'}`}
+      >
+        {/* Overlay gradiente verticale per migliorare la leggibilità del testo */}
+        <div className={`absolute inset-0 bg-gradient-to-b ${
+          theme === 'dark' 
+            ? 'from-[#0A0A10] via-transparent to-[#0A0A10]' 
+            : 'from-gray-50 via-transparent to-gray-50'
+        } z-0`}></div>
+        
+        {/* Circoli luminosi che ruotano lentamente per dare profondità */}
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-[#FF5722]/5 rounded-full filter blur-3xl animate-spin-slow" 
+          style={{animation: 'spin 30s linear infinite'}}></div>
+        <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-[#3b82f6]/5 rounded-full filter blur-3xl animate-spin-slow" 
+          style={{animation: 'spin 40s linear infinite reverse'}}></div>
+          
+        <div className="container mx-auto px-4 md:px-6 relative z-10 pt-10 md:pt-16">
+          <div className="flex items-center justify-center mb-8 md:mb-12 animate-bounce-slow">
+            <Badge variant="outline" className="inline-flex items-center px-4 py-2 bg-[#FF5722]/20 text-sm font-medium text-white rounded-full border-[#FF5722]/20 shadow-glow">
+              <Sparkles className="w-5 h-5 mr-2 text-[#FF5722]" />
+              Soluzioni AI per E-commerce
+            </Badge>
+          </div>
+          
+          <div className="max-w-5xl mx-auto text-center">
+            <h1 className={`text-3xl md:text-5xl lg:text-6xl font-bold mb-6 text-center leading-tight ${
+              theme === 'dark' ? 'text-white' : 'text-slate-900'
+            }`}>
+              <span className={`bg-clip-text text-transparent ${
+                theme === 'dark'
+                  ? 'bg-gradient-to-r from-white to-white/80'
+                  : 'bg-gradient-to-r from-slate-900 to-slate-700'
+              }`}>
+                Customer Care AI del futuro <br />per il tuo E-commerce
+              </span>
+            </h1>
+            
+            <p className={`text-lg md:text-xl text-center mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed ${
+              theme === 'dark' ? 'text-[#E0E0E0]' : 'text-slate-600'
+            }`}>
+              Aumenta vendite e soddisfazione clienti con un assistente AI sempre disponibile, 
+              perfettamente aggiornato su ordini e catalogo completo.
+              Risposte immediate, personalizzate e precise <span className={`font-semibold ${
+                theme === 'dark' ? 'text-white' : 'text-slate-900'
+              }`}>24/7</span>.
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+              <Button size="lg" className="bg-[#FF5722] hover:bg-[#FF5722]/90 text-white shadow-glow rounded-full font-medium px-6">
+                <Rocket className="w-5 h-5 mr-2" />
+                Inizia con una demo gratuita
+              </Button>
+              <Button size="lg" variant="outline" className={`rounded-full px-6 ${
+                theme === 'dark' 
+                  ? 'border-white/20 text-white hover:bg-white/5' 
+                  : 'border-slate-300 text-slate-800 hover:bg-slate-100'
+              }`}>
+                <Bot className="w-5 h-5 mr-2" />
+                Scopri come funziona
+              </Button>
+            </div>
+            
+            {/* Stats cards */}
+            <div className="grid md:grid-cols-3 gap-4 md:gap-6">
+              <Card className={`overflow-hidden relative group hover:shadow-xl transition-all duration-300 ${
+                theme === 'dark' 
+                  ? 'bg-[#111119]/60 backdrop-blur-md border-white/10 text-white' 
+                  : 'bg-white border-slate-200 shadow-md text-slate-800'
+              }`}>
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-70 transition-opacity duration-300"
+                  style={{
+                    background: 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.2) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)',
+                    mixBlendMode: 'soft-light',
+                  }}
+                  onMouseMove={(e) => {
+                    const rect = e.currentTarget.getBoundingClientRect();
+                    const x = ((e.clientX - rect.left) / rect.width) * 100;
+                    const y = ((e.clientY - rect.top) / rect.height) * 100;
+                    e.currentTarget.style.setProperty('--x', `${x}%`);
+                    e.currentTarget.style.setProperty('--y', `${y}%`);
+                  }}
+                ></div>
+                <CardContent className="p-6 text-center relative z-10">
+                  <p className="text-4xl md:text-5xl font-bold text-[#FF5722] mb-2">+37%</p>
+                  <p className={theme === 'dark' ? 'text-white/80' : 'text-slate-600'}>Aumento delle vendite</p>
+                </CardContent>
+              </Card>
+              
+              <Card className={`overflow-hidden relative group hover:shadow-xl transition-all duration-300 ${
+                theme === 'dark' 
+                  ? 'bg-[#111119]/60 backdrop-blur-md border-white/10 text-white' 
+                  : 'bg-white border-slate-200 shadow-md text-slate-800'
+              }`}>
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-70 transition-opacity duration-300"
+                  style={{
+                    background: 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.2) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)',
+                    mixBlendMode: 'soft-light',
+                  }}
+                  onMouseMove={(e) => {
+                    const rect = e.currentTarget.getBoundingClientRect();
+                    const x = ((e.clientX - rect.left) / rect.width) * 100;
+                    const y = ((e.clientY - rect.top) / rect.height) * 100;
+                    e.currentTarget.style.setProperty('--x', `${x}%`);
+                    e.currentTarget.style.setProperty('--y', `${y}%`);
+                  }}
+                ></div>
+                <CardContent className="p-6 text-center relative z-10">
+                  <p className="text-4xl md:text-5xl font-bold text-[#FF5722] mb-2">82%</p>
+                  <p className={theme === 'dark' ? 'text-white/80' : 'text-slate-600'}>Soddisfazione clienti</p>
+                </CardContent>
+              </Card>
+              
+              <Card className={`overflow-hidden relative group hover:shadow-xl transition-all duration-300 ${
+                theme === 'dark' 
+                  ? 'bg-[#111119]/60 backdrop-blur-md border-white/10 text-white' 
+                  : 'bg-white border-slate-200 shadow-md text-slate-800'
+              }`}>
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-70 transition-opacity duration-300"
+                  style={{
+                    background: 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.2) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)',
+                    mixBlendMode: 'soft-light',
+                  }}
+                  onMouseMove={(e) => {
+                    const rect = e.currentTarget.getBoundingClientRect();
+                    const x = ((e.clientX - rect.left) / rect.width) * 100;
+                    const y = ((e.clientY - rect.top) / rect.height) * 100;
+                    e.currentTarget.style.setProperty('--x', `${x}%`);
+                    e.currentTarget.style.setProperty('--y', `${y}%`);
+                  }}
+                ></div>
+                <CardContent className="p-6 text-center relative z-10">
+                  <p className="text-4xl md:text-5xl font-bold text-[#FF5722] mb-2">-65%</p>
+                  <p className={theme === 'dark' ? 'text-white/80' : 'text-slate-600'}>Riduzione costi supporto</p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </StarfieldBackground>
+      
+      <section className={`py-16 md:py-24 relative overflow-hidden ${theme === 'dark' ? 'bg-[#0A0A10]' : 'bg-gray-50'}`}>
+        <div className="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-[#FF5722]/5 to-transparent"></div>
+        
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
+          
+          {/* Sezione caratteristiche principali */}
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
+            <Card className={`${
+              theme === 'dark'
+                ? 'bg-[#111119] border-white/10 text-white'
+                : 'bg-white border-slate-200 shadow-sm text-slate-800'
+            }`}>
+              <CardHeader>
+                <CardTitle className="text-2xl md:text-3xl flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-[#FF5722]/20 flex items-center justify-center text-[#FF5722]">
+                    <ShoppingCart className="w-6 h-6" />
+                  </div>
+                  E-commerce
+                </CardTitle>
+                <CardDescription className={`text-lg ${
+                  theme === 'dark' ? 'text-[#E0E0E0]' : 'text-slate-600'
+                }`}>
+                  {ecommerceData?.description || "Automatizza le risposte alle domande più frequenti e fornisci assistenza 24/7 ai tuoi clienti online."}
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div 
+                  className="p-6 rounded-lg mb-8 relative overflow-hidden"
+                  style={{
+                    background: theme === 'dark' 
+                      ? 'radial-gradient(100% 100% at 50% 0%, rgba(59, 130, 246, 0.1) 0%, rgba(59, 130, 246, 0.02) 100%)' 
+                      : 'radial-gradient(100% 100% at 50% 0%, rgba(59, 130, 246, 0.06) 0%, rgba(59, 130, 246, 0.01) 100%)'
+                  }}
+                >
+                  <h3 className={`text-lg mb-2 ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>Vantaggi per il tuo E-commerce:</h3>
+                  <ul className="space-y-2">
+                    {ecommerceData?.benefits.map((benefit, index) => (
+                      <li key={index} className="flex items-start gap-2">
+                        <Check className="h-5 w-5 text-[#FF5722] mt-0.5 flex-shrink-0" />
+                        <p className={theme === 'dark' ? 'text-[#E0E0E0]' : 'text-slate-700'}>{benefit}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div>
+                  <p className={`text-lg mb-8 ${
+                    theme === 'dark'
+                      ? 'text-[#E0E0E0] group-hover:text-white' 
+                      : 'text-slate-600 group-hover:text-slate-800'
+                  } transition-colors duration-300`}>
+                    Integrazione perfetta con il tuo e-commerce, conoscenza totale di prodotti, 
+                    ordini e inventario, supporto multicanale (sito web, WhatsApp, social media, email).
+                  </p>
+                  
+                  <Button className="gap-2 bg-[#FF5722] hover:bg-[#FF5722]/90 text-white rounded-full">
+                    Scopri come trasformare il tuo e-commerce
+                    <ArrowRight className="h-4 w-4" />
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <div className="space-y-8">
+              <div className="relative overflow-hidden">
+                <h2 className={`text-2xl md:text-3xl font-bold mb-8 ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
+                  Come Leader24 trasforma il tuo E-commerce
+                </h2>
+              </div>
+              
+              <div className="grid gap-6">
+                {automationSteps.map((step, index) => (
+                  <Card key={index} className={`overflow-hidden relative group hover:shadow-xl transition-all duration-300 ${
+                    theme === 'dark'
+                      ? 'bg-[#111119] border-white/10 text-white'
+                      : 'bg-white border-slate-200 shadow-sm text-slate-800'
+                  }`}>
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-70 transition-opacity duration-300"
+                      style={{
+                        background: theme === 'dark' 
+                          ? 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.3) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)'
+                          : 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.2) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)',
+                        mixBlendMode: theme === 'dark' ? 'soft-light' : 'multiply',
+                      }}
+                      onMouseMove={(e) => {
+                        const rect = e.currentTarget.getBoundingClientRect();
+                        const x = ((e.clientX - rect.left) / rect.width) * 100;
+                        const y = ((e.clientY - rect.top) / rect.height) * 100;
+                        e.currentTarget.style.setProperty('--x', `${x}%`);
+                        e.currentTarget.style.setProperty('--y', `${y}%`);
+                      }}
+                    ></div>
+                    <CardContent className="p-6 relative z-10 flex items-start gap-4">
+                      <div className="flex-shrink-0 p-2 rounded-full bg-[#FF5722]/10">
+                        {step.icon}
+                      </div>
+                      <div>
+                        <h3 className={`font-semibold text-lg mb-1 ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>{step.title}</h3>
+                        <p className={theme === 'dark' ? 'text-[#E0E0E0]' : 'text-slate-600'}>{step.description}</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </div>
+          
+          {/* Case Studies per E-commerce */}
+          <div className="mb-16">
+            <h2 className={`text-2xl md:text-3xl font-bold mb-8 text-center ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
+              Case Studies: Successi E-commerce
+            </h2>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              {ecommerceCaseStudies.map((caseStudy, index) => (
+                <Card key={index} className={`overflow-hidden relative group hover:shadow-xl transition-all duration-300 ${
+                  theme === 'dark'
+                    ? 'bg-[#111119] border-white/10 text-white'
+                    : 'bg-white border-slate-200 shadow-sm text-slate-800'
+                }`}>
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-70 transition-opacity duration-300"
+                    style={{
+                      background: theme === 'dark' 
+                        ? 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.2) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)'
+                        : 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.15) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)',
+                      mixBlendMode: theme === 'dark' ? 'soft-light' : 'multiply',
+                    }}
+                    onMouseMove={(e) => {
+                      const rect = e.currentTarget.getBoundingClientRect();
+                      const x = ((e.clientX - rect.left) / rect.width) * 100;
+                      const y = ((e.clientY - rect.top) / rect.height) * 100;
+                      e.currentTarget.style.setProperty('--x', `${x}%`);
+                      e.currentTarget.style.setProperty('--y', `${y}%`);
+                    }}
+                  ></div>
+                  <CardHeader className="relative z-10">
+                    <CardTitle className={`text-lg ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>{caseStudy.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="relative z-10">
+                    <p className={`mb-6 ${theme === 'dark' ? 'text-[#E0E0E0]' : 'text-slate-600'}`}>{caseStudy.description}</p>
+                    <Button variant="outline" className={`rounded-full px-5 ${
+                      theme === 'dark' 
+                        ? 'border-white/20 text-white hover:bg-white/5' 
+                        : 'border-slate-300 text-slate-800 hover:bg-slate-100'
+                    }`}>
+                      Leggi il case study completo
+                      <ArrowRight className="h-4 w-4 ml-2" />
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+          
+          {/* FAQ section */}
+          <div className="mb-16">
+            <h2 className={`text-2xl md:text-3xl font-bold mb-8 text-center ${theme === 'dark' ? 'text-white' : 'text-slate-900'}`}>
+              Domande Frequenti
+            </h2>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              <Card 
+                className={`overflow-hidden relative group hover:shadow-xl transition-all duration-300 ${
+                  theme === 'dark'
+                    ? 'bg-[#111119] border-white/10 text-white'
+                    : 'bg-white border-slate-200 shadow-sm text-slate-800'
+                }`}
+              >
+                {/* Gradiente interattivo che segue il movimento del mouse */}
+                <div 
+                  className="absolute inset-0 opacity-0 group-hover:opacity-70 transition-opacity duration-300"
+                  style={{
+                    background: theme === 'dark' 
+                      ? 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.2) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)'
+                      : 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.15) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)',
+                    mixBlendMode: theme === 'dark' ? 'soft-light' : 'multiply',
+                  }}
+                  onMouseMove={(e) => {
+                    const rect = e.currentTarget.getBoundingClientRect();
+                    const x = ((e.clientX - rect.left) / rect.width) * 100;
+                    const y = ((e.clientY - rect.top) / rect.height) * 100;
+                    e.currentTarget.style.setProperty('--x', `${x}%`);
+                    e.currentTarget.style.setProperty('--y', `${y}%`);
+                  }}
+                ></div>
+                <CardHeader className="relative z-10">
+                  <CardTitle className="text-lg">Quanto tempo serve per implementare Leader24 nel mio e-commerce?</CardTitle>
+                </CardHeader>
+                <CardContent className="relative z-10">
+                  <p className={`transition-colors duration-300 ${
+                    theme === 'dark' 
+                      ? 'text-[#E0E0E0] group-hover:text-white' 
+                      : 'text-slate-600 group-hover:text-slate-800'
+                  }`}>
+                    L'implementazione base richiede solo 3-5 giorni lavorativi. Le personalizzazioni avanzate possono richiedere 1-2 settimane aggiuntive, a seconda della complessità e delle integrazioni necessarie.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <Card 
+                className={`overflow-hidden relative group hover:shadow-xl transition-all duration-300 ${
+                  theme === 'dark'
+                    ? 'bg-[#111119] border-white/10 text-white'
+                    : 'bg-white border-slate-200 shadow-sm text-slate-800'
+                }`}
+              >
+                {/* Gradiente interattivo che segue il movimento del mouse */}
+                <div 
+                  className="absolute inset-0 opacity-0 group-hover:opacity-70 transition-opacity duration-300"
+                  style={{
+                    background: theme === 'dark' 
+                      ? 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.2) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)'
+                      : 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.15) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)',
+                    mixBlendMode: theme === 'dark' ? 'soft-light' : 'multiply',
+                  }}
+                  onMouseMove={(e) => {
+                    const rect = e.currentTarget.getBoundingClientRect();
+                    const x = ((e.clientX - rect.left) / rect.width) * 100;
+                    const y = ((e.clientY - rect.top) / rect.height) * 100;
+                    e.currentTarget.style.setProperty('--x', `${x}%`);
+                    e.currentTarget.style.setProperty('--y', `${y}%`);
+                  }}
+                ></div>
+                <CardHeader className="relative z-10">
+                  <CardTitle className="text-lg">Leader24 si integra con la mia piattaforma e-commerce esistente?</CardTitle>
+                </CardHeader>
+                <CardContent className="relative z-10">
+                  <p className={`transition-colors duration-300 ${
+                    theme === 'dark' 
+                      ? 'text-[#E0E0E0] group-hover:text-white' 
+                      : 'text-slate-600 group-hover:text-slate-800'
+                  }`}>
+                    Sì, Leader24 offre integrazioni native con Shopify e WooCommerce, garantendo una sincronizzazione perfetta del catalogo, inventario e stato degli ordini. Il sistema si collega tramite API ufficiali, senza necessità di modifiche al codice esistente o sviluppo personalizzato.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <Card 
+                className={`overflow-hidden relative group hover:shadow-xl transition-all duration-300 ${
+                  theme === 'dark'
+                    ? 'bg-[#111119] border-white/10 text-white'
+                    : 'bg-white border-slate-200 shadow-sm text-slate-800'
+                }`}
+              >
+                {/* Gradiente interattivo che segue il movimento del mouse */}
+                <div 
+                  className="absolute inset-0 opacity-0 group-hover:opacity-70 transition-opacity duration-300"
+                  style={{
+                    background: theme === 'dark' 
+                      ? 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.2) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)'
+                      : 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.15) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)',
+                    mixBlendMode: theme === 'dark' ? 'soft-light' : 'multiply',
+                  }}
+                  onMouseMove={(e) => {
+                    const rect = e.currentTarget.getBoundingClientRect();
+                    const x = ((e.clientX - rect.left) / rect.width) * 100;
+                    const y = ((e.clientY - rect.top) / rect.height) * 100;
+                    e.currentTarget.style.setProperty('--x', `${x}%`);
+                    e.currentTarget.style.setProperty('--y', `${y}%`);
+                  }}
+                ></div>
+                <CardHeader className="relative z-10">
+                  <CardTitle className="text-lg">In che modo l'AI migliora la soddisfazione dei clienti e-commerce?</CardTitle>
+                </CardHeader>
+                <CardContent className="relative z-10">
+                  <p className={`transition-colors duration-300 ${
+                    theme === 'dark' 
+                      ? 'text-[#E0E0E0] group-hover:text-white' 
+                      : 'text-slate-600 group-hover:text-slate-800'
+                  }`}>
+                    Un customer care AI sempre disponibile elimina le frustrazioni da attese, fornisce risposte precise su prodotti e ordini, e accompagna il cliente in ogni fase dell'acquisto. Questo migliora drasticamente l'esperienza utente, con un aumento medio della soddisfazione dell'82% e un conseguente incremento delle vendite del 37%.
+                  </p>
+                </CardContent>
+              </Card>
+              
+              <Card 
+                className={`overflow-hidden relative group hover:shadow-xl transition-all duration-300 ${
+                  theme === 'dark'
+                    ? 'bg-[#111119] border-white/10 text-white'
+                    : 'bg-white border-slate-200 shadow-sm text-slate-800'
+                }`}
+              >
+                {/* Gradiente interattivo che segue il movimento del mouse */}
+                <div 
+                  className="absolute inset-0 opacity-0 group-hover:opacity-70 transition-opacity duration-300"
+                  style={{
+                    background: theme === 'dark' 
+                      ? 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.2) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)'
+                      : 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.15) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)',
+                    mixBlendMode: theme === 'dark' ? 'soft-light' : 'multiply',
+                  }}
+                  onMouseMove={(e) => {
+                    const rect = e.currentTarget.getBoundingClientRect();
+                    const x = ((e.clientX - rect.left) / rect.width) * 100;
+                    const y = ((e.clientY - rect.top) / rect.height) * 100;
+                    e.currentTarget.style.setProperty('--x', `${x}%`);
+                    e.currentTarget.style.setProperty('--y', `${y}%`);
+                  }}
+                ></div>
+                <CardHeader className="relative z-10">
+                  <CardTitle className="text-lg">Come fa l'AI a conoscere il mio intero catalogo prodotti?</CardTitle>
+                </CardHeader>
+                <CardContent className="relative z-10">
+                  <p className={`transition-colors duration-300 ${
+                    theme === 'dark' 
+                      ? 'text-[#E0E0E0] group-hover:text-white' 
+                      : 'text-slate-600 group-hover:text-slate-800'
+                  }`}>
+                    Leader24 si integra direttamente con il tuo sistema e-commerce, sincronizzando automaticamente ogni prodotto, variante, disponibilità e prezzo. Ogni modifica al catalogo viene immediatamente appresa dall'AI, che può quindi fornire informazioni sempre aggiornate e precise ai clienti, migliorando la loro esperienza d'acquisto e incrementando le vendite.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <Footer />
+    </div>
+  );
+}

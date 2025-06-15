@@ -1,0 +1,73 @@
+					<main id="main" class="site-main">
+				<article
+class="post-458 page type-page status-publish ast-article-single" id="post-458" itemtype="https://schema.org/CreativeWork" itemscope="itemscope">
+	
+				<header class="entry-header ast-no-thumbnail ast-no-title ast-header-without-markup">
+							</header> <!-- .entry-header -->
+		
+<div class="entry-content clear"
+	itemprop="text">
+
+	
+			<div data-elementor-type="wp-page" data-elementor-id="458" class="elementor elementor-458" data-elementor-post-type="page">
+				<div class="elementor-element elementor-element-b4a5141 e-flex e-con-boxed e-con e-parent" data-id="b4a5141" data-element_type="container">
+					<div class="e-con-inner">
+				<div class="elementor-element elementor-element-2405f85 elementor-widget elementor-widget-heading" data-id="2405f85" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Informativa Cookie</h2>				</div>
+				</div>
+					</div>
+				</div>
+		<div class="elementor-element elementor-element-6dcb9a7 e-flex e-con-boxed e-con e-parent" data-id="6dcb9a7" data-element_type="container">
+					<div class="e-con-inner">
+				<div class="elementor-element elementor-element-7ebb02a elementor-widget elementor-widget-html" data-id="7ebb02a" data-element_type="widget" data-widget_type="html.default">
+				<div class="elementor-widget-container">
+					<style>
+    a.cky-banner-element {
+        padding: 8px 30px;
+        background: #F8F9FA;
+        color: #858A8F;
+        border: 1px solid #DEE2E6;
+        box-sizing: border-box;
+        border-radius: 2px;
+        cursor: pointer;
+}
+</style>
+<p>
+    Data di Entrata in Vigore: 24-Ago-2024 <br>
+    Ultimo Aggiornamento: 24-Ago-2024
+</p>
+
+&nbsp;
+<h5>Cosa sono i cookie?</h5>
+<div class="cookie-policy-p"><p>Questa Politica sui Cookie spiega cosa sono i cookie e come li utilizziamo, i tipi di cookie che utilizziamo, cioè le informazioni che raccogliamo tramite i cookie e come tali informazioni vengono utilizzate, e come gestire le impostazioni dei cookie.</p> <p>I cookie sono piccoli file di testo utilizzati per memorizzare piccole porzioni di informazioni. Vengono memorizzati sul tuo dispositivo quando il sito web viene caricato nel tuo browser. Questi cookie ci aiutano a far funzionare correttamente il sito web, a renderlo più sicuro, a fornire una migliore esperienza utente, e a comprendere come il sito web funziona e a analizzare cosa funziona e dove è necessario migliorare.</p></div>
+
+&nbsp;
+<h5>Come utilizziamo i cookie?</h5>
+<div class="cookie-policy-p"><p>Come la maggior parte dei servizi online, il nostro sito utilizza cookie di prima e di terza parte per diversi scopi. I cookie di prima parte sono principalmente necessari per il corretto funzionamento del sito web e non raccolgono alcun dato personale identificabile.</p> <p>I cookie di terze parti utilizzati sul nostro sito servono principalmente a comprendere come il sito web funziona, come interagisci con il nostro sito, a mantenere i nostri servizi sicuri, a fornire pubblicità rilevanti per te, e in generale a offrirti una migliore e migliorata esperienza utente e a velocizzare le tue future interazioni con il nostro sito.</p></div>
+
+&nbsp;
+<h5>Cookies utilizzati</h5>
+
+<div class="cky-audit-table-element"></div>
+
+&nbsp;
+<h5 style="margin-bottom:20px;">Gestisci le preferenze dei cookie</h5>
+
+<a class="cky-banner-element">Impostazioni dei Cookie</a> <br/>
+
+<div><p>Puoi modificare le tue preferenze sui cookie in qualsiasi momento cliccando sul pulsante sopra. Questo ti permetterà di rivedere il banner di consenso ai cookie e modificare le tue preferenze o revocare il tuo consenso immediatamente.</p> <p>Oltre a questo, diversi browser offrono diversi metodi per bloccare ed eliminare i cookie utilizzati dai siti web. Puoi modificare le impostazioni del tuo browser per bloccare/eliminare i cookie. Di seguito sono elencati i link ai documenti di supporto su come gestire ed eliminare i cookie dai principali browser web.</p> <p>Chrome: <a target="_blank" href="https://support.google.com/accounts/answer/32050">https://support.google.com/accounts/answer/32050</a></p><p>Safari: <a target="_blank" href="https://support.apple.com/it-it/guide/safari/sfri11471/mac">https://support.apple.com/it-it/guide/safari/sfri11471/mac</a></p><p>Firefox: <a target="_blank" href="https://support.mozilla.org/it/kb/attivare-e-disattivare-i-cookie">https://support.mozilla.org/it/kb/attivare-e-disattivare-i-cookie</a></p><p>Internet Explorer: <a target="_blank" href="https://support.microsoft.com/it-it/topic/come-eliminare-i-file-cookie-in-internet-explorer-bca9446f-d873-78de-77ba-d42645fa52fc">https://support.microsoft.com/it-it/topic/come-eliminare-i-file-cookie-in-internet-explorer-bca9446f-d873-78de-77ba-d42645fa52fc</a></p><p>Se utilizzi un altro browser web, visita i documenti di supporto ufficiali del tuo browser.</p></div>				</div>
+				</div>
+					</div>
+				</div>
+				</div>
+		
+	
+	
+</div><!-- .entry-content .clear -->
+
+	
+	
+</article><!-- #post-## -->
+
+			</main><!-- #main -->

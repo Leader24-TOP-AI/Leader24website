@@ -1,0 +1,28 @@
+Prima card (linea 741):
+className={`overflow-hidden relative group hover:shadow-xl transition-all duration-300 ${
+  theme === 'dark'
+    ? 'bg-[#111119] border-white/10 text-white'
+    : 'bg-white border-slate-200 shadow-sm text-slate-800'
+}`}
+
+Seconda card (linea 773):
+className={`overflow-hidden relative group hover:shadow-xl transition-all duration-300 ${
+  theme === 'dark'
+    ? 'bg-[#111119] border-white/10 text-white'
+    : 'bg-white border-slate-200 shadow-sm text-slate-800'
+}`}
+
+Terza card (linea 805):
+className={`overflow-hidden relative group hover:shadow-xl transition-all duration-300 ${
+  theme === 'dark'
+    ? 'bg-[#111119] border-white/10 text-white'
+    : 'bg-white border-slate-200 shadow-sm text-slate-800'
+}`}
+
+Gradiente interattivo (per tutte le card):
+style={{
+  background: theme === 'dark' 
+    ? 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.2) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)'
+    : 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.15) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)',
+  mixBlendMode: theme === 'dark' ? 'soft-light' : 'multiply',
+}}

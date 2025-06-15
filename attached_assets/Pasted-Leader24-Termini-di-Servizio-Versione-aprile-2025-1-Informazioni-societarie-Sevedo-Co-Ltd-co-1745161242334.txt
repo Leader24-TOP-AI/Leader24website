@@ -1,0 +1,44 @@
+Leader24 – Termini di Servizio
+Versione: aprile 2025
+
+1. Informazioni societarie
+Sevedo Co. Ltd., con sede legale in 291 Vichitsongkram Road, Phuket, Tailandia (di seguito "Leader24", "noi", "nostro"). Contatti ufficiali: info@leader24.it.
+2. Definizioni
+"Servizi": la piattaforma SaaS Leader24 per la creazione e gestione di agenti di intelligenza artificiale dedicati a customer‑care, prenotazioni alberghiere/ristoranti e tracking ordini e‑commerce.
+3. Ambito del contratto
+Accedendo o utilizzando i Servizi, l’Utente accetta di essere vincolato dai presenti Termini. Se l’Utente agisce in nome e per conto di un’entità, dichiara di avere i poteri necessari per vincolarla.
+4. Piani, prova gratuita e fatturazione
+Leader24 offre (a) un piano gratuito limitato e (b) piani a pagamento con fatturazione in Euro (EUR) su base mensile o annuale. Il pagamento è dovuto in anticipo; il rinnovo è automatico fino a cancellazione. Non sono previsti rimborsi per importi già corrisposti.
+5. Uso accettabile
+È vietato: (i) utilizzare i Servizi per attività illegali o spam; (ii) effettuare reverse engineering o bypassare misure di sicurezza; (iii) violare diritti di terzi.
+6. Servizi di terze parti
+Gli Agenti AI possono integrarsi con WhatsApp Business, Stripe, OpenAI, Google Cloud e altri servizi esterni. Leader24 non garantisce la disponibilità continua di tali servizi né è responsabile di interruzioni, malfunzionamenti o cambi di policy ad essi imputabili.
+7. Disponibilità e supporto
+Disponibilità: obiettivo 99 % su base mensile, esclusa manutenzione programmata (preavviso ≥ 24 h).
+
+
+Indennizzi: nessun credito o rimborso in caso di mancato raggiungimento dell’obiettivo.
+
+
+Supporto: canali automatizzati 24 h/24, 7 g/7; presa in carico dei ticket entro 24 h.
+
+
+8. Proprietà intellettuale
+Leader24 detiene ogni diritto sui Servizi; l’Utente mantiene i diritti sui contenuti caricati.
+9. Riservatezza
+Ciascuna parte manterrà riservate le informazioni confidenziali dell’altra, salvo quanto necessario per adempiere agli obblighi di legge o contrattuali.
+10. Privacy e protezione dati
+Il trattamento dei dati personali è disciplinato dall’Informativa Privacy disponibile su https://leader24.it/informativa-privacy. Poiché parte del personale opera dalla Tailandia, gli accessi remoti ai dati degli Utenti europei costituiscono trasferimenti internazionali disciplinati dalle Clausole Contrattuali Standard (Decisione UE 2021/914), qui integralmente incorporate.
+11. Dichiarazioni ed esclusioni di garanzia
+I Servizi sono forniti "così come sono" e "come disponibili". Leader24 non rilascia garanzie, espresse o implicite, incluse quelle di commerciabilità, idoneità a scopi particolari e non violazione.
+12. Limitazione di responsabilità
+Nella misura massima consentita dalla legge, Leader24 non sarà responsabile per danni diretti, indiretti, speciali, incidentali o consequenziali, ivi compresa la perdita di dati o profitti, anche se avvisata della possibilità di tali danni. La responsabilità aggregata di Leader24 verso l’Utente è pari a €0, salvo i casi in cui la legge vieti l’esclusione o la limitazione.
+13. Indennizzo
+L’Utente terrà indenne Leader24 da ogni reclamo derivante dall’uso improprio dei Servizi.
+14. Durata e cessazione
+L’Utente può recedere in qualsiasi momento cancellando l’account; Leader24 può sospendere o terminare i Servizi in caso di violazione dei Termini. I dati potranno essere cancellati decorso un periodo di 30 giorni dalla cessazione.
+15. Legge applicabile e foro competente
+I presenti Termini sono regolati dalla legge della Tailandia. Ogni controversia sarà devoluta alla giurisdizione esclusiva dei tribunali di Bangkok, fatti salvi i diritti inderogabili dei consumatori dell’UE.
+16. Varie
+L’eventuale invalidità di una clausola non pregiudica la validità delle restanti. Leader24 può cedere il presente contratto previa comunicazione; l’Utente non può cedere diritti senza consenso scritto.
+

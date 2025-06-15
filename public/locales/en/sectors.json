@@ -1,0 +1,216 @@
+{
+  "title": "Industry Applications",
+  "title2": "specific for your sector",
+  "sidebarTitle": "Industries",
+  "benefits": "Benefits for",
+  "howItWorks": "How it works for",
+  "solutionsDesc": "Our solutions for the {{industry}} sector are designed to address the specific challenges you face daily. Leader24 integrates with your existing platforms and automates repetitive workflows, allowing you to:",
+  "dedicated": "Dedicated",
+  "subtitle": "Leader24 adapts perfectly to any sector that needs customer communication. Here are some of the areas where our clients have achieved excellent results.",
+  "badge": "Versatile Implementation",
+  "notFound": "Can't find your industry? Leader24 can be customized for any type of business that needs customer communication.",
+  "viewAllSectors": "View all industries",
+  "requestCustomDemo": "Request a Custom Demo",
+  "selectedSector": "Selected industry:",
+  "details": "Details",
+  "advantages": "Advantages for this industry",
+  "discoverMore": "Learn more",
+  "backToSectors": "Back to industries",
+  "benefit1": "Improve customer experience with 24/7 immediate responses",
+  "benefit2": "Reduce manual workload for your team",
+  "benefit3": "Increase operational efficiency with automated processes",
+  "requestDemo": "Request a personalized demo",
+  "downloadBrochure": "Download {{industry}} brochure",
+  "caseStudyTitle": "Case Study: {{industry}}",
+  "caseStudyDesc": "Learn how a company in the {{industry}} sector transformed their customer communication with Leader24.",
+  "testimonialQuote": "Leader24 has completely transformed our ability to respond to customers. Now we offer 24/7 support without increasing our team.",
+  "testimonialSource": "{{industry}} Customer",
+  "readCaseStudy": "Read more Case Studies",
+  "urls": {
+    "contacts": "/en/contacts",
+    "caseStudies": "/en/case-studies",
+    "contactsFaq": "/en/contacts#Frequently asked questions"
+  },
+  "faqTitle": "FAQ: {{industry}}",
+  "faq1Title": "How long does it take to implement Leader24?",
+  "faq1Answer": "Basic implementation takes just a few days. More customized solutions might require 1-2 weeks.",
+  "faq2Title": "Does Leader24 integrate with our existing systems?",
+  "faq2Answer": "Yes, Leader24 integrates with most CRM, ERP and e-commerce platforms used in the {{industry}} sector.",
+  "faq3Title": "How much can a company in the {{industry}} sector save?",
+  "faq3Answer": "On average, our clients report a 40-60% reduction in time spent on repetitive tasks and a 30% increase in customer satisfaction.",
+  "moreFaq": "More frequently asked questions",
+  "startNow": "Start with Leader24 today",
+  "ctaDescription": "Discover how our platform can transform your customer communication and optimize processes in your company.",
+  "bookDemo": "Book a demo",
+  "contactUs": "Contact us",
+  "testimonial": {
+    "quote": "Leader24 has completely transformed our ability to respond to customers. Now we offer 24/7 support without increasing our team.",
+    "client": "Client"
+  },
+  "commonTags": {
+    "automation": "Automation",
+    "twentyFourSeven": "24/7",
+    "customerSupport": "Customer Support",
+    "artificialIntelligence": "Artificial Intelligence"
+  },
+  "industryNames": {
+    "ecommerce": "E-commerce",
+    "insurance": "Insurance",
+    "tourism": "Tourism",
+    "realEstate": "Real Estate",
+    "marketing": "Marketing/Web Agencies",
+    "automotive": "Automotive",
+    "health": "Health and Wellness",
+    "it": "IT Services",
+    "education": "Education",
+    "hospitality": "Hospitality",
+    "finance": "Finance",
+    "professionalServices": "Professional Services"
+  },
+  "industries": [
+    {
+      "name": "E-commerce",
+      "description": "Automate responses to frequently asked questions and provide 24/7 support to your online customers.",
+      "icon": "shopping-cart",
+      "benefits": [
+        "Automated order management",
+        "Shipment tracking",
+        "Immediate responses on return policies",
+        "24/7 customer support",
+        "Reduced waiting times"
+      ]
+    },
+    {
+      "name": "Insurance",
+      "description": "Optimize support request management and provide immediate responses on policies.",
+      "icon": "shield",
+      "benefits": [
+        "Immediate responses on coverage and deductibles",
+        "Automated request management",
+        "Real-time updates on claim status",
+        "Personalized customer support",
+        "Quick verification of policy conditions"
+      ]
+    },
+    {
+      "name": "Tourism",
+      "description": "Offer immediate assistance for bookings, changes, and tourist information 24/7.",
+      "icon": "plane",
+      "benefits": [
+        "Automated booking management",
+        "Immediate responses to common questions",
+        "Multilingual assistance",
+        "Personalized advice for travelers",
+        "Real-time availability updates"
+      ]
+    },
+    {
+      "name": "Real Estate",
+      "description": "Manage property information requests and organize viewings and appointments automatically.",
+      "icon": "home",
+      "benefits": [
+        "Automatic lead qualification",
+        "Appointment scheduling",
+        "Immediate responses on availability and features",
+        "Automated post-visit follow-ups",
+        "Efficient management of multiple requests"
+      ]
+    },
+    {
+      "name": "Marketing/Web Agencies",
+      "description": "Improve your team's efficiency by managing client requests and technical support automatically.",
+      "icon": "megaphone",
+      "benefits": [
+        "Client request management",
+        "Automatic assignment to the correct teams",
+        "Quick responses to common technical questions",
+        "Project progress monitoring",
+        "Structured feedback collection"
+      ]
+    },
+    {
+      "name": "Automotive",
+      "description": "Provide assistance for test drive bookings, maintenance, and information on new and used vehicles.",
+      "icon": "car",
+      "benefits": [
+        "Automated test drive booking",
+        "Maintenance appointment management",
+        "Vehicle availability updates",
+        "Immediate after-sales assistance",
+        "Technical information on available models"
+      ]
+    },
+    {
+      "name": "Health and Wellness",
+      "description": "Manage appointments, answer questions about treatments and services, and provide patient support.",
+      "icon": "heart-pulse",
+      "benefits": [
+        "Booking and modifying appointments",
+        "Answering questions about services offered",
+        "Reminders for visits and treatments",
+        "Preliminary data collection",
+        "Personalized post-treatment follow-ups"
+      ]
+    },
+    {
+      "name": "IT Services",
+      "description": "Offer immediate technical support, manage tickets, and provide solutions to the most common problems.",
+      "icon": "code",
+      "benefits": [
+        "Immediate responses to common problems",
+        "Automatic escalation for complex cases",
+        "Collection of diagnostic information",
+        "Ticket status monitoring",
+        "On-demand technical documentation"
+      ]
+    },
+    {
+      "name": "Education",
+      "description": "Provide support to students and parents, manage enrollments, and offer information on courses and programs.",
+      "icon": "graduation-cap",
+      "benefits": [
+        "Immediate responses on educational offerings",
+        "Management of enrollments and deadlines",
+        "24/7 administrative support",
+        "Information on events and activities",
+        "Personalized assistance for students and parents"
+      ]
+    },
+    {
+      "name": "Hospitality",
+      "description": "Improve guest experience with immediate assistance for bookings, services, and information.",
+      "icon": "hotel",
+      "benefits": [
+        "Simplified check-in/check-out",
+        "Automated room service requests",
+        "Information on facilities and hours",
+        "Restaurant reservation management",
+        "Immediate responses to frequent requests"
+      ]
+    },
+    {
+      "name": "Finance",
+      "description": "Assistance for banking operations, investments, and financial advice in a secure and immediate way.",
+      "icon": "banknote",
+      "benefits": [
+        "Information on financial products",
+        "Assistance for banking operations",
+        "Verification of application status and requests",
+        "Personalized notifications",
+        "Protection of sensitive information"
+      ]
+    },
+    {
+      "name": "Professional Services",
+      "description": "Support for consultations, appointments, and efficient management of client requests.",
+      "icon": "briefcase",
+      "benefits": [
+        "Automatic client pre-qualification",
+        "Consultation and appointment scheduling",
+        "Preliminary information collection",
+        "Structured post-consultation follow-ups",
+        "Efficient time management"
+      ]
+    }
+  ]
+}

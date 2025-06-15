@@ -1,0 +1,83 @@
+{
+  "title": "Contact Leader24",
+  "subtitle": "We're here to answer all your questions and help you improve your business communication.",
+  "whyChoose": "Why choose Leader24?",
+  "benefits": {
+    "1": "Immediate and personalized technical assistance",
+    "2": "Tailored solutions for every business sector",
+    "3": "Cutting-edge technology with constant updates"
+  },
+  "form": {
+    "title": "Send a message",
+    "subtitle": "Fill out the form below and we'll get back to you within 24 hours.",
+    "fullName": "Full Name *",
+    "email": "Email *",
+    "phone": "Phone",
+    "company": "Company",
+    "message": "Message *",
+    "messagePlaceholder": "Describe how we can help you...",
+    "submit": "Send message",
+    "sending": "Sending..."
+  },
+  "validation": {
+    "formError": "Form Error",
+    "requiredFields": "Please complete all required fields.",
+    "invalidEmail": "Invalid Email",
+    "enterValidEmail": "Please enter a valid email address.",
+    "sendError": "Sending Error",
+    "tryAgain": "An error occurred. Please try again later.",
+    "messageSent": "Message sent!",
+    "willRespond": "We'll respond as soon as possible."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers to the most common questions about Leader24.",
+    "items": [
+      {
+        "question": "What is Leader24 and how can it help my business?",
+        "answer": "Leader24 is an advanced customer support automation service. It uses cutting-edge technologies to provide 24/7 assistance to your customers via website chat or WhatsApp. The system can automatically respond in a natural way to frequently asked questions, manage appointments, and provide information, improving the efficiency of your customer service."
+      },
+      {
+        "question": "How much does it cost to implement Leader24 in my company?",
+        "answer": "Leader24 offers a free plan with limited features, ideal for starting to discover the potential of AI agents. Paid plans are also available for more advanced business needs. For any questions, our virtual agent is available 24/7 directly on the website. If you need to delve deeper, you can schedule an appointment through the agent: you will be contacted within 24 hours by our team."
+      },
+      {
+        "question": "Is it difficult to integrate Leader24 with my existing website?",
+        "answer": "Absolutely not. Integrating Leader24 with your website is simple and fast. We have a customizable tool that will make the user experience much simpler for business integration and smoother for the end customer."
+      },
+      {
+        "question": "How long does it take to implement Leader24?",
+        "answer": "Leader24 is designed for simple and quick setup. Through our tool, even an average user can implement an AI agent on their website independently, in a very short time. For WhatsApp activation, agent creation can happen instantly, but a dedicated number is required. In any case, we offer an assistance service to support you in every phase of integration, ensuring a smooth and effective online deployment."
+      },
+      {
+        "question": "Can Leader24 be customized to answer specific questions in my industry?",
+        "answer": "Absolutely yes. Leader24 allows you to easily customize the chatbot's knowledge base independently, by uploading company documents in PDF format or indicating your website link. This way, the AI agent will be able to answer specific questions related to your industry, your services, or your products. If you need support in configuring or optimizing responses, our team is always available."
+      },
+      {
+        "question": "How can I monitor Leader24's performance?",
+        "answer": "Leader24 offers you an intuitive dashboard that allows you to independently manage your leads, view interactions with the AI agent, and monitor performance in a simple and effective way. Everything is designed to give you full control, without requiring technical expertise."
+      },
+      {
+        "question": "Does Leader24 support languages other than Italian?",
+        "answer": "Yes, Leader24 supports more than 20 languages, including English, Spanish, French, German, and many others. You can configure the system to automatically detect the user's language or set default languages based on your needs."
+      },
+      {
+        "question": "Can I integrate Leader24 on WhatsApp?",
+        "answer": "Yes, Leader24 easily integrates with WhatsApp. You just need to have a dedicated number, separate from your personal one, to avoid interference with private contacts. Once configured, agent activation is immediate: you'll simply need to scan a QR code to start using it independently."
+      }
+    ]
+  },
+  "otherInfo": {
+    "title": "Other Information",
+    "contactUs": "Or contact us directly",
+    "email": "Email",
+    "phone": "Phone",
+    "address": "Address",
+    "headquarters": "Headquarters",
+    "openingHours": "Opening Hours",
+    "mondayToFriday": "Monday - Friday",
+    "saturdayClosed": "Saturday - Sunday: Closed",
+    "socialChannels": "Social Channels",
+    "followUs": "Follow us on social media to stay updated"
+  }
+}

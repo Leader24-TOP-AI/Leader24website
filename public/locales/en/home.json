@@ -1,0 +1,119 @@
+{
+  "hero": {
+    "title": {
+      "part1": "AI Agents for",
+      "part2": "Business Livechat and WhatsApp",
+      "part3": "platforms"
+    },
+    "subtitle": "Save time and resources by automating customer support 24/7 with Leader24",
+    "stats": {
+      "satisfaction": "+82% customer satisfaction",
+      "responseTime": "−60% response time",
+      "costs": "−65% operational costs"
+    },
+    "buttons": {
+      "freeTrial": "Free Trial",
+      "learnMore": "Learn More"
+    }
+  },
+  "introduction": {
+    "title": "Automate WhatsApp Chats and Save Valuable Time",
+    "subtitle": "Let Leader24 handle the chats while you focus on what truly matters.",
+    "description": "Leader24 transforms your WhatsApp channel into a powerful tool for customer management. With our advanced artificial intelligence, every message receives a personalized and professional response, as if you were writing it personally. The system is completely customized to your products and services.",
+    "cards": {
+      "saveTime": {
+        "title": "Save Time",
+        "description": "Automate customer requests and dedicate more time to your business."
+      },
+      "alwaysAvailable": {
+        "title": "Always Available",
+        "description": "Respond to customers 24/7, even when you're not available."
+      }
+    }
+  },
+  "features": {
+    "title": "Enhance Your Customer Service",
+    "subtitle": "Key Features of Leader24",
+    "conclusion": {
+      "title": "Being a Leader Means Being Always Ready",
+      "description": "With Leader24, your business is always available, offering quick and personalized responses to your customers 24 hours a day, 7 days a week. Whether you're a dentist, a hotelier, or a professional, Leader24 allows you to stay in touch with your customers, improve efficiency, and strengthen your reputation as a leader in your industry."
+    },
+    "buttons": {
+      "tryChat": "Try Chatting"
+    },
+    "aiAssistant": {
+      "title": "Try our AI Assistant",
+      "description": "Our virtual assistant is always available on the right side of the screen to answer your questions. Don't hesitate to chat with it!",
+      "note": "The same technology can be integrated into your business communication channels."
+    },
+    "featuresList": [
+      {
+        "title": "Automated Responses",
+        "subtitle": "Natural and informed responses thanks to AI",
+        "description": "Leader24 uses advanced AI to respond to messages naturally, knowing your services and ensuring accurate responses."
+      },
+      {
+        "title": "Multi-Channel Integration",
+        "subtitle": "Connect wherever your customers are",
+        "description": "Supports communication across different platforms, such as website and WhatsApp, for always-available customer service."
+      },
+      {
+        "title": "Continuous Availability",
+        "subtitle": "Always at your customers' disposal",
+        "description": "Leader24 ensures a constant presence, responding to customer requests 24 hours a day, 7 days a week."
+      },
+      {
+        "title": "Multilingual Support",
+        "subtitle": "Communicate with customers from around the world",
+        "description": "Leader24 handles requests in different languages, offering a customer experience without linguistic or cultural barriers."
+      },
+      {
+        "title": "Appointment Management",
+        "subtitle": "Organize and optimize your time",
+        "description": "Automate appointment management, reducing waiting times and improving your operational efficiency."
+      },
+      {
+        "title": "Ease of Use",
+        "subtitle": "Simple installation, stress-free management",
+        "description": "Leader24 is easy to set up and use, allowing you to focus on business without technical concerns."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Revolutionize your customer service<br/>with Leader24 AI agents",
+    "subtitle": "Immediate responses, 24/7 automation, cost reduction up to 70%",
+    "description": "Our AI agents respond on livechat and WhatsApp just like human operators.<br/><a href=\"https://dash.leader24.it/signup\" class=\"text-[#FF5722] hover:underline\">Try free for 14 days</a> and discover the power of intelligent automation.",
+    "button": "Automate your support"
+  },
+  "testimonials": {
+    "badge": "Success Stories",
+    "title": "Case Studies",
+    "subtitle": "Discover how companies from different industries have improved their customer communication with Leader24.",
+    "readCaseStudy": "Read Case Study",
+    "viewAllCaseStudies": "View all case studies",
+    "caseStudies": [
+      {
+        "company": "FiberNet Italia",
+        "titleStart": "How FiberNet",
+        "titleHighlight": "increased customer satisfaction by 40%",
+        "titleEnd": "with automated WhatsApp",
+        "quote": "Thanks to Leader24's WhatsApp automation, we provide immediate assistance for our subscribers' most common requests. Response times have decreased by 90% and the customer experience has significantly improved.",
+        "person": {
+          "name": "Marco Rossi",
+          "title": "Customer Care Director"
+        }
+      },
+      {
+        "company": "Sorriso Dental Clinic",
+        "titleStart": "How a dental clinic manages",
+        "titleHighlight": "over 200 monthly appointments",
+        "titleEnd": "automatically",
+        "quote": "Leader24 has transformed our appointment management: patients can book, reschedule, or cancel appointments via WhatsApp 24/7. Staff is more focused on direct assistance, and we've reduced no-shows by 75%.",
+        "person": {
+          "name": "Dr. Laura Bianchi",
+          "title": "Dental Clinic Owner"
+        }
+      }
+    ]
+  }
+}

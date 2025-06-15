@@ -1,0 +1,57 @@
+{
+  "urls": {
+    "home": "/en/",
+    "caseStudies": "/en/case-studies",
+    "sectors": "/en/industries",
+    "contacts": "/en/contact-us",
+    "privacy": "/en/privacy",
+    "cookie": "/en/cookie",
+    "terms": "/en/terms-of-service",
+    "ecommerce": "/en/industries/ecommerce"
+  },
+  "header": {
+    "home": "Home",
+    "sectors": "Industries",
+    "ecommerce": "E-commerce",
+    "caseStudies": "Case Studies",
+    "contacts": "Contact Us",
+    "features": "Features",
+    "viewAllSectors": "View all industries",
+    "login": "Sign In",
+    "trial": "Free Trial"
+  },
+  "footer": {
+    "company": "Leader24.it",
+    "slogan": "Automate without limits",
+    "allRightsReserved": "All rights reserved",
+    "navigation": "Navigation",
+    "infoAccess": "Info & Access",
+    "home": "Home",
+    "sectors": "Industries",
+    "ecommerce": "E-commerce",
+    "caseStudies": "Case Studies",
+    "contacts": "Contact Us",
+    "privacy": "Privacy Policy",
+    "cookie": "Cookie Policy",
+    "terms": "Terms of Service",
+    "login": "Log In",
+    "freeTrail": "Free Trial"
+  },
+
+  "language": {
+    "select": "Select language",
+    "it": "Italian",
+    "en": "English"
+  },
+  "cta": {
+    "contactUs": "Contact Us",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "readMore": "Read More",
+    "freeDemo": "Free Demo"
+  },
+  "theme": {
+    "dark": "Dark theme",
+    "light": "Light theme"
+  }
+}
