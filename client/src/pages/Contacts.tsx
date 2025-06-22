@@ -205,15 +205,15 @@ export default function Contacts() {
                     <h3 className={`text-xl font-semibold mb-3 ${theme === 'dark' ? 'text-white' : 'text-slate-800'}`}>{t('whyChoose')}</h3>
                     <ul className="space-y-2">
                       <li className="flex items-start">
-                        <span className="text-[#FF5722] mr-2">✓</span>
+                        <span className="text-[#60a5fa] mr-2">✓</span>
                         <span className={`${theme === 'dark' ? 'text-[#E0E0E0]' : 'text-slate-700'}`}>{t('benefits.1')}</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="text-[#FF5722] mr-2">✓</span>
+                        <span className="text-[#60a5fa] mr-2">✓</span>
                         <span className={`${theme === 'dark' ? 'text-[#E0E0E0]' : 'text-slate-700'}`}>{t('benefits.2')}</span>
                       </li>
                       <li className="flex items-start">
-                        <span className="text-[#FF5722] mr-2">✓</span>
+                        <span className="text-[#60a5fa] mr-2">✓</span>
                         <span className={`${theme === 'dark' ? 'text-[#E0E0E0]' : 'text-slate-700'}`}>{t('benefits.3')}</span>
                       </li>
                     </ul>
@@ -319,7 +319,7 @@ export default function Contacts() {
                       
                       <Button 
                         type="submit" 
-                        className="w-full bg-gradient-to-r from-[#FF5722] to-[#FFA07A] hover:from-[#FFA07A] hover:to-[#FF5722] text-white"
+                        className="w-full bg-gradient-to-r from-[#3662e3] to-[#5b82ff] hover:from-[#5b82ff] hover:to-[#3662e3] text-white"
                         disabled={isSubmitting}
                       >
                         {isSubmitting ? (
@@ -369,8 +369,8 @@ export default function Contacts() {
                       className="w-full text-left py-4 flex justify-between items-center focus:outline-none"
                     >
                       <span className={`font-medium ${theme === 'dark' 
-                        ? 'text-white hover:text-[#FF5722]' 
-                        : 'text-slate-800 hover:text-[#FF5722]'
+                        ? 'text-white hover:text-[#3662e3]' 
+                        : 'text-slate-800 hover:text-[#3662e3]'
                       }`}>{item.question}</span>
                       <ChevronDown 
                         className={`h-5 w-5 transition-transform duration-200 ${

@@ -39,7 +39,7 @@ export default function Footer() {
                    className="dark:text-[#BBBBBB] text-slate-600 dark:hover:text-white hover:text-slate-900 transition-colors">
                   <FaLinkedin size={20} />
                 </a>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" 
+                <a href="https://www.facebook.com/profile.php?id=61564307807115" target="_blank" rel="noopener noreferrer" 
                    className="dark:text-[#BBBBBB] text-slate-600 dark:hover:text-white hover:text-slate-900 transition-colors">
                   <FaFacebook size={20} />
                 </a>
@@ -104,7 +104,7 @@ export default function Footer() {
               </li>
               <li className="pt-1">
                 <a 
-                  href="https://dash.leader24.it/login" 
+                  href="https://dash.leader24.ai" 
                   className="text-sm dark:text-[#BBBBBB] text-slate-600 dark:hover:text-white hover:text-slate-900 transition-colors flex items-center"
                 >
                   <svg 
@@ -126,8 +126,8 @@ export default function Footer() {
               </li>
               <li>
                 <a 
-                  href="https://dash.leader24.it/signup" 
-                  className="text-sm font-medium text-[#FF5722] dark:hover:text-white hover:text-orange-700 transition-colors"
+                  href="https://dash.leader24.ai/auth/register" 
+                  className="text-sm font-medium text-[#3662e3] dark:hover:text-white hover:text-[#2952d3] transition-colors"
                 >
                   {t('footer.freeTrail')}
                 </a>

@@ -12,7 +12,7 @@ export function LightningBolt({ className }: LightningBoltProps) {
     >
       <path 
         d="M100 20L40 120H85L75 180L160 80H100L100 20Z" 
-        fill="#FF5722" 
+        fill="#3662e3" 
       />
     </svg>
   );

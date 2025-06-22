@@ -12,7 +12,7 @@
       "costs": "−65% operational costs"
     },
     "buttons": {
-      "freeTrial": "Free Trial",
+      "freeTrial": "Create your agent",
       "learnMore": "Learn More"
     }
   },
@@ -82,7 +82,7 @@
   "cta": {
     "title": "Revolutionize your customer service<br/>with Leader24 AI agents",
     "subtitle": "Immediate responses, 24/7 automation, cost reduction up to 70%",
-    "description": "Our AI agents respond on livechat and WhatsApp just like human operators.<br/><a href=\"https://dash.leader24.it/signup\" class=\"text-[#FF5722] hover:underline\">Try free for 14 days</a> and discover the power of intelligent automation.",
+    "description": "Our AI agents respond on livechat and WhatsApp just like human operators.<br/><a href=\"https://dash.leader24.ai/auth/register\" class=\"text-[#3662e3] hover:underline\">Try free for 14 days</a> and discover the power of intelligent automation.",
     "button": "Automate your support"
   },
   "testimonials": {
@@ -99,7 +99,7 @@
         "titleEnd": "with automated WhatsApp",
         "quote": "Thanks to Leader24's WhatsApp automation, we provide immediate assistance for our subscribers' most common requests. Response times have decreased by 90% and the customer experience has significantly improved.",
         "person": {
-          "name": "Marco Rossi",
+          "name": "Marco R.",
           "title": "Customer Care Director"
         }
       },
@@ -110,7 +110,7 @@
         "titleEnd": "automatically",
         "quote": "Leader24 has transformed our appointment management: patients can book, reschedule, or cancel appointments via WhatsApp 24/7. Staff is more focused on direct assistance, and we've reduced no-shows by 75%.",
         "person": {
-          "name": "Dr. Laura Bianchi",
+          "name": "Dr. Laura B.",
           "title": "Dental Clinic Owner"
         }
       }

@@ -5,14 +5,14 @@
       "part2": "Livechat e Whatsapp",
       "part3": "aziendali"
     },
-    "subtitle": "Risparmi tempo e risorse automatizzando il supporto clienti 24/7 con Leader24",
+    "subtitle": "Risparmia tempo e risorse automatizzando il supporto clienti 24/7",
     "stats": {
       "satisfaction": "+82% soddisfazione clienti",
       "responseTime": "−60% tempo di risposta",
       "costs": "−65% costi operativi"
     },
     "buttons": {
-      "freeTrial": "Prova Gratuita",
+      "freeTrial": "Crea il tuo agente",
       "learnMore": "Scopri di Più"
     }
   },
@@ -82,7 +82,7 @@
   "cta": {
     "title": "Rivoluziona il tuo servizio clienti<br/>con gli agenti AI di Leader24",
     "subtitle": "Risposte immediate, automatizzazione 24/7, riduzione dei costi fino al 70%",
-    "description": "I nostri agenti AI rispondono su livechat e WhatsApp come operatori umani.<br/><a href=\"https://dash.leader24.it/signup\" class=\"text-[#FF5722] hover:underline\">Prova gratis per 14 giorni</a> e scopri il potere dell'automazione intelligente.",
+    "description": "I nostri agenti AI rispondono su livechat e WhatsApp come operatori umani.<br/><a href=\"https://dash.leader24.ai/auth/register\" class=\"text-[#3662e3] hover:underline\">Prova gratis per 14 giorni</a> e scopri il potere dell'automazione intelligente.",
     "button": "Automatizza il tuo supporto"
   },
   "testimonials": {
@@ -99,7 +99,7 @@
         "titleEnd": "con WhatsApp automatizzato",
         "quote": "Grazie all'automazione WhatsApp di Leader24, offriamo assistenza immediata sulle richieste più comuni dei nostri abbonati. I tempi di risposta sono diminuiti del 90% e l'esperienza cliente è notevolmente migliorata.",
         "person": {
-          "name": "Marco Rossi",
+          "name": "Marco R.",
           "title": "Direttore Customer Care"
         }
       },
@@ -110,7 +110,7 @@
         "titleEnd": "in modo automatico",
         "quote": "Leader24 ha trasformato la nostra gestione appuntamenti: i pazienti possono prenotare, spostare o annullare le visite tramite WhatsApp 24/7. Il personale è più concentrato sull'assistenza diretta e abbiamo ridotto le mancate presentazioni del 75%.",
         "person": {
-          "name": "Dott.ssa Laura Bianchi",
+          "name": "Dott.ssa Laura B.",
           "title": "Titolare Studio Dentistico"
         }
       }

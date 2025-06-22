@@ -10,12 +10,12 @@ export default function Testimonials() {
   const { t, i18n } = useTranslation(['home']);
   return (
     <section id="testimonials" className={`py-16 md:py-24 relative overflow-hidden ${theme === 'dark' ? 'bg-[#0A0A10]' : 'bg-slate-100'}`}>
-      <div className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-[#FF5722]/5 to-transparent"></div>
+      <div className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-[#3662e3]/5 to-transparent"></div>
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="flex items-center justify-center mb-12">
-          <Badge variant="outline" className={`inline-flex items-center px-4 py-2 bg-[#FF5722]/20 text-sm font-medium ${theme === 'dark' ? 'text-white' : 'text-slate-800'} rounded-full border-[#FF5722]/20`}>
-            <Zap className="w-5 h-5 mr-2 text-[#FF5722]" />
+          <Badge variant="outline" className={`inline-flex items-center px-4 py-2 bg-[#3662e3]/20 text-sm font-medium ${theme === 'dark' ? 'text-white' : 'text-slate-800'} rounded-full border-[#3662e3]/20`}>
+            <Zap className="w-5 h-5 mr-2 text-[#3662e3]" />
             {t('testimonials.badge')}
           </Badge>
         </div>

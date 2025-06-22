@@ -2,6 +2,8 @@
 
 Leader24 è una piattaforma di automazione AI per LiveChat e WhatsApp aziendali che trasforma le interazioni con i clienti attraverso l'intelligenza artificiale.
 
+[![Deploy to DigitalOcean](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/YOUR_USERNAME/YOUR_REPO/tree/main)
+
 ## 🚀 Tecnologie
 
 - **Frontend**: React 18 + TypeScript + Vite
@@ -56,6 +58,9 @@ L'applicazione sarà disponibile su `http://localhost:8080`
 npm run build
 npm run start
 ```
+
+### Deployment
+Per il deployment su DigitalOcean, consulta [DEPLOYMENT.md](./DEPLOYMENT.md)
 
 ## 📁 Struttura del Progetto
 

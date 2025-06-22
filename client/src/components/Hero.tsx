@@ -187,14 +187,14 @@ export default function Hero() {
         <div 
           className="absolute rounded-full blur-3xl"
           style={{ 
-            background: 'linear-gradient(135deg, rgba(255, 87, 34, 0.1), rgba(255, 160, 122, 0.1))',
+            background: 'linear-gradient(135deg, rgba(54, 98, 227, 0.1), rgba(91, 130, 255, 0.1))',
             width: `${gradientPosition.size3}px`, 
             height: `${gradientPosition.size3}px`,
             right: `${gradientPosition.x3}px`, 
             bottom: `${gradientPosition.y3}px`,
             transition: 'none',
             transform: `rotate(${gradientPosition.rotation3}deg)`,
-            boxShadow: '0 0 120px 40px rgba(255, 87, 34, 0.15)'
+            boxShadow: '0 0 120px 40px rgba(54, 98, 227, 0.15)'
           }}
         ></div>
         
@@ -220,7 +220,7 @@ export default function Hero() {
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl xl:text-7xl font-bold mb-8 leading-tight relative">
             <span className="dark:bg-gradient-to-r dark:from-white dark:to-gray-300 bg-gradient-to-r from-slate-800 to-slate-600 text-transparent bg-clip-text">{t('hero.title.part1')}</span>{' '}
-            <span className="bg-gradient-to-r from-[#FF5722] via-[#FF8C4C] to-[#FFA07A] animate-gradient-x text-transparent bg-clip-text">{t('hero.title.part2')}</span>{' '}
+            <span className="bg-gradient-to-r from-[#3662e3] via-[#5b82ff] to-[#60a5fa] animate-gradient-x text-transparent bg-clip-text">{t('hero.title.part2')}</span>{' '}
             <span className="dark:bg-gradient-to-r dark:from-white dark:to-gray-300 bg-gradient-to-r from-slate-800 to-slate-600 text-transparent bg-clip-text">{t('hero.title.part3')}</span>
           </h1>
           
@@ -228,27 +228,18 @@ export default function Hero() {
             {t('hero.subtitle')}
           </p>
           
-          <div className="flex justify-center mb-6">
-            <div className="dark:bg-white/5 bg-black/5 rounded-lg px-4 py-2 backdrop-blur-sm">
-              <p className="dark:text-[#E0E0E0] text-slate-800 text-sm">
-                <span className="text-[#FF5722] font-semibold">{t('hero.stats.satisfaction').split(' ')[0]}</span> {t('hero.stats.satisfaction').split(' ').slice(1).join(' ')} &nbsp;•&nbsp; 
-                <span className="text-[#FF5722] font-semibold">{t('hero.stats.responseTime').split(' ')[0]}</span> {t('hero.stats.responseTime').split(' ').slice(1).join(' ')} &nbsp;•&nbsp;
-                <span className="text-[#FF5722] font-semibold">{t('hero.stats.costs').split(' ')[0]}</span> {t('hero.stats.costs').split(' ').slice(1).join(' ')}
-              </p>
-            </div>
-          </div>
           
           <div className="flex flex-col md:flex-row justify-center gap-6 md:gap-8 mb-16 mt-12">
             <a 
-              href="https://dash.leader24.it/signup"
+              href="https://dash.leader24.ai/auth/register"
               className="w-full md:w-auto"
             >
               <Button 
                 size="lg" 
-                className="relative overflow-hidden bg-gradient-to-r from-[#FF5722] to-[#FFA07A] text-white px-6 py-3 h-auto text-base font-medium w-full md:w-auto group shadow-md shadow-[#FF5722]/10"
+                className="relative overflow-hidden bg-gradient-to-r from-[#3662e3] to-[#5b82ff] text-white px-6 py-3 h-auto text-base font-medium w-full md:w-auto group shadow-md shadow-[#3662e3]/10"
               >
                 <span className="relative z-10">{t('hero.buttons.freeTrial')}</span>
-                <span className="absolute inset-0 bg-gradient-to-r from-[#FFA07A] to-[#FF5722] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out"></span>
+                <span className="absolute inset-0 bg-gradient-to-r from-[#5b82ff] to-[#3662e3] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out"></span>
               </Button>
             </a>
             

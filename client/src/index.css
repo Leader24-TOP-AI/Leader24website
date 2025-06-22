@@ -14,10 +14,10 @@
   --header-bg-scrolled: rgba(255, 255, 255, 0.9);
   --header-border: rgba(0, 0, 0, 0.1);
   --nav-text: #334155;
-  --nav-text-hover: #E95F33;
+  --nav-text-hover: #3662e3;
   
   /* Pulsanti */
-  --btn-primary-bg: #E95F33;
+  --btn-primary-bg: #3662e3;
   --btn-primary-text: white;
   
   /* Testi e sfondo generale */
@@ -35,10 +35,10 @@
   --header-bg-scrolled: rgba(18, 18, 24, 0.9);
   --header-border: rgba(255, 255, 255, 0.1);
   --nav-text: #e2e8f0;
-  --nav-text-hover: #E95F33;
+  --nav-text-hover: #3662e3;
   
   /* Pulsanti */
-  --btn-primary-bg: #E95F33;
+  --btn-primary-bg: #3662e3;
   --btn-primary-text: white;
   
   /* Testi e sfondo generale */
@@ -59,7 +59,7 @@
 
 /* Effetto gradiente text */
 .text-gradient {
-  background: linear-gradient(135deg, #E95F33, #FF7F50);
+  background: linear-gradient(135deg, #3662e3, #5b82ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -67,7 +67,7 @@
 
 /* Effetto gradiente per il testo in tema scuro */
 .dark .text-gradient {
-  background: linear-gradient(135deg, #E95F33, #FFA07A);
+  background: linear-gradient(135deg, #3662e3, #5b82ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -310,7 +310,7 @@
 
 /* Stili per focus e accessibilità */
 .focus-ring:focus {
-  outline: 2px solid #E95F33;
+  outline: 2px solid #3662e3;
   outline-offset: 2px;
 }
 

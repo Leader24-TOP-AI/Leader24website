@@ -138,7 +138,7 @@ export default function MobileMenu() {
         
         <div className="flex flex-col space-y-4">
           <a 
-            href="https://dash.leader24.it/login" 
+            href="https://dash.leader24.ai" 
             className="px-6 py-2 border border-[color:var(--border-color)] text-[color:var(--foreground)] rounded-md text-lg font-medium hover:bg-[color:var(--hover-overlay)] transition-colors"
           >
             <span className="flex items-center justify-center gap-2">

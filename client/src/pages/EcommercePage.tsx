@@ -22,22 +22,22 @@ export default function EcommercePage() {
   // I passaggi chiave del processo di customer care AI per e-commerce
   const automationSteps = [
     {
-      icon: <ShoppingCart className="h-8 w-8 text-[#FF5722]" />,
+      icon: <ShoppingCart className="h-8 w-8 text-[#60a5fa]" />,
       title: t('automationSteps.tracking.title'),
       description: t('automationSteps.tracking.description')
     },
     {
-      icon: <TrendingUp className="h-8 w-8 text-[#FF5722]" />,
+      icon: <TrendingUp className="h-8 w-8 text-[#60a5fa]" />,
       title: t('automationSteps.catalog.title'),
       description: t('automationSteps.catalog.description')
     },
     {
-      icon: <RefreshCw className="h-8 w-8 text-[#FF5722]" />,
+      icon: <RefreshCw className="h-8 w-8 text-[#60a5fa]" />,
       title: t('automationSteps.availability.title'),
       description: t('automationSteps.availability.description')
     },
     {
-      icon: <Users className="h-8 w-8 text-[#FF5722]" />,
+      icon: <Users className="h-8 w-8 text-[#60a5fa]" />,
       title: t('automationSteps.personalized.title'),
       description: t('automationSteps.personalized.description')
     }
@@ -68,10 +68,10 @@ export default function EcommercePage() {
           <div className="flex items-center justify-center mb-8 md:mb-12">
             <Badge variant="outline" className={`inline-flex items-center px-4 py-2 text-sm font-medium rounded-full ${
               theme === 'dark'
-                ? 'bg-[#FF5722]/20 text-white border-[#FF5722]/20'
-                : 'bg-[#FF5722]/30 text-[#B33700] border-[#FF5722]/30 font-semibold'
+                ? 'bg-[#3662e3]/20 text-white border-[#3662e3]/20'
+                : 'bg-[#3662e3]/30 text-[#1e40af] border-[#3662e3]/30 font-semibold'
             }`}>
-              <Sparkles className="w-5 h-5 mr-2 text-[#FF5722]" />
+              <Sparkles className="w-5 h-5 mr-2 text-[#60a5fa]" />
               {t('badge')}
             </Badge>
           </div>
@@ -98,7 +98,7 @@ export default function EcommercePage() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
               <Button 
                 size="lg" 
-                className="bg-[#FF5722] hover:bg-[#FF5722] hover:opacity-90 text-white rounded-full font-medium px-6"
+                className="bg-[#3662e3] hover:bg-[#3662e3] hover:opacity-90 text-white rounded-full font-medium px-6"
                 onClick={() => window.open("https://dash.leader24.it/signup", "_blank")}
               >
                 <Rocket className="w-5 h-5 mr-2" />
@@ -134,8 +134,8 @@ export default function EcommercePage() {
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-70 transition-opacity duration-300"
                   style={{
                     background: theme === 'dark'
-                      ? 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.2) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)'
-                      : 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.15) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)',
+                      ? 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(54, 98, 227, 0.2) 0%, rgba(54, 98, 227, 0.05) 25%, transparent 70%)'
+                      : 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(54, 98, 227, 0.15) 0%, rgba(54, 98, 227, 0.05) 25%, transparent 70%)',
                     mixBlendMode: theme === 'dark'
                       ? 'soft-light'
                       : 'multiply',
@@ -149,7 +149,7 @@ export default function EcommercePage() {
                   }}
                 ></div>
                 <CardContent className="p-6 text-center relative z-10">
-                  <p className="text-4xl md:text-5xl font-bold text-[#FF5722] mb-2">+37%</p>
+                  <p className="text-4xl md:text-5xl font-bold text-[#3662e3] mb-2">+37%</p>
                   <p className={theme === 'dark' ? 'text-white/80' : 'text-slate-600'}>{t('statsCards.sales')}</p>
                 </CardContent>
               </Card>
@@ -162,8 +162,8 @@ export default function EcommercePage() {
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-70 transition-opacity duration-300"
                   style={{
                     background: theme === 'dark'
-                      ? 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.2) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)'
-                      : 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.15) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)',
+                      ? 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(54, 98, 227, 0.2) 0%, rgba(54, 98, 227, 0.05) 25%, transparent 70%)'
+                      : 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(54, 98, 227, 0.15) 0%, rgba(54, 98, 227, 0.05) 25%, transparent 70%)',
                     mixBlendMode: theme === 'dark'
                       ? 'soft-light'
                       : 'multiply',
@@ -177,7 +177,7 @@ export default function EcommercePage() {
                   }}
                 ></div>
                 <CardContent className="p-6 text-center relative z-10">
-                  <p className="text-4xl md:text-5xl font-bold text-[#FF5722] mb-2">82%</p>
+                  <p className="text-4xl md:text-5xl font-bold text-[#3662e3] mb-2">82%</p>
                   <p className={theme === 'dark' ? 'text-white/80' : 'text-slate-600'}>{t('statsCards.satisfaction')}</p>
                 </CardContent>
               </Card>
@@ -190,8 +190,8 @@ export default function EcommercePage() {
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-70 transition-opacity duration-300"
                   style={{
                     background: theme === 'dark'
-                      ? 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.2) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)'
-                      : 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.15) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)',
+                      ? 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(54, 98, 227, 0.2) 0%, rgba(54, 98, 227, 0.05) 25%, transparent 70%)'
+                      : 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(54, 98, 227, 0.15) 0%, rgba(54, 98, 227, 0.05) 25%, transparent 70%)',
                     mixBlendMode: theme === 'dark'
                       ? 'soft-light'
                       : 'multiply',
@@ -205,7 +205,7 @@ export default function EcommercePage() {
                   }}
                 ></div>
                 <CardContent className="p-6 text-center relative z-10">
-                  <p className="text-4xl md:text-5xl font-bold text-[#FF5722] mb-2">-65%</p>
+                  <p className="text-4xl md:text-5xl font-bold text-[#3662e3] mb-2">-65%</p>
                   <p className={theme === 'dark' ? 'text-white/80' : 'text-slate-600'}>{t('statsCards.reduction')}</p>
                 </CardContent>
               </Card>
@@ -215,7 +215,7 @@ export default function EcommercePage() {
       </div>
       
       <section className={`py-16 md:py-24 relative overflow-hidden ${theme === 'dark' ? 'bg-[#0A0A10]' : 'bg-gray-50'}`}>
-        <div className="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-[#FF5722]/5 to-transparent"></div>
+        <div className="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-[#3662e3]/5 to-transparent"></div>
         
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           
@@ -228,7 +228,7 @@ export default function EcommercePage() {
             }`}>
               <CardHeader>
                 <CardTitle className="text-2xl md:text-3xl flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-[#FF5722]/20 flex items-center justify-center text-[#FF5722]">
+                  <div className="w-10 h-10 rounded-full bg-[#3662e3]/20 flex items-center justify-center text-[#3662e3]">
                     <ShoppingCart className="w-6 h-6" />
                   </div>
                   E-commerce
@@ -245,15 +245,15 @@ export default function EcommercePage() {
                   style={{
                     position: 'relative',
                     background: theme === 'dark' 
-                      ? 'linear-gradient(45deg, rgba(255, 87, 34, 0.1), rgba(0, 0, 0, 0))' 
-                      : 'linear-gradient(45deg, rgba(255, 87, 34, 0.05), rgba(255, 255, 255, 0))',
+                      ? 'linear-gradient(45deg, rgba(54, 98, 227, 0.1), rgba(0, 0, 0, 0))' 
+                      : 'linear-gradient(45deg, rgba(54, 98, 227, 0.05), rgba(255, 255, 255, 0))',
                   }}
                 >
                   {/* Gradienti interattivi che si muovono con il mouse */}
                   <div 
                     className="absolute inset-0 opacity-0 group-hover:opacity-70 transition-opacity duration-300"
                     style={{
-                      background: 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.3) 0%, rgba(255, 87, 34, 0.1) 20%, transparent 60%)',
+                      background: 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(54, 98, 227, 0.3) 0%, rgba(54, 98, 227, 0.1) 20%, transparent 60%)',
                       transformOrigin: 'var(--x) var(--y)',
                       mixBlendMode: theme === 'dark'
                       ? 'soft-light'
@@ -274,8 +274,8 @@ export default function EcommercePage() {
                   <div className="grid md:grid-cols-2 gap-4 relative z-10">
                     {ecommerceData?.benefits.map((benefit, index) => (
                       <div key={index} className="flex items-start space-x-3">
-                        <div className="rounded-full bg-[#FF5722]/20 p-1 mt-0.5">
-                          <Check className="h-4 w-4 text-[#FF5722]" />
+                        <div className="rounded-full bg-[#3662e3]/20 p-1 mt-0.5">
+                          <Check className="h-4 w-4 text-[#60a5fa]" />
                         </div>
                         <span className={theme === 'dark' ? 'text-white' : 'text-slate-600'}>{benefit}</span>
                       </div>
@@ -286,7 +286,7 @@ export default function EcommercePage() {
               <CardFooter>
                 <Link href="/contatti">
                   <Button 
-                    className="bg-[#FF5722] hover:bg-[#FF5722] hover:opacity-90 text-white w-full"
+                    className="bg-[#3662e3] hover:bg-[#3662e3] hover:opacity-90 text-white w-full"
                     onClick={() => {
                       // Assicura che lo scroll torni in cima alla pagina quando si naviga
                       setTimeout(() => window.scrollTo(0, 0), 100);
@@ -308,8 +308,8 @@ export default function EcommercePage() {
                   className="absolute inset-0 opacity-0 group-hover:opacity-70 transition-opacity duration-300"
                   style={{
                     background: theme === 'dark'
-                      ? 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.2) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)'
-                      : 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.15) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)',
+                      ? 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(54, 98, 227, 0.2) 0%, rgba(54, 98, 227, 0.05) 25%, transparent 70%)'
+                      : 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(54, 98, 227, 0.15) 0%, rgba(54, 98, 227, 0.05) 25%, transparent 70%)',
                     mixBlendMode: 'overlay',
                   }}
                   onMouseMove={(e) => {
@@ -329,25 +329,25 @@ export default function EcommercePage() {
                       theme === 'dark' ? 'hover:bg-white/5' : 'hover:bg-slate-50'
                     }`}>
                       <span className={theme === 'dark' ? 'text-[#E0E0E0]' : 'text-slate-600'}>Aumento vendite con AI catalogo</span>
-                      <Badge className="bg-[#FF5722] shadow-glow text-white">+37%</Badge>
+                      <Badge className="bg-[#3662e3] shadow-glow text-white">+37%</Badge>
                     </div>
                     <div className={`flex justify-between items-center p-2 rounded-lg transition-all ${
                       theme === 'dark' ? 'hover:bg-white/5' : 'hover:bg-slate-50'
                     }`}>
                       <span className={theme === 'dark' ? 'text-[#E0E0E0]' : 'text-slate-600'}>Risposta domande ordini</span>
-                      <Badge className="bg-[#FF5722] shadow-glow text-white">24/7</Badge>
+                      <Badge className="bg-[#3662e3] shadow-glow text-white">24/7</Badge>
                     </div>
                     <div className={`flex justify-between items-center p-2 rounded-lg transition-all ${
                       theme === 'dark' ? 'hover:bg-white/5' : 'hover:bg-slate-50'
                     }`}>
                       <span className={theme === 'dark' ? 'text-[#E0E0E0]' : 'text-slate-600'}>Soddisfazione clienti</span>
-                      <Badge className="bg-[#FF5722] shadow-glow text-white">+82%</Badge>
+                      <Badge className="bg-[#3662e3] shadow-glow text-white">+82%</Badge>
                     </div>
                     <div className={`flex justify-between items-center p-2 rounded-lg transition-all ${
                       theme === 'dark' ? 'hover:bg-white/5' : 'hover:bg-slate-50'
                     }`}>
                       <span className={theme === 'dark' ? 'text-[#E0E0E0]' : 'text-slate-600'}>Tasso di riacquisto</span>
-                      <Badge className="bg-[#FF5722] shadow-glow text-white">+58%</Badge>
+                      <Badge className="bg-[#3662e3] shadow-glow text-white">+58%</Badge>
                     </div>
                   </div>
                 </CardContent>
@@ -362,8 +362,8 @@ export default function EcommercePage() {
                   className="absolute inset-0 opacity-0 group-hover:opacity-70 transition-opacity duration-300"
                   style={{
                     background: theme === 'dark'
-                      ? 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.2) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)'
-                      : 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.15) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)',
+                      ? 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(54, 98, 227, 0.2) 0%, rgba(54, 98, 227, 0.05) 25%, transparent 70%)'
+                      : 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(54, 98, 227, 0.15) 0%, rgba(54, 98, 227, 0.05) 25%, transparent 70%)',
                     mixBlendMode: 'overlay',
                   }}
                   onMouseMove={(e) => {
@@ -382,14 +382,14 @@ export default function EcommercePage() {
                     <div 
                       className="rounded-lg p-4 border border-white/10 overflow-hidden relative group hover:shadow-xl transition-all duration-300"
                       style={{
-                        background: 'linear-gradient(135deg, rgba(255, 87, 34, 0.05), rgba(0, 0, 0, 0))',
+                        background: 'linear-gradient(135deg, rgba(54, 98, 227, 0.05), rgba(0, 0, 0, 0))',
                       }}
                     >
                       {/* Gradienti interattivi che si muovono con il mouse */}
                       <div 
                         className="absolute inset-0 opacity-0 group-hover:opacity-70 transition-opacity duration-300"
                         style={{
-                          background: 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.3) 0%, rgba(255, 87, 34, 0.1) 20%, transparent 60%)',
+                          background: 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(54, 98, 227, 0.3) 0%, rgba(54, 98, 227, 0.1) 20%, transparent 60%)',
                           transformOrigin: 'var(--x) var(--y)',
                           mixBlendMode: theme === 'dark'
                       ? 'soft-light'
@@ -404,9 +404,9 @@ export default function EcommercePage() {
                         }}
                       ></div>
                       
-                      <h3 className="text-lg font-semibold text-[#FF5722] mb-2 flex items-center relative z-10">
+                      <h3 className="text-lg font-semibold text-[#3662e3] mb-2 flex items-center relative z-10">
                         <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M12 1.75L5.75 4.5V9.25C5.75 14.31 8.21 19.01 12 20.5C15.79 19.01 18.25 14.31 18.25 9.25V4.5L12 1.75Z" stroke="#FF5722" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M12 1.75L5.75 4.5V9.25C5.75 14.31 8.21 19.01 12 20.5C15.79 19.01 18.25 14.31 18.25 9.25V4.5L12 1.75Z" stroke="#3662e3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                         {t('shopify.title')}
                       </h3>
@@ -419,14 +419,14 @@ export default function EcommercePage() {
                     <div 
                       className="rounded-lg p-4 border border-white/10 overflow-hidden relative group hover:shadow-xl transition-all duration-300"
                       style={{
-                        background: 'linear-gradient(135deg, rgba(255, 87, 34, 0.05), rgba(0, 0, 0, 0))',
+                        background: 'linear-gradient(135deg, rgba(54, 98, 227, 0.05), rgba(0, 0, 0, 0))',
                       }}
                     >
                       {/* Gradienti interattivi che si muovono con il mouse */}
                       <div 
                         className="absolute inset-0 opacity-0 group-hover:opacity-70 transition-opacity duration-300"
                         style={{
-                          background: 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.3) 0%, rgba(255, 87, 34, 0.1) 20%, transparent 60%)',
+                          background: 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(54, 98, 227, 0.3) 0%, rgba(54, 98, 227, 0.1) 20%, transparent 60%)',
                           transformOrigin: 'var(--x) var(--y)',
                           mixBlendMode: theme === 'dark'
                       ? 'soft-light'
@@ -441,9 +441,9 @@ export default function EcommercePage() {
                         }}
                       ></div>
                       
-                      <h3 className="text-lg font-semibold text-[#FF5722] mb-2 flex items-center relative z-10">
+                      <h3 className="text-lg font-semibold text-[#3662e3] mb-2 flex items-center relative z-10">
                         <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M16 6L18 8M18 8L16 10M18 8H13M13 14L11 16M11 16L13 18M11 16H16M6 14H8C9.10457 14 10 13.1046 10 12V8C10 6.89543 9.10457 6 8 6H6C4.89543 6 4 6.89543 4 8V12C4 13.1046 4.89543 14 6 14Z" stroke="#FF5722" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M16 6L18 8M18 8L16 10M18 8H13M13 14L11 16M11 16L13 18M11 16H16M6 14H8C9.10457 14 10 13.1046 10 12V8C10 6.89543 9.10457 6 8 6H6C4.89543 6 4 6.89543 4 8V12C4 13.1046 4.89543 14 6 14Z" stroke="#3662e3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                         </svg>
                         {t('woocommerce.title')}
                       </h3>
@@ -487,15 +487,15 @@ export default function EcommercePage() {
                       : 'bg-white border-slate-200 shadow-sm text-slate-800'
                   }`}
                 >
-                  <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-[#FF5722] to-[#FFA07A]"></div>
+                  <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-[#3662e3] to-[#5b82ff]"></div>
                   
                   {/* Gradiente interattivo che segue il movimento del mouse */}
                   <div 
                     className="absolute inset-0 opacity-0 group-hover:opacity-70 transition-opacity duration-300"
                     style={{
                       background: theme === 'dark'
-                      ? 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.2) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)'
-                      : 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.15) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)',
+                      ? 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(54, 98, 227, 0.2) 0%, rgba(54, 98, 227, 0.05) 25%, transparent 70%)'
+                      : 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(54, 98, 227, 0.15) 0%, rgba(54, 98, 227, 0.05) 25%, transparent 70%)',
                       mixBlendMode: theme === 'dark'
                       ? 'soft-light'
                       : 'multiply',
@@ -546,8 +546,8 @@ export default function EcommercePage() {
                     className="absolute inset-0 opacity-0 group-hover:opacity-70 transition-opacity duration-300"
                     style={{
                       background: theme === 'dark'
-                      ? 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.2) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)'
-                      : 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.15) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)',
+                      ? 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(54, 98, 227, 0.2) 0%, rgba(54, 98, 227, 0.05) 25%, transparent 70%)'
+                      : 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(54, 98, 227, 0.15) 0%, rgba(54, 98, 227, 0.05) 25%, transparent 70%)',
                       mixBlendMode: theme === 'dark'
                       ? 'soft-light'
                       : 'multiply',
@@ -617,14 +617,14 @@ export default function EcommercePage() {
             }`}
           >
             {/* Linee luminose superiore e inferiore */}
-            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-[#FF5722]/0 via-[#FF5722] to-[#FF5722]/0 group-hover:via-[#FF5722]/70 transition-all duration-700"></div>
-            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-[#FF5722]/0 via-[#FF5722] to-[#FF5722]/0 group-hover:via-[#FF5722]/70 transition-all duration-700"></div>
+            <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-[#3662e3]/0 via-[#3662e3] to-[#3662e3]/0 group-hover:via-[#3662e3]/70 transition-all duration-700"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-[#3662e3]/0 via-[#3662e3] to-[#3662e3]/0 group-hover:via-[#3662e3]/70 transition-all duration-700"></div>
             
             {/* Gradiente interattivo che segue il movimento del mouse */}
             <div 
               className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-700"
               style={{
-                background: 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.4) 0%, rgba(255, 87, 34, 0.1) 30%, transparent 70%)',
+                background: 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(54, 98, 227, 0.4) 0%, rgba(54, 98, 227, 0.1) 30%, transparent 70%)',
                 mixBlendMode: theme === 'dark'
                       ? 'soft-light'
                       : 'multiply',
@@ -655,7 +655,7 @@ export default function EcommercePage() {
                 <Link href={currentLanguage === 'it' ? "/contatti" : "/en/contatti"}>
                   <Button 
                     size="lg" 
-                    className="bg-[#FF5722] hover:bg-[#FF5722]/90 text-white shadow-glow"
+                    className="bg-[#3662e3] hover:bg-[#3662e3]/90 text-white shadow-glow"
                     onClick={() => {
                       // Assicura che lo scroll torni in cima alla pagina quando si naviga
                       setTimeout(() => window.scrollTo(0, 0), 100);
@@ -689,8 +689,8 @@ export default function EcommercePage() {
                   className="absolute inset-0 opacity-0 group-hover:opacity-70 transition-opacity duration-300"
                   style={{
                     background: theme === 'dark'
-                      ? 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.2) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)'
-                      : 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.15) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)',
+                      ? 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(54, 98, 227, 0.2) 0%, rgba(54, 98, 227, 0.05) 25%, transparent 70%)'
+                      : 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(54, 98, 227, 0.15) 0%, rgba(54, 98, 227, 0.05) 25%, transparent 70%)',
                     mixBlendMode: theme === 'dark'
                       ? 'soft-light'
                       : 'multiply',
@@ -729,8 +729,8 @@ export default function EcommercePage() {
                   className="absolute inset-0 opacity-0 group-hover:opacity-70 transition-opacity duration-300"
                   style={{
                     background: theme === 'dark'
-                      ? 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.2) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)'
-                      : 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.15) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)',
+                      ? 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(54, 98, 227, 0.2) 0%, rgba(54, 98, 227, 0.05) 25%, transparent 70%)'
+                      : 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(54, 98, 227, 0.15) 0%, rgba(54, 98, 227, 0.05) 25%, transparent 70%)',
                     mixBlendMode: theme === 'dark'
                       ? 'soft-light'
                       : 'multiply',
@@ -769,8 +769,8 @@ export default function EcommercePage() {
                   className="absolute inset-0 opacity-0 group-hover:opacity-70 transition-opacity duration-300"
                   style={{
                     background: theme === 'dark'
-                      ? 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.2) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)'
-                      : 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.15) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)',
+                      ? 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(54, 98, 227, 0.2) 0%, rgba(54, 98, 227, 0.05) 25%, transparent 70%)'
+                      : 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(54, 98, 227, 0.15) 0%, rgba(54, 98, 227, 0.05) 25%, transparent 70%)',
                     mixBlendMode: theme === 'dark'
                       ? 'soft-light'
                       : 'multiply',
@@ -809,8 +809,8 @@ export default function EcommercePage() {
                   className="absolute inset-0 opacity-0 group-hover:opacity-70 transition-opacity duration-300"
                   style={{
                     background: theme === 'dark'
-                      ? 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.2) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)'
-                      : 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255, 87, 34, 0.15) 0%, rgba(255, 87, 34, 0.05) 25%, transparent 70%)',
+                      ? 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(54, 98, 227, 0.2) 0%, rgba(54, 98, 227, 0.05) 25%, transparent 70%)'
+                      : 'radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(54, 98, 227, 0.15) 0%, rgba(54, 98, 227, 0.05) 25%, transparent 70%)',
                     mixBlendMode: theme === 'dark'
                       ? 'soft-light'
                       : 'multiply',

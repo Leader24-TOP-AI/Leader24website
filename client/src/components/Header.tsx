@@ -136,7 +136,7 @@ export default function Header() {
           
           {/* Login Button - Desktop */}
           <a 
-            href="https://dash.leader24.it/login" 
+            href="https://dash.leader24.ai" 
             className="hidden md:flex items-center gap-2 text-slate-700 dark:text-slate-200 hover:text-slate-900 dark:hover:text-white transition-colors"
           >
             <svg 
@@ -163,7 +163,7 @@ export default function Header() {
           >
             <Button 
               size="lg"
-              className="bg-[#E95F33] hover:bg-[#D9502A] px-6 py-2 h-auto rounded-full text-white font-medium"
+              className="bg-[#3662e3] hover:bg-[#2952d3] px-6 py-2 h-auto rounded-full text-white font-medium"
             >
               {t('header.trial', 'Prova Gratis')}
             </Button>

@@ -85,19 +85,19 @@ export default function Features() {
   const getIconComponent = (iconName: string) => {
     switch (iconName) {
       case 'MessageSquare':
-        return <MessageSquare className="w-6 h-6 text-[#FF5722]" />;
+        return <MessageSquare className="w-6 h-6 text-[#60a5fa]" />;
       case 'Layers':
-        return <Layers className="w-6 h-6 text-[#FF5722]" />;
+        return <Layers className="w-6 h-6 text-[#60a5fa]" />;
       case 'Clock':
-        return <Clock className="w-6 h-6 text-[#FF5722]" />;
+        return <Clock className="w-6 h-6 text-[#60a5fa]" />;
       case 'Globe':
-        return <Globe className="w-6 h-6 text-[#FF5722]" />;
+        return <Globe className="w-6 h-6 text-[#60a5fa]" />;
       case 'CalendarDays':
-        return <CalendarDays className="w-6 h-6 text-[#FF5722]" />;
+        return <CalendarDays className="w-6 h-6 text-[#60a5fa]" />;
       case 'Settings':
-        return <Settings className="w-6 h-6 text-[#FF5722]" />;
+        return <Settings className="w-6 h-6 text-[#60a5fa]" />;
       default:
-        return <MessageSquare className="w-6 h-6 text-[#FF5722]" />;
+        return <MessageSquare className="w-6 h-6 text-[#60a5fa]" />;
     }
   };
 
@@ -125,8 +125,8 @@ export default function Features() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 ref={titleRef} id="funzionalita" className={`text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r ${theme === 'dark' ? 'from-white to-gray-300' : 'from-slate-800 to-slate-600'} text-transparent bg-clip-text`}>{t('features.title')}</h2>
           <p className={`text-lg ${theme === 'dark' ? 'text-[#E0E0E0]' : 'text-slate-700'} relative inline-block`}>
-            {t('features.subtitle')} <span className="bg-gradient-to-r from-[#FF5722] to-[#FFA07A] text-transparent bg-clip-text relative">Leader24</span>
-            <span className="absolute -bottom-1 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#FF5722]/50 to-transparent"></span>
+            {t('features.subtitle')} <span className="bg-gradient-to-r from-[#3662e3] to-[#5b82ff] text-transparent bg-clip-text relative">Leader24</span>
+            <span className="absolute -bottom-1 left-0 w-full h-px bg-gradient-to-r from-transparent via-[#3662e3]/50 to-transparent"></span>
           </p>
         </div>
         
@@ -171,7 +171,7 @@ export default function Features() {
                   }}
                 ></div>
                 <div 
-                  className={`orange-gradient-${index} absolute w-56 h-56 ${theme === 'dark' ? 'bg-[#FF5722]/15' : 'bg-[#FF5722]/10'} rounded-full blur-3xl transition-all duration-300`}
+                  className={`orange-gradient-${index} absolute w-56 h-56 ${theme === 'dark' ? 'bg-[#3662e3]/15' : 'bg-[#3662e3]/10'} rounded-full blur-3xl transition-all duration-300`}
                   style={{ 
                     left: `-20px`, 
                     top: `0px`,
@@ -180,19 +180,19 @@ export default function Features() {
                 {/* Aggiunta di bordo luminoso e ombra interna per il tema chiaro */}
                 <div className={`absolute inset-0 ${theme === 'dark' 
                   ? '' 
-                  : 'border border-[#FF5722]/20 rounded-xl shadow-[inset_0_0_15px_rgba(255,87,34,0.1)]'
+                  : 'border border-[#3662e3]/20 rounded-xl shadow-[inset_0_0_15px_rgba(54,98,227,0.1)]'
                 }`}></div>
               </div>
               
               <CardContent className="p-0 relative z-10">
-                <div className="w-12 h-12 bg-[#FF5722]/20 rounded-full flex items-center justify-center mb-6 transition-all duration-500 group-hover:bg-[#FF5722]/30">
+                <div className="w-12 h-12 bg-[#60a5fa]/20 rounded-full flex items-center justify-center mb-6 transition-all duration-500 group-hover:bg-[#60a5fa]/30">
                   {getIconComponent(feature.iconName)}
                 </div>
                 
                 <h3 className={`text-xl font-semibold mb-3 transition-all duration-500 ${
                   theme === 'dark' 
                   ? 'text-white group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-300' 
-                  : 'text-slate-800 group-hover:bg-gradient-to-r group-hover:from-[#FF5722] group-hover:to-[#FF8C4C]'
+                  : 'text-slate-800 group-hover:bg-gradient-to-r group-hover:from-[#3662e3] group-hover:to-[#5b82ff]'
                 } group-hover:text-transparent group-hover:bg-clip-text`}>
                   {t(`features.featuresList.${index}.title`)}
                 </h3>
@@ -221,13 +221,6 @@ export default function Features() {
             {t('features.conclusion.description')}
           </p>
           
-          <a 
-            href="https://api.whatsapp.com/send?phone=393762493961&text=Salve,%20vorrei%20una%20dimostrazione%20su%20come%20funziona%20il%20vostro%20servizio" 
-            className="relative inline-block overflow-hidden px-8 py-3 bg-gradient-to-r from-[#FF5722] to-[#FFA07A] text-white rounded-md text-lg font-medium group"
-          >
-            <span className="relative z-10">{t('features.buttons.tryChat')}</span>
-            <span className="absolute inset-0 bg-gradient-to-r from-[#FFA07A] to-[#FF5722] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out"></span>
-          </a>
         </div>
         
         {/* Box per l'Assistente AI spostato qui dalla hero section */}
@@ -235,10 +228,10 @@ export default function Features() {
           <div className={`p-6 ${theme === 'dark' ? 'bg-white/5 border-white/10' : 'bg-black/5 border-black/10'} border rounded-xl relative overflow-hidden group animate-float hover:shadow-xl`}>
             {/* Effetto highlight sull'angolo */}
             <div 
-              className="absolute -top-10 -right-10 w-20 h-20 bg-gradient-to-br from-[#FF5722]/30 to-transparent rotate-12 blur-lg group-hover:scale-150 transition-transform duration-700 ease-out"
+              className="absolute -top-10 -right-10 w-20 h-20 bg-gradient-to-br from-[#3662e3]/30 to-transparent rotate-12 blur-lg group-hover:scale-150 transition-transform duration-700 ease-out"
             ></div>
             
-            <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-[#FF5722] via-[#FF8C4C] to-[#FFA07A] animate-gradient-x text-transparent bg-clip-text">
+            <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-[#3662e3] via-[#5b82ff] to-[#60a5fa] animate-gradient-x text-transparent bg-clip-text">
               {t('features.aiAssistant.title')}
             </h2>
             <p className={`${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'} mb-4 relative z-10`}>

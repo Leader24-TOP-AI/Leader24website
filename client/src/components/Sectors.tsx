@@ -117,13 +117,13 @@ export default function Sectors() {
         theme === 'dark' ? 'bg-blue-500/10' : 'bg-blue-400/10'
       }`}></div>
       <div className={`absolute left-1/3 bottom-1/4 w-64 h-64 rounded-full blur-3xl animate-pulse-slow ${
-        theme === 'dark' ? 'bg-[#FF5722]/10' : 'bg-[#FF5722]/5'
+        theme === 'dark' ? 'bg-[#60a5fa]/10' : 'bg-[#60a5fa]/5'
       }`}></div>
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center max-w-4xl mx-auto mb-16">
-          <Badge variant="outline" className={`mb-4 text-[#FF5722] ${
-            theme === 'dark' ? 'border-[#FF5722]/20' : 'border-[#FF5722]/30'
+          <Badge variant="outline" className={`mb-4 text-[#3662e3] ${
+            theme === 'dark' ? 'border-[#3662e3]/20' : 'border-[#3662e3]/30'
           } px-4 py-1`}>
             {t('badge')}
           </Badge>
@@ -157,7 +157,7 @@ export default function Sectors() {
                     : 'border border-slate-200 hover:bg-slate-50'
                   }
                   ${selectedIndustry.nameKey === industry.nameKey 
-                    ? `ring-2 ring-[#FF5722] ${theme === 'dark' ? 'bg-white/10' : 'bg-orange-50/50'}` 
+                    ? `ring-2 ring-[#3662e3] ${theme === 'dark' ? 'bg-white/10' : 'bg-blue-50/50'}` 
                     : theme === 'dark' ? 'bg-white/5' : 'bg-white'
                   }
                 `}
@@ -167,7 +167,7 @@ export default function Sectors() {
                   <div className={`
                     mx-auto w-10 h-10 rounded-full flex items-center justify-center mb-2 md:mb-3
                     ${selectedIndustry.nameKey === industry.nameKey 
-                      ? 'bg-[#FF5722]/20 text-[#FF5722]' 
+                      ? 'bg-[#3662e3]/20 text-[#3662e3]' 
                       : theme === 'dark' 
                         ? 'bg-white/10 text-white/70' 
                         : 'bg-slate-100 text-slate-600'
@@ -181,7 +181,7 @@ export default function Sectors() {
                   
                   {/* Indicatore di scorrimento visibile solo su mobile */}
                   {isMobile && (
-                    <div className="mt-2 text-xs text-[#FF5722] flex items-center justify-center">
+                    <div className="mt-2 text-xs text-[#3662e3] flex items-center justify-center">
                       <span>{t('details')}</span>
                       <ChevronRight className="w-3 h-3 ml-1" />
                     </div>
@@ -206,10 +206,10 @@ export default function Sectors() {
           {isMobile && (
             <div className={`rounded-md p-3 mb-6 flex items-center ${
               theme === 'dark' 
-                ? 'bg-[#FF5722]/10 text-white' 
-                : 'bg-orange-50 text-slate-800'
+                ? 'bg-[#3662e3]/10 text-white' 
+                : 'bg-blue-50 text-slate-800'
             }`}>
-              <div className="w-8 h-8 rounded-full bg-[#FF5722]/20 flex items-center justify-center text-[#FF5722] mr-3">
+              <div className="w-8 h-8 rounded-full bg-[#3662e3]/20 flex items-center justify-center text-[#3662e3] mr-3">
                 {getIcon(selectedIndustry.icon)}
               </div>
               <div>
@@ -224,7 +224,7 @@ export default function Sectors() {
           <div className="grid md:grid-cols-2 gap-8 items-start">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-full bg-[#FF5722]/20 flex items-center justify-center text-[#FF5722]">
+                <div className="w-12 h-12 rounded-full bg-[#3662e3]/20 flex items-center justify-center text-[#3662e3]">
                   {getIcon(selectedIndustry.icon)}
                 </div>
                 <h3 className={`text-2xl font-bold ${
@@ -237,7 +237,7 @@ export default function Sectors() {
               }`}>{selectedIndustry.description}</p>
               
               <div className="flex flex-wrap gap-2 mb-6">
-                <Badge variant="outline" className="bg-[#FF5722]/10 text-[#FF5722] border-[#FF5722]/20">
+                <Badge variant="outline" className="bg-[#3662e3]/10 text-[#3662e3] border-[#3662e3]/20">
                   {t('commonTags.automation')}
                 </Badge>
                 <Badge variant="outline" className={`${
@@ -267,7 +267,7 @@ export default function Sectors() {
                 href={i18n.language === 'en' ? '/en/contact-us' : '/contatti'} 
                 onClick={() => window.scrollTo(0, 0)}
               >
-                <Button className="bg-[#FF5722] hover:bg-[#FF5722] hover:opacity-90 text-white px-6">
+                <Button className="bg-[#3662e3] hover:bg-[#3662e3] hover:opacity-90 text-white px-6">
                   {t('discoverMore')}
                 </Button>
               </a>
@@ -281,14 +281,14 @@ export default function Sectors() {
               <h4 className={`text-lg font-semibold mb-4 flex items-center gap-2 ${
                 theme === 'dark' ? 'text-white' : 'text-slate-800'
               }`}>
-                <LucideIcons.CheckCircle className="h-5 w-5 text-[#FF5722]" />
+                <LucideIcons.CheckCircle className="h-5 w-5 text-[#60a5fa]" />
                 {t('advantages')}
               </h4>
               
               <ul className="space-y-3">
                 {selectedIndustry.benefits.map((benefit, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <span className="mt-1 text-[#FF5722]">
+                    <span className="mt-1 text-[#60a5fa]">
                       <LucideIcons.Check className="h-4 w-4" />
                     </span>
                     <span className={`${
@@ -321,7 +321,7 @@ export default function Sectors() {
               <Button 
                 variant="outline" 
                 size="sm"
-                className="text-[#FF5722] border-[#FF5722]/20 hover:bg-[#FF5722]/10"
+                className="text-[#3662e3] border-[#3662e3]/20 hover:bg-[#3662e3]/10"
                 onClick={() => {
                   const sectorsGrid = document.querySelector('#sectors');
                   sectorsGrid?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -342,12 +342,12 @@ export default function Sectors() {
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center">
             <a href={i18n.language === 'en' ? '/en/industries' : '/settori'} onClick={() => window.scrollTo(0, 0)}>
-              <Button className="bg-[#FF5722] text-white hover:bg-[#FF5722] hover:opacity-90 w-full md:w-auto">
+              <Button className="bg-[#3662e3] text-white hover:bg-[#3662e3] hover:opacity-90 w-full md:w-auto">
                 {t('viewAllSectors')}
               </Button>
             </a>
             <a href={i18n.language === 'en' ? '/en/contact-us' : '/contatti'} onClick={() => window.scrollTo(0, 0)}>
-              <Button variant="outline" className="border-[#FF5722] text-[#FF5722] hover:bg-[#FF5722]/10 w-full md:w-auto">
+              <Button variant="outline" className="border-[#3662e3] text-[#3662e3] hover:bg-[#3662e3]/10 w-full md:w-auto">
                 {t('requestCustomDemo')}
               </Button>
             </a>

@@ -35,7 +35,7 @@ export default function Introduction() {
               <Card className={`${
                 theme === 'dark' ? 'bg-[#121218] border-white/10' : 'bg-white border-slate-200 shadow-sm'
               } p-4 transition-all duration-300 hover:shadow-md`}>
-                <Clock className="w-8 h-8 text-[#FF5722] mb-3" />
+                <Clock className="w-8 h-8 text-[#60a5fa] mb-3" />
                 <h3 className={`font-semibold text-lg mb-2 ${
                   theme === 'dark' ? 'text-white' : 'text-slate-800'
                 }`}>
@@ -51,7 +51,7 @@ export default function Introduction() {
               <Card className={`${
                 theme === 'dark' ? 'bg-[#121218] border-white/10' : 'bg-white border-slate-200 shadow-sm'
               } p-4 transition-all duration-300 hover:shadow-md`}>
-                <CheckCircle className="w-8 h-8 text-[#FF5722] mb-3" />
+                <CheckCircle className="w-8 h-8 text-[#60a5fa] mb-3" />
                 <h3 className={`font-semibold text-lg mb-2 ${
                   theme === 'dark' ? 'text-white' : 'text-slate-800'
                 }`}>
@@ -72,7 +72,7 @@ export default function Introduction() {
               <div className={`absolute inset-0 bg-gradient-to-tr ${
                 theme === 'dark' 
                 ? 'from-purple-500/20 to-blue-500/20' 
-                : 'from-purple-400/20 to-[#FF5722]/20'
+                : 'from-purple-400/20 to-[#3662e3]/20'
               } rounded-full blur-3xl`}></div>
               
               {/* Overlay per migliorare il contrasto sul tema chiaro */}
@@ -83,8 +83,8 @@ export default function Introduction() {
               <div className="relative z-10 animate-[float_6s_ease-in-out_infinite]">
                 <div className={`animate-[glow_2s_ease-in-out_infinite_alternate] filter ${
                   theme === 'dark'
-                  ? 'drop-shadow-[0_0_15px_rgba(255,87,34,0.7)]'
-                  : 'drop-shadow-[0_0_15px_rgba(255,87,34,0.5)]'
+                  ? 'drop-shadow-[0_0_15px_rgba(54,98,227,0.7)]'
+                  : 'drop-shadow-[0_0_15px_rgba(54,98,227,0.5)]'
                 }`}>
                   <LightningBolt className="w-full h-full" />
                 </div>

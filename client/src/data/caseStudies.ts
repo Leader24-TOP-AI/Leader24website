@@ -1,7 +1,7 @@
 export const caseStudies = [
   {
     company: "FiberNet Italia",
-    gradient: "bg-gradient-to-br from-[#7A2917] to-[#5A1800]",
+    gradient: "bg-gradient-to-br from-[#1e3a8a] to-[#1e40af]",
     titleStart: "Come FiberNet ha",
     titleHighlight: "aumentato del 40% la soddisfazione clienti",
     titleEnd: "con WhatsApp automatizzato",

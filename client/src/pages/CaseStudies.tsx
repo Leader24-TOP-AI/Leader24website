@@ -70,21 +70,21 @@ export default function CaseStudies() {
                 
                 <div className="grid grid-cols-3 gap-4 mb-8">
                   <div className={`rounded-lg p-4 text-center ${theme === 'dark' ? 'bg-white/5 border border-white/10' : 'bg-slate-800/5 border border-slate-200'}`}>
-                    <div className="text-[#FF5722] text-3xl font-bold mb-2">{t('stats.customerSatisfaction.value')}</div>
+                    <div className="text-[#3662e3] text-3xl font-bold mb-2">{t('stats.customerSatisfaction.value')}</div>
                     <div className={`text-sm ${theme === 'dark' ? 'text-[#E0E0E0]' : 'text-slate-700'}`}>{t('stats.customerSatisfaction.text')}</div>
                   </div>
                   <div className={`rounded-lg p-4 text-center ${theme === 'dark' ? 'bg-white/5 border border-white/10' : 'bg-slate-800/5 border border-slate-200'}`}>
-                    <div className="text-[#FF5722] text-3xl font-bold mb-2">{t('stats.timeReduction.value')}</div>
+                    <div className="text-[#3662e3] text-3xl font-bold mb-2">{t('stats.timeReduction.value')}</div>
                     <div className={`text-sm ${theme === 'dark' ? 'text-[#E0E0E0]' : 'text-slate-700'}`}>{t('stats.timeReduction.text')}</div>
                   </div>
                   <div className={`rounded-lg p-4 text-center ${theme === 'dark' ? 'bg-white/5 border border-white/10' : 'bg-slate-800/5 border border-slate-200'}`}>
-                    <div className="text-[#FF5722] text-3xl font-bold mb-2">{t('stats.support.value')}</div>
+                    <div className="text-[#3662e3] text-3xl font-bold mb-2">{t('stats.support.value')}</div>
                     <div className={`text-sm ${theme === 'dark' ? 'text-[#E0E0E0]' : 'text-slate-700'}`}>{t('stats.support.text')}</div>
                   </div>
                 </div>
                 
                 <Link href="/contatti">
-                  <Button className="bg-gradient-to-r from-[#FF5722] to-[#FFA07A] hover:from-[#FFA07A] hover:to-[#FF5722] text-white px-8 py-6 text-lg">
+                  <Button className="bg-gradient-to-r from-[#3662e3] to-[#5b82ff] hover:from-[#5b82ff] hover:to-[#3662e3] text-white px-8 py-6 text-lg">
                     {t('cta')}
                     <ChevronRight className="ml-2 h-5 w-5" />
                   </Button>
@@ -150,8 +150,8 @@ export default function CaseStudies() {
                   </div>
                   
                   {/* Elementi decorativi */}
-                  <div className="absolute top-10 -left-10 w-32 h-32 bg-[#FF5722]/10 rounded-full blur-xl"></div>
-                  <div className="absolute bottom-10 -right-10 w-32 h-32 bg-[#FF5722]/10 rounded-full blur-xl"></div>
+                  <div className="absolute top-10 -left-10 w-32 h-32 bg-[#3662e3]/10 rounded-full blur-xl"></div>
+                  <div className="absolute bottom-10 -right-10 w-32 h-32 bg-[#3662e3]/10 rounded-full blur-xl"></div>
                 </div>
               </div>
             </div>
@@ -161,19 +161,19 @@ export default function CaseStudies() {
               <div className={`text-center mb-4 text-sm uppercase tracking-wider ${theme === 'dark' ? 'text-[#E0E0E0]' : 'text-slate-600'}`}>{t('trustedBy')}</div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                 <div>
-                  <div className="text-[#FF5722] text-2xl font-bold mb-1">{t('companies.count')}</div>
+                  <div className="text-[#3662e3] text-2xl font-bold mb-1">{t('companies.count')}</div>
                   <div className={`text-sm ${theme === 'dark' ? 'text-[#BBBBBB]' : 'text-slate-500'}`}>{t('companies.label')}</div>
                 </div>
                 <div>
-                  <div className="text-[#FF5722] text-2xl font-bold mb-1">{t('sectors.count')}</div>
+                  <div className="text-[#3662e3] text-2xl font-bold mb-1">{t('sectors.count')}</div>
                   <div className={`text-sm ${theme === 'dark' ? 'text-[#BBBBBB]' : 'text-slate-500'}`}>{t('sectors.label')}</div>
                 </div>
                 <div>
-                  <div className="text-[#FF5722] text-2xl font-bold mb-1">{t('countries.count')}</div>
+                  <div className="text-[#3662e3] text-2xl font-bold mb-1">{t('countries.count')}</div>
                   <div className={`text-sm ${theme === 'dark' ? 'text-[#BBBBBB]' : 'text-slate-500'}`}>{t('countries.label')}</div>
                 </div>
                 <div>
-                  <div className="text-[#FF5722] text-2xl font-bold mb-1">{t('languages.count')}</div>
+                  <div className="text-[#3662e3] text-2xl font-bold mb-1">{t('languages.count')}</div>
                   <div className={`text-sm ${theme === 'dark' ? 'text-[#BBBBBB]' : 'text-slate-500'}`}>{t('languages.label')}</div>
                 </div>
               </div>
@@ -197,8 +197,8 @@ export default function CaseStudies() {
                     <div className={`mb-8 p-6 rounded-lg ${theme === 'dark' ? 'bg-white/5 border border-white/10' : 'bg-white border border-slate-200 shadow-sm'}`}>
                       <blockquote className={`italic mb-4 ${theme === 'dark' ? 'text-[#E0E0E0]' : 'text-slate-600'}`}>&ldquo;{caseStudy.quote}&rdquo;</blockquote>
                       <div className="flex items-center">
-                        <div className="w-10 h-10 rounded-full bg-[#FF5722]/20 flex items-center justify-center mr-3">
-                          <span className="text-[#FF5722] font-bold">
+                        <div className="w-10 h-10 rounded-full bg-[#60a5fa]/20 flex items-center justify-center mr-3">
+                          <span className="text-[#60a5fa] font-bold">
                             {caseStudy.person.name.includes("Laura") ? "L" : caseStudy.person.name.charAt(0)}
                           </span>
                         </div>
@@ -214,7 +214,7 @@ export default function CaseStudies() {
                       <ul className="space-y-2">
                         {caseStudy.challenges.map((challenge: string, idx: number) => (
                           <li key={idx} className="flex items-start">
-                            <span className="text-[#FF5722] mr-2">•</span>
+                            <span className="text-[#60a5fa] mr-2">•</span>
                             <span className={`${theme === 'dark' ? 'text-[#E0E0E0]' : 'text-slate-600'}`}>{challenge}</span>
                           </li>
                         ))}
@@ -231,7 +231,7 @@ export default function CaseStudies() {
                       <ul className="space-y-2">
                         {caseStudy.results.map((result: string, idx: number) => (
                           <li key={idx} className="flex items-start">
-                            <span className="text-[#FF5722] mr-2">✓</span>
+                            <span className="text-[#60a5fa] mr-2">✓</span>
                             <span className={`${theme === 'dark' ? 'text-[#E0E0E0]' : 'text-slate-600'}`}>{result}</span>
                           </li>
                         ))}
@@ -273,7 +273,7 @@ export default function CaseStudies() {
                     
                     <div className="mt-8">
                       <Link href="/contatti">
-                        <Button className="w-full bg-gradient-to-r from-[#FF5722] to-[#FFA07A] hover:from-[#FFA07A] hover:to-[#FF5722] text-white">
+                        <Button className="w-full bg-gradient-to-r from-[#3662e3] to-[#5b82ff] hover:from-[#5b82ff] hover:to-[#3662e3] text-white">
                           {t('detailsLabels.contact')}
                           <ChevronRight className="ml-2 h-4 w-4" />
                         </Button>

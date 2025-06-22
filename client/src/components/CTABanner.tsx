@@ -13,7 +13,7 @@ export default function CTABanner() {
       <div className={`absolute top-0 left-0 w-full h-full opacity-50 ${
         theme === 'dark' 
           ? 'bg-gradient-to-b from-purple-500/10 via-red-500/10 to-blue-500/10' 
-          : 'bg-gradient-to-b from-purple-400/5 via-orange-400/5 to-blue-400/5'
+          : 'bg-gradient-to-b from-purple-400/5 via-blue-400/5 to-blue-400/5'
       }`}></div>
       
       <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -31,8 +31,8 @@ export default function CTABanner() {
           }`} dangerouslySetInnerHTML={{ __html: t('cta.description') }}>
           </p>
           
-          <a href="https://dash.leader24.it/signup">
-            <Button size="default" className="bg-[#FF5722] hover:bg-[#FF5722] hover:opacity-90 text-white px-6 py-2.5 h-auto text-base">
+          <a href="https://dash.leader24.ai/auth/register">
+            <Button size="default" className="bg-[#3662e3] hover:bg-[#3662e3] hover:opacity-90 text-white px-6 py-2.5 h-auto text-base">
               {t('cta.button')}
             </Button>
           </a>

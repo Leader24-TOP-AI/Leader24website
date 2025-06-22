@@ -208,14 +208,14 @@ export default function SectorsPage() {
           <div 
             className="absolute rounded-full blur-3xl"
             style={{ 
-              backgroundColor: 'rgba(255, 87, 34, 0.7)', /* Arancione più intenso */
+              backgroundColor: 'rgba(54, 98, 227, 0.7)', /* Blu più intenso */
               width: `${gradientPosition.size3}px`, 
               height: `${gradientPosition.size3}px`,
               left: `${gradientPosition.x3}%`, 
               bottom: `${gradientPosition.y3}px`,
               transition: 'none',
               transform: `rotate(${gradientPosition.rotation3}deg)`,
-              boxShadow: '0 0 200px 100px rgba(255, 87, 34, 0.45)',
+              boxShadow: '0 0 200px 100px rgba(54, 98, 227, 0.45)',
               mixBlendMode: 'screen'
             }}
           ></div>
@@ -237,16 +237,16 @@ export default function SectorsPage() {
           ></div>
         </div>
         
-        <div className="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-[#FF5722]/5 to-transparent"></div>
+        <div className="absolute top-0 left-0 right-0 h-1/3 bg-gradient-to-b from-[#3662e3]/5 to-transparent"></div>
         
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <div className="flex items-center justify-center mb-12">
             <Badge variant="outline" className={`inline-flex items-center px-4 py-2 text-sm font-medium rounded-full ${
               theme === 'dark' 
-                ? 'bg-[#FF5722]/20 text-white border-[#FF5722]/20' 
-                : 'bg-[#FF5722]/10 text-[#FF5722] border-[#FF5722]/20'
+                ? 'bg-[#3662e3]/20 text-white border-[#3662e3]/20' 
+                : 'bg-[#3662e3]/10 text-[#3662e3] border-[#3662e3]/20'
             }`}>
-              <Zap className="w-5 h-5 mr-2 text-[#FF5722]" />
+              <Zap className="w-5 h-5 mr-2 text-[#3662e3]" />
               {t('badge')}
             </Badge>
           </div>
@@ -285,7 +285,7 @@ export default function SectorsPage() {
                       variant={selectedIndustry.nameKey === industry.nameKey ? "default" : "ghost"}
                       className={`w-full justify-start ${
                         selectedIndustry.nameKey === industry.nameKey 
-                          ? 'bg-[#FF5722] hover:bg-[#FF5722] hover:opacity-90 text-white' 
+                          ? 'bg-[#3662e3] hover:bg-[#3662e3] hover:opacity-90 text-white' 
                           : theme === 'dark'
                             ? 'text-white/70 hover:text-white'
                             : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100'
@@ -326,7 +326,7 @@ export default function SectorsPage() {
                 <CardHeader>
                   <CardTitle className="text-2xl md:text-3xl">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-[#FF5722]/20 flex items-center justify-center text-[#FF5722]">
+                      <div className="w-10 h-10 rounded-full bg-[#60a5fa]/20 flex items-center justify-center text-[#60a5fa]">
                         {getIcon(selectedIndustry.icon)}
                       </div>
                       {selectedIndustry.nameKey ? t(`industryNames.${selectedIndustry.nameKey}`) : selectedIndustry.name}
@@ -341,8 +341,8 @@ export default function SectorsPage() {
                 <CardContent>
                   <div className={`p-6 rounded-lg mb-8 ${
                     theme === 'dark'
-                      ? 'bg-gradient-to-r from-[#FF5722]/10 to-transparent'
-                      : 'bg-gradient-to-r from-[#FF5722]/5 to-white border border-slate-100'
+                      ? 'bg-gradient-to-r from-[#3662e3]/10 to-transparent'
+                      : 'bg-gradient-to-r from-[#3662e3]/5 to-white border border-slate-100'
                   }`}>
                     <h3 className={`text-xl mb-4 font-medium ${
                       theme === 'dark' ? 'text-white' : 'text-slate-800'
@@ -350,8 +350,8 @@ export default function SectorsPage() {
                     <div className="grid md:grid-cols-2 gap-4">
                       {selectedIndustry.benefits.map((benefit, index) => (
                         <div key={index} className="flex items-start space-x-3">
-                          <div className="rounded-full bg-[#FF5722]/20 p-1 mt-0.5">
-                            <Check className="h-4 w-4 text-[#FF5722]" />
+                          <div className="rounded-full bg-[#60a5fa]/20 p-1 mt-0.5">
+                            <Check className="h-4 w-4 text-[#60a5fa]" />
                           </div>
                           <span className={`${
                             theme === 'dark' ? 'text-[#E0E0E0]' : 'text-slate-700'
@@ -378,15 +378,15 @@ export default function SectorsPage() {
                       theme === 'dark' ? 'text-[#E0E0E0]' : 'text-slate-700'
                     }`}>
                       <li className="flex items-start space-x-2">
-                        <ArrowRight className="h-5 w-5 text-[#FF5722] min-w-[20px] mt-0.5" />
+                        <ArrowRight className="h-5 w-5 text-[#60a5fa] min-w-[20px] mt-0.5" />
                         <span>{t('benefit1')}</span>
                       </li>
                       <li className="flex items-start space-x-2">
-                        <ArrowRight className="h-5 w-5 text-[#FF5722] min-w-[20px] mt-0.5" />
+                        <ArrowRight className="h-5 w-5 text-[#60a5fa] min-w-[20px] mt-0.5" />
                         <span>{t('benefit2')}</span>
                       </li>
                       <li className="flex items-start space-x-2">
-                        <ArrowRight className="h-5 w-5 text-[#FF5722] min-w-[20px] mt-0.5" />
+                        <ArrowRight className="h-5 w-5 text-[#60a5fa] min-w-[20px] mt-0.5" />
                         <span>{t('benefit3')}</span>
                       </li>
                     </ul>
@@ -394,7 +394,7 @@ export default function SectorsPage() {
                 </CardContent>
                 <CardFooter>
                   <Button 
-                    className="bg-[#FF5722] hover:bg-[#FF5722] hover:opacity-90 text-white w-full"
+                    className="bg-[#3662e3] hover:bg-[#3662e3] hover:opacity-90 text-white w-full"
                     onClick={() => {
                       window.scrollTo(0, 0);
                       window.location.href = t('urls.contacts', '/contatti');
@@ -519,8 +519,8 @@ export default function SectorsPage() {
           
           <div className={`rounded-xl p-8 text-center max-w-5xl mx-auto ${
             theme === 'dark'
-              ? 'bg-gradient-to-r from-[#6200EA]/20 via-[#FF5722]/20 to-[#2196F3]/20 border border-white/10'
-              : 'bg-gradient-to-r from-[#6200EA]/5 via-[#FF5722]/5 to-[#2196F3]/5 border border-slate-200 shadow-sm'
+              ? 'bg-gradient-to-r from-[#6200EA]/20 via-[#3662e3]/20 to-[#2196F3]/20 border border-white/10'
+              : 'bg-gradient-to-r from-[#6200EA]/5 via-[#3662e3]/5 to-[#2196F3]/5 border border-slate-200 shadow-sm'
           }`}>
             <h2 className={`text-2xl md:text-3xl font-bold mb-4 ${
               theme === 'dark' ? 'text-white' : 'text-slate-800'
@@ -535,7 +535,7 @@ export default function SectorsPage() {
             <div className="flex justify-center">
               <Button 
                 size="lg" 
-                className="bg-[#FF5722] text-white hover:bg-[#FF5722] hover:opacity-90"
+                className="bg-[#3662e3] text-white hover:bg-[#3662e3] hover:opacity-90"
                 onClick={() => {
                   window.scrollTo(0, 0);
                   window.location.href = t('urls.contacts', '/contatti');
