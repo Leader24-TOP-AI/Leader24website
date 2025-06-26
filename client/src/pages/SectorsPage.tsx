@@ -53,6 +53,13 @@ export default function SectorsPage() {
   const getTranslatedIndustryName = (industry: any) => {
     return industry.nameKey ? t(`industryNames.${industry.nameKey}`) : industry.name;
   };
+  
+  // Get translated industry data
+  const translatedIndustries = t('industries', { returnObjects: true }) as any[];
+  const getTranslatedIndustry = (industry: Industry) => {
+    const industryIndex = industries.findIndex(ind => ind === industry);
+    return translatedIndustries[industryIndex] || industry;
+  };
   const [gradientPosition, setGradientPosition] = useState({
     x1: -40, 
     y1: 40,
@@ -335,7 +342,7 @@ export default function SectorsPage() {
                   <CardDescription className={`text-lg ${
                     theme === 'dark' ? 'text-[#E0E0E0]' : 'text-slate-600'
                   }`}>
-                    {selectedIndustry.description}
+                    {getTranslatedIndustry(selectedIndustry).description}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -348,7 +355,7 @@ export default function SectorsPage() {
                       theme === 'dark' ? 'text-white' : 'text-slate-800'
                     }`}>{t('benefits')} {selectedIndustry.nameKey ? t(`industryNames.${selectedIndustry.nameKey}`) : selectedIndustry.name}</h3>
                     <div className="grid md:grid-cols-2 gap-4">
-                      {selectedIndustry.benefits.map((benefit, index) => (
+                      {getTranslatedIndustry(selectedIndustry).benefits.map((benefit: string, index: number) => (
                         <div key={index} className="flex items-start space-x-3">
                           <div className="rounded-full bg-[#60a5fa]/20 p-1 mt-0.5">
                             <Check className="h-4 w-4 text-[#60a5fa]" />

@@ -217,9 +217,7 @@ export default function Features() {
         
         <div className="mt-16 md:mt-24 max-w-3xl mx-auto text-center">
           <h3 className={`text-2xl md:text-3xl font-bold mb-4 bg-gradient-to-r ${theme === 'dark' ? 'from-white to-gray-300' : 'from-slate-800 to-slate-600'} text-transparent bg-clip-text`}>{t('features.conclusion.title')}</h3>
-          <p className={`text-base ${theme === 'dark' ? 'text-[#E0E0E0]' : 'text-slate-700'} mb-8`}>
-            {t('features.conclusion.description')}
-          </p>
+          <p className={`text-base ${theme === 'dark' ? 'text-[#E0E0E0]' : 'text-slate-700'} mb-8`} dangerouslySetInnerHTML={{ __html: t('features.conclusion.description') }}></p>
           
         </div>
         
