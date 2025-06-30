@@ -126,10 +126,21 @@ export default function Contacts() {
 
     setIsSubmitting(true);
     
-    // Simulazione invio dati
     try {
-      // Qui andrà la chiamata API reale
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      // Chiamata API reale
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Errore durante l\'invio');
+      }
       
       toast({
         title: t('validation.messageSent'),
@@ -146,10 +157,11 @@ export default function Contacts() {
       });
       
     } catch (error) {
+      console.error('Errore invio form:', error);
       toast({
         variant: "destructive",
         title: t('validation.sendError'),
-        description: t('validation.tryAgain')
+        description: error instanceof Error ? error.message : t('validation.tryAgain')
       });
     } finally {
       setIsSubmitting(false);

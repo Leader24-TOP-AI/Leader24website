@@ -58,7 +58,7 @@ npm run db:push      # Push database schema changes with Drizzle Kit
 2. **Adding Components**: Follow existing Shadcn/ui patterns in the ui/ directory
 3. **Translations**: Update both `/public/locales/en/` and `/public/locales/it/` when adding new text
 4. **API Routes**: Define new routes in `/server/routes.ts`
-5. **Environment Variables**: Required vars include `DATABASE_URL`, optional include `PORT`, `SENDGRID_API_KEY`, `OPENAI_API_KEY`
+5. **Environment Variables**: Required vars include `DATABASE_URL`, optional include `PORT`, `RESEND_API_KEY`, `OPENAI_API_KEY`
 
 ### Common Patterns
 
