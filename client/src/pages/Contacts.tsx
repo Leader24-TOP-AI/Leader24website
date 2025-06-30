@@ -36,6 +36,7 @@ export default function Contacts() {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
   
   // Effetto per gestire lo scrolling alle FAQ in modo personalizzato
   React.useEffect(() => {
@@ -142,6 +143,9 @@ export default function Contacts() {
         throw new Error(result.error || 'Errore durante l\'invio');
       }
       
+      // Mostra messaggio di successo
+      setIsSuccess(true);
+      
       toast({
         title: t('validation.messageSent'),
         description: t('validation.willRespond'),
@@ -155,6 +159,9 @@ export default function Contacts() {
         company: "",
         message: "",
       });
+      
+      // Nascondi messaggio di successo dopo 10 secondi
+      setTimeout(() => setIsSuccess(false), 10000);
       
     } catch (error) {
       console.error('Errore invio form:', error);
@@ -244,6 +251,27 @@ export default function Contacts() {
                   </CardHeader>
                   
                   <CardContent>
+                    {/* Messaggio di conferma successo */}
+                    {isSuccess && (
+                      <div className={`mb-6 p-4 rounded-lg border ${
+                        theme === 'dark' 
+                          ? 'bg-green-900/20 border-green-500/30 text-green-300' 
+                          : 'bg-green-50 border-green-200 text-green-800'
+                      }`}>
+                        <div className="flex items-center">
+                          <svg className="w-5 h-5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                          </svg>
+                          <div>
+                            <p className="font-semibold">Messaggio inviato con successo!</p>
+                            <p className="text-sm mt-1">
+                              Ti abbiamo inviato una email di conferma. Ti risponderemo entro 24 ore.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                    
                     <form onSubmit={handleSubmit} className="space-y-4">
                       <div className="grid md:grid-cols-2 gap-4">
                         <div className="space-y-2">
