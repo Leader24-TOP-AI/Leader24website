@@ -27,7 +27,9 @@
     "sendError": "Sending Error",
     "tryAgain": "An error occurred. Please try again later.",
     "messageSent": "Message sent!",
-    "willRespond": "We'll respond as soon as possible."
+    "willRespond": "We'll respond as soon as possible.",
+    "successTitle": "Message sent successfully!",
+    "successMessage": "We've sent you a confirmation email. We'll respond within 24 hours."
   },
   "faq": {
     "title": "Frequently Asked Questions",

@@ -27,7 +27,9 @@
     "sendError": "Errore di invio",
     "tryAgain": "Si è verificato un errore. Riprova più tardi.",
     "messageSent": "Messaggio inviato!",
-    "willRespond": "Ti risponderemo al più presto."
+    "willRespond": "Ti risponderemo al più presto.",
+    "successTitle": "Messaggio inviato con successo!",
+    "successMessage": "Ti abbiamo inviato una email di conferma. Ti risponderemo entro 24 ore."
   },
   "faq": {
     "title": "Domande frequenti",
