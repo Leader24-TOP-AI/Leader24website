@@ -1,11 +1,22 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { Resend } from 'resend';
-import { insertContactSchema, type InsertContact } from '@shared/schema';
+import { Pool, neonConfig } from '@neondatabase/serverless';
+import { drizzle } from 'drizzle-orm/neon-serverless';
+import { contactSubmissions, type InsertContact } from '../shared/schema';
 import { z } from 'zod';
-import { db } from '../server/db';
-import { contactSubmissions } from '@shared/schema';
+import ws from "ws";
+
+neonConfig.webSocketConstructor = ws;
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+
+// Configurazione database
+if (!process.env.DATABASE_URL) {
+  throw new Error("DATABASE_URL must be set");
+}
+
+const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+const db = drizzle(pool);
 
 // Schema per validazione del body della richiesta
 const contactRequestSchema = z.object({
