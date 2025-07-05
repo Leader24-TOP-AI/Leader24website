@@ -53,7 +53,7 @@ app.use((req, res, next) => {
   }
 
   // ───────────────  avvio server ─────────────
-  const port = parseInt(process.env.PORT || "8080", 10); // <— qui la porta dinamica
+  const port = parseInt(process.env.PORT || "5000", 10); // <— qui la porta dinamica
 
   server.listen(port, () => {
     log(`serving on port ${port}`);

@@ -81,23 +81,51 @@ export default function Features() {
     };
   }, [handleMouseMove]);
   
-  // Map to render the correct icon based on iconName
+  // Map to render the correct icon based on iconName with harmonized backgrounds
   const getIconComponent = (iconName: string) => {
     switch (iconName) {
       case 'MessageSquare':
-        return <MessageSquare className="w-6 h-6 text-[#60a5fa]" />;
+        return (
+          <div className="w-12 h-12 bg-blue-100/60 rounded-full flex items-center justify-center mb-6 transition-all duration-500 group-hover:bg-blue-100/80">
+            <MessageSquare className="w-6 h-6 text-blue-500" />
+          </div>
+        );
       case 'Layers':
-        return <Layers className="w-6 h-6 text-[#60a5fa]" />;
+        return (
+          <div className="w-12 h-12 bg-indigo-100/60 rounded-full flex items-center justify-center mb-6 transition-all duration-500 group-hover:bg-indigo-100/80">
+            <Layers className="w-6 h-6 text-indigo-500" />
+          </div>
+        );
       case 'Clock':
-        return <Clock className="w-6 h-6 text-[#60a5fa]" />;
+        return (
+          <div className="w-12 h-12 bg-amber-100/60 rounded-full flex items-center justify-center mb-6 transition-all duration-500 group-hover:bg-amber-100/80">
+            <Clock className="w-6 h-6 text-amber-500" />
+          </div>
+        );
       case 'Globe':
-        return <Globe className="w-6 h-6 text-[#60a5fa]" />;
+        return (
+          <div className="w-12 h-12 bg-emerald-100/60 rounded-full flex items-center justify-center mb-6 transition-all duration-500 group-hover:bg-emerald-100/80">
+            <Globe className="w-6 h-6 text-emerald-500" />
+          </div>
+        );
       case 'CalendarDays':
-        return <CalendarDays className="w-6 h-6 text-[#60a5fa]" />;
+        return (
+          <div className="w-12 h-12 bg-rose-100/60 rounded-full flex items-center justify-center mb-6 transition-all duration-500 group-hover:bg-rose-100/80">
+            <CalendarDays className="w-6 h-6 text-rose-500" />
+          </div>
+        );
       case 'Settings':
-        return <Settings className="w-6 h-6 text-[#60a5fa]" />;
+        return (
+          <div className="w-12 h-12 bg-purple-100/60 rounded-full flex items-center justify-center mb-6 transition-all duration-500 group-hover:bg-purple-100/80">
+            <Settings className="w-6 h-6 text-purple-500" />
+          </div>
+        );
       default:
-        return <MessageSquare className="w-6 h-6 text-[#60a5fa]" />;
+        return (
+          <div className="w-12 h-12 bg-blue-100/60 rounded-full flex items-center justify-center mb-6 transition-all duration-500 group-hover:bg-blue-100/80">
+            <MessageSquare className="w-6 h-6 text-blue-500" />
+          </div>
+        );
     }
   };
 
@@ -185,9 +213,7 @@ export default function Features() {
               </div>
               
               <CardContent className="p-0 relative z-10">
-                <div className="w-12 h-12 bg-[#60a5fa]/20 rounded-full flex items-center justify-center mb-6 transition-all duration-500 group-hover:bg-[#60a5fa]/30">
-                  {getIconComponent(feature.iconName)}
-                </div>
+                {getIconComponent(feature.iconName)}
                 
                 <h3 className={`text-xl font-semibold mb-3 transition-all duration-500 ${
                   theme === 'dark' 
