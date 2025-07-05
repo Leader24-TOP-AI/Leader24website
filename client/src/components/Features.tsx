@@ -246,31 +246,6 @@ export default function Features() {
           <p className={`text-base ${theme === 'dark' ? 'text-[#E0E0E0]' : 'text-slate-700'} mb-8`} dangerouslySetInnerHTML={{ __html: t('features.conclusion.description') }}></p>
           
         </div>
-        
-        {/* Box per l'Assistente AI spostato qui dalla hero section */}
-        <div className="mt-20 max-w-2xl mx-auto">
-          <div className={`p-6 ${theme === 'dark' ? 'bg-white/5 border-white/10' : 'bg-black/5 border-black/10'} border rounded-xl relative overflow-hidden group animate-float hover:shadow-xl`}>
-            {/* Effetto highlight sull'angolo */}
-            <div 
-              className="absolute -top-10 -right-10 w-20 h-20 bg-gradient-to-br from-[#3662e3]/30 to-transparent rotate-12 blur-lg group-hover:scale-150 transition-transform duration-700 ease-out"
-            ></div>
-            
-            <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r from-[#3662e3] via-[#5b82ff] to-[#60a5fa] animate-gradient-x text-transparent bg-clip-text">
-              {t('features.aiAssistant.title')}
-            </h2>
-            <p className={`${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'} mb-4 relative z-10`}>
-              {t('features.aiAssistant.description')}
-            </p>
-            <p className={`${theme === 'dark' ? 'text-gray-400' : 'text-gray-500'} text-sm relative z-10`}>
-              {t('features.aiAssistant.note')}
-            </p>
-            
-            {/* Border shine effect */}
-            <div className={`absolute inset-0 border ${theme === 'dark' ? 'border-white/10' : 'border-black/10'} rounded-xl overflow-hidden`}>
-              <div className={`absolute inset-0 bg-gradient-to-r from-transparent ${theme === 'dark' ? 'via-white/20' : 'via-black/10'} to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1500 ease-in-out`}></div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
