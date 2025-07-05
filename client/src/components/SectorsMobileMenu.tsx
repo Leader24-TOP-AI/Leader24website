@@ -101,7 +101,7 @@ export default function SectorsMobileMenu() {
         
         <a 
           href="https://api.whatsapp.com/send?phone=393762493961&text=Salve,%20vorrei%20una%20dimostrazione%20su%20come%20funziona%20il%20vostro%20servizio" 
-          className="mt-8 px-6 py-3 bg-[#FF5722] text-white rounded-md text-lg font-medium"
+          className="mt-8 px-6 py-3 bg-[#FF5722] text-white rounded-full text-lg font-medium"
         >
           Prova Gratuita
         </a>

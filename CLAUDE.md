@@ -67,3 +67,8 @@ npm run db:push      # Push database schema changes with Drizzle Kit
 3. **Styling**: Use Tailwind CSS classes, custom animations defined in `tailwind.config.ts`
 4. **Error Handling**: Centralized error handler in server, use try-catch blocks in async functions
 5. **TypeScript**: Strict mode enabled, avoid using `any` type
+
+## Memories
+
+### GitHub Repositories
+- quando ti chiedo di salvare su github salva sempre qui https://github.com/Leader24-TOP-AI/Leader24website

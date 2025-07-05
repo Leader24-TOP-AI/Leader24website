@@ -139,7 +139,7 @@ export default function MobileMenu() {
         <div className="flex flex-col space-y-4">
           <a 
             href="https://dash.leader24.ai" 
-            className="px-6 py-2 border border-[color:var(--border-color)] text-[color:var(--foreground)] rounded-md text-lg font-medium hover:bg-[color:var(--hover-overlay)] transition-colors"
+            className="px-6 py-2 border border-[color:var(--border-color)] text-[color:var(--foreground)] rounded-full text-lg font-medium hover:bg-[color:var(--hover-overlay)] transition-colors"
           >
             <span className="flex items-center justify-center gap-2">
               <svg 
@@ -161,7 +161,7 @@ export default function MobileMenu() {
           </a>
           <a 
             href="https://dash.leader24.it/signup" 
-            className="px-6 py-3 bg-[color:var(--btn-primary-bg)] text-[color:var(--btn-primary-text)] rounded-md text-lg font-medium hover:bg-[color:var(--btn-primary-bg)] hover:opacity-90 transition-colors"
+            className="px-6 py-3 bg-[color:var(--btn-primary-bg)] text-[color:var(--btn-primary-text)] rounded-full text-lg font-medium hover:bg-[color:var(--btn-primary-bg)] hover:opacity-90 transition-colors"
           >
             {t('header.trial', 'Prova Gratis')}
           </a>
