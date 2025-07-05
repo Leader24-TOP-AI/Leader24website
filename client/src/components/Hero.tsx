@@ -236,24 +236,24 @@ export default function Hero() {
             >
               <Button 
                 size="lg" 
-                className="relative overflow-hidden bg-gradient-to-r from-[#3662e3] to-[#5b82ff] text-white px-6 py-3 h-auto text-base font-medium w-full md:w-auto group shadow-md shadow-[#3662e3]/10"
+                className="relative overflow-hidden bg-gradient-to-r from-[#3662e3] to-[#5b82ff] text-white px-8 py-4 h-auto text-base font-medium w-full md:w-auto group shadow-md shadow-[#3662e3]/10 rounded-full"
               >
-                <span className="relative z-10">{t('hero.buttons.freeTrial')}</span>
-                <span className="absolute inset-0 bg-gradient-to-r from-[#5b82ff] to-[#3662e3] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out"></span>
+                <span className="relative z-10">Crea il tuo agente</span>
+                <span className="absolute inset-0 bg-gradient-to-r from-[#5b82ff] to-[#3662e3] opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out rounded-full"></span>
               </Button>
             </a>
             
             <Button 
               size="lg" 
               variant="outline" 
-              className="relative dark:border-white/30 border-slate-500/50 overflow-hidden px-6 py-3 h-auto text-base font-medium w-full md:w-auto group shadow-md dark:shadow-white/5 shadow-slate-500/10"
+              className="relative dark:border-white/30 border-slate-500/50 overflow-hidden px-8 py-4 h-auto text-base font-medium w-full md:w-auto group shadow-md dark:shadow-white/5 shadow-slate-500/10 rounded-full"
               onClick={() => scrollToElement('features')}
             >
               <span className="relative z-10 dark:bg-gradient-to-r dark:from-white dark:to-gray-300 bg-gradient-to-r from-slate-700 to-slate-900 text-transparent bg-clip-text transition-all duration-500 dark:group-hover:from-gray-300 dark:group-hover:to-white group-hover:from-slate-900 group-hover:to-slate-700">
-                {t('hero.buttons.learnMore')}
+                Scopri di Più
               </span>
-              <span className="absolute inset-0 dark:border dark:border-white/30 border border-slate-500/50 rounded-md opacity-100"></span>
-              <span className="absolute inset-0 dark:bg-white/10 bg-slate-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+              <span className="absolute inset-0 dark:border dark:border-white/30 border border-slate-500/50 rounded-full opacity-100"></span>
+              <span className="absolute inset-0 dark:bg-white/10 bg-slate-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full"></span>
             </Button>
           </div>
         </div>
