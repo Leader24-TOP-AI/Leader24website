@@ -22,26 +22,15 @@ export default function SectorsPage() {
   // Funzione per trovare l'industria dall'hash URL
   const findIndustryFromHash = () => {
     if (typeof window !== 'undefined') {
-      const hash = window.location.hash.replace('#', '');
+      const hash = window.location.hash.replace('#', '').toLowerCase();
       if (hash) {
-        // Prima cerca per nameKey esatto
-        let industry = industries.find(i => i.nameKey === hash);
-        
-        // Se non trova, prova a mappare alcuni nomi italiani comuni alle chiavi inglesi
-        if (!industry) {
-          const italianToEnglishMap: Record<string, string> = {
-            'assicurazioni': 'insurance',
-            'turismo': 'tourism',
-            'immobiliare': 'realEstate',
-            'ecommerce': 'ecommerce'
-          };
-          
-          const mappedKey = italianToEnglishMap[hash.toLowerCase()];
-          if (mappedKey) {
-            industry = industries.find(i => i.nameKey === mappedKey);
-          }
-        }
-        
+        // Cerca l'industria il cui slug tradotto corrisponde all'hash
+        const industry = industries.find(ind => {
+          const translatedName = ind.nameKey ? t(`industryNames.${ind.nameKey}`) : ind.name;
+          const slug = translatedName.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, '-');
+          return slug === hash || ind.nameKey === hash; // Supporta sia slug tradotti che nameKey in inglese per retrocompatibilità
+        });
+
         if (industry) {
           return industry;
         }
@@ -61,6 +50,12 @@ export default function SectorsPage() {
   // Funzione per ottenere il nome tradotto del settore
   const getTranslatedIndustryName = (industry: any) => {
     return industry.nameKey ? t(`industryNames.${industry.nameKey}`) : industry.name;
+  };
+
+  // Funzione per ottenere un ID URL-friendly dall'industria tradotta
+  const getTranslatedIndustrySlug = (industry: any) => {
+    const translatedName = getTranslatedIndustryName(industry);
+    return translatedName.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, '-');
   };
   
   // Get translated industry data
@@ -311,10 +306,10 @@ export default function SectorsPage() {
                       onClick={() => {
                         // Per E-commerce, reindirizziamo alla pagina dedicata
                         if (industry.nameKey === 'ecommerce') {
-                          window.location.href = "/settori/ecommerce";
+                          window.location.href = lang === 'en' ? "/en/industries/ecommerce" : "/settori/ecommerce";
                         } else {
-                          // Aggiorna l'hash dell'URL invece di impostare direttamente lo stato
-                          window.location.hash = industry.nameKey || '';
+                          // Aggiorna l'hash dell'URL con lo slug tradotto
+                          window.location.hash = getTranslatedIndustrySlug(industry);
                         }
                       }}
                     >
