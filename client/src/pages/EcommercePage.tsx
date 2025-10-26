@@ -61,9 +61,97 @@ export default function EcommercePage() {
     }
   ];
 
+  // Structured Data for SEO
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": lang === 'en' ? "AI Customer Care for E-commerce - 24/7 Support" : "Customer Care AI per E-commerce - Assistenza 24/7",
+    "description": metadata.description,
+    "author": {
+      "@type": "Organization",
+      "name": "Leader24",
+      "url": "https://leader24.ai"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Leader24",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://leader24.ai/og-image.jpg"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": metadata.canonical
+    },
+    "about": {
+      "@type": "Service",
+      "serviceType": lang === 'en' ? "AI Customer Support for E-commerce" : "Assistenza Clienti AI per E-commerce",
+      "provider": {
+        "@type": "Organization",
+        "name": "Leader24"
+      },
+      "areaServed": "IT",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "E-commerce Business Owners"
+      }
+    }
+  };
+
+  const faqStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": t('faq.questions.implementation.question'),
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": t('faq.questions.implementation.answer')
+        }
+      },
+      {
+        "@type": "Question",
+        "name": t('faq.questions.integration.question'),
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": t('faq.questions.integration.answer')
+        }
+      },
+      {
+        "@type": "Question",
+        "name": t('faq.questions.satisfaction.question'),
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": t('faq.questions.satisfaction.answer')
+        }
+      },
+      {
+        "@type": "Question",
+        "name": t('faq.questions.catalog.question'),
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": t('faq.questions.catalog.answer')
+        }
+      }
+    ]
+  };
+
   return (
     <>
       <SEO metadata={metadata} lang={lang} />
+
+      {/* Structured Data JSON-LD for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
+      />
+
       <div className={`min-h-screen font-sans overflow-x-hidden ${theme === 'dark' ? 'bg-[#0A0A10]' : 'bg-gray-50'}`}>
         <Header />
         <MobileMenu />
