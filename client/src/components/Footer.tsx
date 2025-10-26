@@ -66,7 +66,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href={t('urls.sectors', '/settori') + "/ecommerce"} className="text-sm dark:text-[#BBBBBB] text-slate-600 dark:hover:text-white hover:text-slate-900 transition-colors">
+                <a href="/settori/ecommerce" className="text-sm dark:text-[#BBBBBB] text-slate-600 dark:hover:text-white hover:text-slate-900 transition-colors">
                   {t('footer.ecommerce')}
                 </a>
               </li>
