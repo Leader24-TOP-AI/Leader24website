@@ -87,11 +87,17 @@ export default function Header() {
           >
             {t('header.features', 'Funzionalità')}
           </a>
-          <Link 
-            href={t('urls.sectors', '/settori')} 
+          <Link
+            href={t('urls.sectors', '/settori')}
             className={navItemClasses}
           >
             {t('header.sectors')}
+          </Link>
+          <Link
+            href="/settori/ecommerce"
+            className={navItemClasses}
+          >
+            E-commerce
           </Link>
           <Link href={t('urls.caseStudies', '/casi-studio')} className={navItemClasses}>
             {t('header.caseStudies')}
