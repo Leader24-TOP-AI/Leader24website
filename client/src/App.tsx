@@ -14,7 +14,7 @@ import Cookie from "@/pages/Cookie";
 import Privacy from "@/pages/Privacy";
 import Terms from "@/pages/Terms";
 import NotFound from "@/pages/not-found";
-import { useEffect } from "react";
+import { useEffect, Suspense } from "react";
 
 function Router() {
   // Hook per ottenere il pathname corrente
@@ -59,13 +59,27 @@ function Router() {
   );
 }
 
+// Loading component da mostrare durante il caricamento delle traduzioni
+function LoadingFallback() {
+  return (
+    <div className="min-h-screen bg-[#0A0A10] flex items-center justify-center">
+      <div className="flex flex-col items-center gap-4">
+        <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+        <p className="text-white text-lg">Caricamento...</p>
+      </div>
+    </div>
+  );
+}
+
 function App() {
   return (
     <HelmetProvider>
       <QueryClientProvider client={queryClient}>
         <ThemeProvider defaultTheme="dark">
-          <Router />
-          <Toaster />
+          <Suspense fallback={<LoadingFallback />}>
+            <Router />
+            <Toaster />
+          </Suspense>
         </ThemeProvider>
       </QueryClientProvider>
     </HelmetProvider>

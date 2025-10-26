@@ -17,11 +17,16 @@ i18n
       loadPath: '/locales/{{lng}}/{{ns}}.json',
     },
     detection: {
-      order: ['localStorage', 'cookie', 'navigator'],
+      order: ['path', 'localStorage', 'cookie', 'navigator'],
       caches: ['localStorage', 'cookie'],
+      lookupFromPathIndex: 0,
     },
     defaultNS: 'common',
-    ns: ['common', 'home', 'sectors', 'ecommerce', 'casestudies', 'contact', 'privacy', 'cookie', 'terms']
+    ns: ['common', 'home', 'sectors', 'ecommerce', 'casestudies', 'contact', 'privacy', 'cookie', 'terms'],
+    react: {
+      useSuspense: true,
+    },
+    load: 'languageOnly',
   });
 
 export default i18n;
