@@ -42,18 +42,21 @@ function generateSitemap() {
     fs.mkdirSync(distPath, { recursive: true });
   }
 
-  // Generate sitemap.xml (Italian only - for AI crawlers)
-  let sitemapIT = `<?xml version="1.0" encoding="UTF-8"?>
+  // Generate single sitemap.xml with all pages - Italian priority
+  let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 `;
 
-  console.log('📝 Generating sitemap.xml (Italian only - for AI crawlers)...\n');
+  console.log('📝 Generating sitemap.xml (All pages - Italian priority)...\n');
+
+  // Add Italian pages first with HIGH priority
+  console.log('🇮🇹 Italian pages (HIGH priority):\n');
   for (const route of italianRoutes) {
     const url = `${baseUrl}${route.path}`;
     const englishUrl = `${baseUrl}${route.enPath}`;
 
-    sitemapIT += `  <url>
+    sitemap += `  <url>
     <loc>${url}</loc>
     <lastmod>${lastmod}</lastmod>
     <changefreq>${route.changefreq}</changefreq>
@@ -66,43 +69,13 @@ function generateSitemap() {
     console.log(`✅ IT ${route.path.padEnd(30)} priority: ${route.priority}`);
   }
 
-  sitemapIT += `</urlset>
-`;
-
-  fs.writeFileSync(path.join(distPath, 'sitemap.xml'), sitemapIT, 'utf-8');
-
-  // Generate sitemap-all.xml (All languages - for Google)
-  let sitemapAll = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-`;
-
-  console.log('\n📝 Generating sitemap-all.xml (All languages - for Google)...\n');
-
-  // Add Italian pages
-  for (const route of italianRoutes) {
-    const url = `${baseUrl}${route.path}`;
-    const englishUrl = `${baseUrl}${route.enPath}`;
-
-    sitemapAll += `  <url>
-    <loc>${url}</loc>
-    <lastmod>${lastmod}</lastmod>
-    <changefreq>${route.changefreq}</changefreq>
-    <priority>${route.priority}</priority>
-    <xhtml:link rel="alternate" hreflang="it" href="${url}" />
-    <xhtml:link rel="alternate" hreflang="en" href="${englishUrl}" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="${url}" />
-  </url>
-`;
-  }
-
-  // Add English pages
-  console.log('Adding English pages to sitemap-all.xml...\n');
+  // Add English pages with VERY LOW priority
+  console.log('\n🇬🇧 English pages (LOW priority):\n');
   for (const route of englishRoutes) {
     const url = `${baseUrl}${route.path}`;
     const italianUrl = `${baseUrl}${route.itPath}`;
 
-    sitemapAll += `  <url>
+    sitemap += `  <url>
     <loc>${url}</loc>
     <lastmod>${lastmod}</lastmod>
     <changefreq>${route.changefreq}</changefreq>
@@ -115,20 +88,18 @@ function generateSitemap() {
     console.log(`✅ EN ${route.path.padEnd(30)} priority: ${route.priority}`);
   }
 
-  sitemapAll += `</urlset>
+  sitemap += `</urlset>
 `;
 
-  fs.writeFileSync(path.join(distPath, 'sitemap-all.xml'), sitemapAll, 'utf-8');
+  fs.writeFileSync(path.join(distPath, 'sitemap.xml'), sitemap, 'utf-8');
 
   console.log(`\n${'='.repeat(60)}`);
-  console.log(`✅ Sitemaps generated successfully!`);
-  console.log(`📁 Location: ${distPath}`);
-  console.log(`\n📄 sitemap.xml (Italian only):`);
-  console.log(`   🇮🇹 Italian pages: ${italianRoutes.length}`);
-  console.log(`\n📄 sitemap-all.xml (All languages):`);
-  console.log(`   🇮🇹 Italian pages: ${italianRoutes.length}`);
-  console.log(`   🇬🇧 English pages: ${englishRoutes.length}`);
-  console.log(`   📊 Total: ${italianRoutes.length + englishRoutes.length}`);
+  console.log(`✅ Sitemap generated successfully!`);
+  console.log(`📁 Location: ${distPath}/sitemap.xml`);
+  console.log(`\n📊 Statistics:`);
+  console.log(`   🇮🇹 Italian pages: ${italianRoutes.length} (priority: 0.5-1.0)`);
+  console.log(`   🇬🇧 English pages: ${englishRoutes.length} (priority: 0.1-0.3)`);
+  console.log(`   📊 Total pages: ${italianRoutes.length + englishRoutes.length}`);
   console.log(`${'='.repeat(60)}\n`);
 }
 
