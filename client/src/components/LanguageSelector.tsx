@@ -94,7 +94,7 @@ export function LanguageSelector() {
             </svg>
           </span>
           <span className="font-medium text-slate-700 dark:text-slate-200">
-            {i18n.language === 'it' ? 'IT' : 'EN'}
+            {i18n.language === 'it' ? 'EN' : 'IT'}
           </span>
         </Button>
       </DropdownMenuTrigger>
