@@ -2,7 +2,16 @@
 # Primary language: Italian (it)
 # Secondary language: English (en)
 
+# Default crawlers: Italian content only
 User-agent: *
+Disallow: /en/
+Disallow: /en
+
+# Google and Bing: Allow all languages (will use sitemap-all.xml)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
 Allow: /
 
 # Sitemap locations
