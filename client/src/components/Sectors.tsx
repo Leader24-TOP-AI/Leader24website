@@ -100,7 +100,11 @@ export default function Sectors() {
   // Gestisce il cambio di settore selezionato
   const handleIndustryClick = (industry: typeof industries[0]) => {
     setSelectedIndustry(industry);
-    
+
+    // Aggiorna l'URL hash con lo slug tradotto
+    const translatedSlug = getTranslatedIndustrySlug(industry);
+    window.history.replaceState(null, '', `#${translatedSlug}`);
+
     // Scroll to details section su mobile dopo una breve pausa per l'animazione
     if (isMobile && detailsRef.current) {
       setTimeout(() => {
