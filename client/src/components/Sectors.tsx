@@ -38,6 +38,12 @@ export default function Sectors() {
       t(`industries.${index}.benefits.${benefitIndex}`)
     );
   };
+
+  // Funzione per ottenere un ID URL-friendly dall'industria tradotta
+  const getTranslatedIndustrySlug = (industry: any) => {
+    const translatedName = getTranslatedIndustryName(industry);
+    return translatedName.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, '-');
+  };
   const detailsRef = useRef<HTMLDivElement>(null);
   const isInitialRender = useRef(true);
   
@@ -209,9 +215,9 @@ export default function Sectors() {
         </div>
         
         {/* Dettaglio del settore selezionato */}
-        <div 
+        <div
           ref={detailsRef}
-          id={`sector-details-${selectedIndustry.nameKey || selectedIndustry.name.toLowerCase().replace(/\s+/g, '-')}`}
+          id={getTranslatedIndustrySlug(selectedIndustry)}
           className={`rounded-xl p-6 md:p-8 backdrop-blur-md ${
             theme === 'dark'
               ? 'bg-gradient-to-br from-white/5 to-white/10 border border-white/10'
