@@ -48,19 +48,24 @@ async function generatePages() {
   const baseHtml = fs.readFileSync(baseHtmlPath, 'utf-8');
 
   // Extract Vite's script and CSS link tags from the base HTML
-  const viteScriptMatch = baseHtml.match(/<script[^>]*src="[^"]*main-[^"]*\.js"[^>]*><\/script>/);
-  const viteCssMatch = baseHtml.match(/<link[^>]*href="[^"]*main-[^"]*\.css"[^>]*>/);
+  // Match any bundle (main-*, index-*, etc.)
+  const viteScriptMatch = baseHtml.match(/<script[^>]*src="\/assets\/[^"]*\.js"[^>]*><\/script>/);
+  const viteCssMatch = baseHtml.match(/<link[^>]*href="\/assets\/[^"]*\.css"[^>]*>/);
 
   const viteScript = viteScriptMatch ? viteScriptMatch[0] : '';
   const viteCss = viteCssMatch ? viteCssMatch[0] : '';
 
   if (!viteScript || !viteCss) {
+    console.error('❌ Could not extract Vite assets from base HTML');
+    console.error('Base HTML preview:', baseHtml.substring(0, 1000));
     throw new Error('Could not extract Vite script or CSS from base HTML');
   }
 
   console.log('🚀 Starting pre-rendering of pages...\n');
   console.log(`📁 Output directory: ${distPath}\n`);
-  console.log(`✅ Found Vite assets: ${viteScript.includes('main-') ? 'JS ✓' : 'JS ✗'} ${viteCss.includes('main-') ? 'CSS ✓' : 'CSS ✗'}\n`);
+  console.log(`✅ Found Vite assets:`);
+  console.log(`   JS:  ${viteScript}`);
+  console.log(`   CSS: ${viteCss}\n`);
 
   let successCount = 0;
   let errorCount = 0;
