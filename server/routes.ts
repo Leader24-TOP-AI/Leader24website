@@ -16,6 +16,51 @@ export async function registerRoutes(app: Express): Promise<Server> {
     res.json({ status: "ok", timestamp: Date.now() });
   });
 
+  // Contact form submission
+  api.post("/contact", async (req, res) => {
+    try {
+      const { name, email, phone, company, sector, message } = req.body;
+
+      // Validation
+      if (!name || !email || !message) {
+        return res.status(400).json({
+          error: "Missing required fields: name, email, message"
+        });
+      }
+
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        return res.status(400).json({
+          error: "Invalid email format"
+        });
+      }
+
+      // Save to database
+      const contact = await storage.createContactSubmission({
+        name,
+        email,
+        phone: phone || null,
+        company: company || null,
+        sector: sector || null,
+        message
+      });
+
+      log(`New contact submission from ${email}`);
+
+      res.json({
+        success: true,
+        message: "Contact form submitted successfully",
+        id: contact.id
+      });
+    } catch (error) {
+      log(`Error saving contact: ${error}`);
+      res.status(500).json({
+        error: "Failed to submit contact form"
+      });
+    }
+  });
+
   // qui altre rotte future…
   app.use("/api", api);
 

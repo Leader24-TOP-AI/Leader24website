@@ -3,13 +3,17 @@ import { useTranslation } from 'react-i18next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import MobileMenu from '@/components/MobileMenu';
+import SEO from '@/components/SEO';
 import { Button } from '@/components/ui/button';
 import { useTheme } from '@/components/ThemeProvider';
 import { Separator } from '@/components/ui/separator';
+import { getMetadata } from '@/lib/metadata';
 
 export default function Terms() {
   const { t, i18n } = useTranslation(['terms', 'common']);
   const { theme } = useTheme();
+  const lang = i18n.language.startsWith('en') ? 'en' : 'it';
+  const metadata = getMetadata('terms', lang);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   
   // Gestisce il movimento del mouse per aggiornare la posizione del gradiente
@@ -37,9 +41,11 @@ export default function Terms() {
   }, [handleMouseMove]);
 
   return (
-    <div className={`min-h-screen flex flex-col ${theme === 'dark' ? 'bg-[#0A0A10]' : 'bg-gray-50'}`}>
-      <Header />
-      <MobileMenu />
+    <>
+      <SEO metadata={metadata} lang={lang} />
+      <div className={`min-h-screen flex flex-col ${theme === 'dark' ? 'bg-[#0A0A10]' : 'bg-gray-50'}`}>
+        <Header />
+        <MobileMenu />
       
       <main className="flex-1 py-16 md:py-24 mt-10 relative overflow-hidden">
         {/* Sfondo con gradiente scuro e interattivo */}
@@ -92,8 +98,9 @@ export default function Terms() {
           </div>
         </div>
       </main>
-      
+
       <Footer />
-    </div>
+      </div>
+    </>
   );
 }

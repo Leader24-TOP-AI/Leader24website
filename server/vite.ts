@@ -45,20 +45,28 @@ export async function setupVite(app: Express, server: Server) {
     const url = req.originalUrl;
 
     try {
-      const clientTemplate = path.resolve(
-        import.meta.dirname,
-        "..",
-        "client",
-        "index.html",
+      // Load SSR template utilities
+      const { generateSSRTemplate, getMetadataFromPath } = await import('./ssr-template');
+
+      // Get metadata for current path
+      const lang = url.startsWith('/en') ? 'en' : 'it';
+      const { metadata } = await getMetadataFromPath(url, lang);
+
+      // Generate HTML with SSR metadata
+      let html = generateSSRTemplate('', metadata, {
+        title: '',
+        meta: '',
+        link: '',
+        script: ''
+      }, lang);
+
+      // Transform with Vite (adds HMR and dev scripts)
+      html = html.replace(
+        `src="/src/entry-client.tsx"`,
+        `src="/src/entry-client.tsx?v=${nanoid()}"`,
       );
 
-      // always reload the index.html file from disk incase it changes
-      let template = await fs.promises.readFile(clientTemplate, "utf-8");
-      template = template.replace(
-        `src="/src/main.tsx"`,
-        `src="/src/main.tsx?v=${nanoid()}"`,
-      );
-      const page = await vite.transformIndexHtml(url, template);
+      const page = await vite.transformIndexHtml(url, html);
       res.status(200).set({ "Content-Type": "text/html" }).end(page);
     } catch (e) {
       vite.ssrFixStacktrace(e as Error);

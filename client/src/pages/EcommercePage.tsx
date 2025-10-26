@@ -6,10 +6,12 @@ import { industries } from '@/data/industries';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import MobileMenu from '@/components/MobileMenu';
+import SEO from '@/components/SEO';
 import { Zap, ArrowRight, Check, ShoppingCart, TrendingUp, RefreshCw, Users, CreditCard, Sparkles, Rocket, Bot } from 'lucide-react';
 import { useTheme } from '@/components/ThemeProvider';
 import { useTranslation } from 'react-i18next';
 import { Link } from "wouter";
+import { getMetadata } from '@/lib/metadata';
 
 // Ottieni i dati specifici per E-commerce
 const ecommerceData = industries.find(industry => industry.name === "E-commerce");
@@ -18,6 +20,8 @@ export default function EcommercePage() {
   const { theme } = useTheme();
   const { t, i18n } = useTranslation(['ecommerce']);
   const currentLanguage = i18n.language;
+  const lang = i18n.language.startsWith('en') ? 'en' : 'it';
+  const metadata = getMetadata('ecommerce', lang);
 
   // I passaggi chiave del processo di customer care AI per e-commerce
   const automationSteps = [
@@ -58,9 +62,11 @@ export default function EcommercePage() {
   ];
 
   return (
-    <div className={`min-h-screen font-sans overflow-x-hidden ${theme === 'dark' ? 'bg-[#0A0A10]' : 'bg-gray-50'}`}>
-      <Header />
-      <MobileMenu />
+    <>
+      <SEO metadata={metadata} lang={lang} />
+      <div className={`min-h-screen font-sans overflow-x-hidden ${theme === 'dark' ? 'bg-[#0A0A10]' : 'bg-gray-50'}`}>
+        <Header />
+        <MobileMenu />
       
       <div className={`min-h-screen py-16 md:py-24 ${theme === 'dark' ? 'bg-[#0A0A10]' : 'bg-gray-50'}`}>
           
@@ -842,6 +848,7 @@ export default function EcommercePage() {
       </section>
       
       <Footer />
-    </div>
+      </div>
+    </>
   );
 }

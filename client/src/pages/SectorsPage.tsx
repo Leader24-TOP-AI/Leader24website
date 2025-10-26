@@ -7,14 +7,17 @@ import { industries, Industry } from '@/data/industries';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import MobileMenu from '@/components/MobileMenu';
+import SEO from '@/components/SEO';
 import { Zap, ArrowRight, Check } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
 import { useTheme } from '@/components/ThemeProvider';
 import { useTranslation } from 'react-i18next';
+import { getMetadata, getIndustryMetadata } from '@/lib/metadata';
 
 export default function SectorsPage() {
   const { theme } = useTheme();
-  const { t } = useTranslation(['sectors']);
+  const { t, i18n } = useTranslation(['sectors']);
+  const lang = i18n.language.startsWith('en') ? 'en' : 'it';
   
   // Funzione per trovare l'industria dall'hash URL
   const findIndustryFromHash = () => {
@@ -48,7 +51,13 @@ export default function SectorsPage() {
   };
   
   const [selectedIndustry, setSelectedIndustry] = useState(findIndustryFromHash());
-  
+
+  // Dynamic metadata based on selected industry or generic sectors page
+  const hasHash = typeof window !== 'undefined' && window.location.hash;
+  const metadata = hasHash && selectedIndustry?.nameKey
+    ? getIndustryMetadata(selectedIndustry.nameKey, lang)
+    : getMetadata('sectors', lang);
+
   // Funzione per ottenere il nome tradotto del settore
   const getTranslatedIndustryName = (industry: any) => {
     return industry.nameKey ? t(`industryNames.${industry.nameKey}`) : industry.name;
@@ -171,8 +180,10 @@ export default function SectorsPage() {
   }, [mousePosition, handleMouseMove]);
 
   return (
-    <div className={`min-h-screen font-sans overflow-x-hidden ${theme === 'dark' ? 'bg-[#0A0A10]' : 'bg-gray-50'}`}>
-      <Header />
+    <>
+      <SEO metadata={metadata} lang={lang} />
+      <div className={`min-h-screen font-sans overflow-x-hidden ${theme === 'dark' ? 'bg-[#0A0A10]' : 'bg-gray-50'}`}>
+        <Header />
       <MobileMenu />
       
       <section className={`py-16 md:py-24 relative overflow-hidden ${theme === 'dark' ? 'bg-[#0A0A10]' : 'bg-gray-50'}`}>
@@ -556,6 +567,7 @@ export default function SectorsPage() {
       </section>
       
       <Footer />
-    </div>
+      </div>
+    </>
   );
 }

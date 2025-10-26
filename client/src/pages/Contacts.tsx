@@ -15,13 +15,17 @@ import { useToast } from "@/hooks/use-toast";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileMenu from "@/components/MobileMenu";
+import SEO from "@/components/SEO";
 import { useTheme } from "@/components/ThemeProvider";
 import { useTranslation } from "react-i18next";
+import { getMetadata } from "@/lib/metadata";
 
 export default function Contacts() {
   const { toast } = useToast();
   const { theme } = useTheme();
-  const { t } = useTranslation('contact');
+  const { t, i18n } = useTranslation('contact');
+  const lang = i18n.language.startsWith('en') ? 'en' : 'it';
+  const metadata = getMetadata('contacts', lang);
   
   // Scroll in cima alla pagina quando il componente viene montato
   React.useEffect(() => {
@@ -190,6 +194,7 @@ export default function Contacts() {
 
   return (
     <>
+      <SEO metadata={metadata} lang={lang} />
       <Header />
       <MobileMenu />
       <main className="flex flex-col min-h-screen">

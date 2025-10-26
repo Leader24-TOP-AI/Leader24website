@@ -2,10 +2,16 @@ import { useCallback, useEffect, useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import MobileMenu from '@/components/MobileMenu';
+import SEO from '@/components/SEO';
 import { useTheme } from '@/components/ThemeProvider';
+import { useTranslation } from 'react-i18next';
+import { getMetadata } from '@/lib/metadata';
 
 export default function Privacy() {
   const { theme } = useTheme();
+  const { i18n } = useTranslation();
+  const lang = i18n.language.startsWith('en') ? 'en' : 'it';
+  const metadata = getMetadata('privacy', lang);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   
   // Gestisce il movimento del mouse per aggiornare la posizione del gradiente
@@ -33,9 +39,11 @@ export default function Privacy() {
   }, [handleMouseMove]);
 
   return (
-    <div className={`min-h-screen flex flex-col ${theme === 'dark' ? 'bg-[#0A0A10]' : 'bg-gray-50'}`}>
-      <Header />
-      <MobileMenu />
+    <>
+      <SEO metadata={metadata} lang={lang} />
+      <div className={`min-h-screen flex flex-col ${theme === 'dark' ? 'bg-[#0A0A10]' : 'bg-gray-50'}`}>
+        <Header />
+        <MobileMenu />
       
       <main className="flex-1 py-16 md:py-24 relative overflow-hidden">
         {/* Sfondo con gradiente scuro e interattivo */}
@@ -176,6 +184,7 @@ export default function Privacy() {
       </main>
       
       <Footer />
-    </div>
+      </div>
+    </>
   );
 }

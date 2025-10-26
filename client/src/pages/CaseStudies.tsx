@@ -5,12 +5,16 @@ import { ChevronRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileMenu from "@/components/MobileMenu";
+import SEO from "@/components/SEO";
 import { useTheme } from "@/components/ThemeProvider";
 import { useTranslation } from "react-i18next";
+import { getMetadata } from "@/lib/metadata";
 
 export default function CaseStudies() {
   const { theme } = useTheme();
-  const { t } = useTranslation('casestudies');
+  const { t, i18n } = useTranslation('casestudies');
+  const lang = i18n.language.startsWith('en') ? 'en' : 'it';
+  const metadata = getMetadata('caseStudies', lang);
   
   // Otteniamo i case study dalle traduzioni
   const extendedCaseStudies = t('caseStudies', { returnObjects: true }) as any[];
@@ -39,6 +43,7 @@ export default function CaseStudies() {
 
   return (
     <>
+      <SEO metadata={metadata} lang={lang} />
       <Header />
       <MobileMenu />
       <main className="flex flex-col min-h-screen">
