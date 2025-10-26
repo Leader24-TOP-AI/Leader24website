@@ -5,8 +5,11 @@
 User-agent: *
 Allow: /
 
-# Sitemap location
+# Sitemap locations
+# sitemap.xml - Italian pages only (default for AI crawlers)
 Sitemap: https://leader24.ai/sitemap.xml
+# sitemap-all.xml - All languages (for search engines)
+Sitemap: https://leader24.ai/sitemap-all.xml
 
 # Crawl-delay for polite bots
 Crawl-delay: 1

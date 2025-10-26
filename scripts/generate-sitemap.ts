@@ -36,19 +36,24 @@ const englishRoutes = [
 function generateSitemap() {
   const baseUrl = 'https://leader24.ai';
   const lastmod = new Date().toISOString().split('T')[0]; // YYYY-MM-DD format
+  const distPath = path.resolve(__dirname, '../dist/public');
 
-  let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
+  if (!fs.existsSync(distPath)) {
+    fs.mkdirSync(distPath, { recursive: true });
+  }
+
+  // Generate sitemap.xml (Italian only - for AI crawlers)
+  let sitemapIT = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 `;
 
-  // Add Italian pages first (primary language)
-  console.log('📝 Adding Italian pages (primary language)...\n');
+  console.log('📝 Generating sitemap.xml (Italian only - for AI crawlers)...\n');
   for (const route of italianRoutes) {
     const url = `${baseUrl}${route.path}`;
     const englishUrl = `${baseUrl}${route.enPath}`;
 
-    sitemap += `  <url>
+    sitemapIT += `  <url>
     <loc>${url}</loc>
     <lastmod>${lastmod}</lastmod>
     <changefreq>${route.changefreq}</changefreq>
@@ -61,13 +66,43 @@ function generateSitemap() {
     console.log(`✅ IT ${route.path.padEnd(30)} priority: ${route.priority}`);
   }
 
-  // Add English pages second (alternate language)
-  console.log('\n📝 Adding English pages (alternate language)...\n');
+  sitemapIT += `</urlset>
+`;
+
+  fs.writeFileSync(path.join(distPath, 'sitemap.xml'), sitemapIT, 'utf-8');
+
+  // Generate sitemap-all.xml (All languages - for Google)
+  let sitemapAll = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+`;
+
+  console.log('\n📝 Generating sitemap-all.xml (All languages - for Google)...\n');
+
+  // Add Italian pages
+  for (const route of italianRoutes) {
+    const url = `${baseUrl}${route.path}`;
+    const englishUrl = `${baseUrl}${route.enPath}`;
+
+    sitemapAll += `  <url>
+    <loc>${url}</loc>
+    <lastmod>${lastmod}</lastmod>
+    <changefreq>${route.changefreq}</changefreq>
+    <priority>${route.priority}</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="${url}" />
+    <xhtml:link rel="alternate" hreflang="en" href="${englishUrl}" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="${url}" />
+  </url>
+`;
+  }
+
+  // Add English pages
+  console.log('Adding English pages to sitemap-all.xml...\n');
   for (const route of englishRoutes) {
     const url = `${baseUrl}${route.path}`;
     const italianUrl = `${baseUrl}${route.itPath}`;
 
-    sitemap += `  <url>
+    sitemapAll += `  <url>
     <loc>${url}</loc>
     <lastmod>${lastmod}</lastmod>
     <changefreq>${route.changefreq}</changefreq>
@@ -80,25 +115,20 @@ function generateSitemap() {
     console.log(`✅ EN ${route.path.padEnd(30)} priority: ${route.priority}`);
   }
 
-  sitemap += `</urlset>
+  sitemapAll += `</urlset>
 `;
 
-  // Write sitemap to dist/public
-  const distPath = path.resolve(__dirname, '../dist/public');
-  const sitemapPath = path.join(distPath, 'sitemap.xml');
-
-  if (!fs.existsSync(distPath)) {
-    fs.mkdirSync(distPath, { recursive: true });
-  }
-
-  fs.writeFileSync(sitemapPath, sitemap, 'utf-8');
+  fs.writeFileSync(path.join(distPath, 'sitemap-all.xml'), sitemapAll, 'utf-8');
 
   console.log(`\n${'='.repeat(60)}`);
-  console.log(`✅ Sitemap generated successfully!`);
-  console.log(`📁 Location: ${sitemapPath}`);
-  console.log(`📊 Total URLs: ${italianRoutes.length + englishRoutes.length}`);
-  console.log(`   🇮🇹 Italian (primary): ${italianRoutes.length}`);
-  console.log(`   🇬🇧 English (alternate): ${englishRoutes.length}`);
+  console.log(`✅ Sitemaps generated successfully!`);
+  console.log(`📁 Location: ${distPath}`);
+  console.log(`\n📄 sitemap.xml (Italian only):`);
+  console.log(`   🇮🇹 Italian pages: ${italianRoutes.length}`);
+  console.log(`\n📄 sitemap-all.xml (All languages):`);
+  console.log(`   🇮🇹 Italian pages: ${italianRoutes.length}`);
+  console.log(`   🇬🇧 English pages: ${englishRoutes.length}`);
+  console.log(`   📊 Total: ${italianRoutes.length + englishRoutes.length}`);
   console.log(`${'='.repeat(60)}\n`);
 }
 
