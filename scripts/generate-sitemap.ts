@@ -21,16 +21,16 @@ const italianRoutes = [
   { path: '/terms', enPath: '/en/terms-of-service', priority: 0.5, changefreq: 'yearly' },
 ];
 
-// English routes (alternate language) - lower priority
+// English routes (alternate language) - very low priority to prioritize Italian
 const englishRoutes = [
-  { path: '/en', itPath: '/', priority: 0.8, changefreq: 'weekly' },
-  { path: '/en/industries', itPath: '/settori', priority: 0.7, changefreq: 'weekly' },
-  { path: '/en/industries/ecommerce', itPath: '/settori/ecommerce', priority: 0.7, changefreq: 'weekly' },
-  { path: '/en/case-studies', itPath: '/casi-studio', priority: 0.7, changefreq: 'monthly' },
-  { path: '/en/contact-us', itPath: '/contatti', priority: 0.6, changefreq: 'monthly' },
-  { path: '/en/privacy', itPath: '/privacy', priority: 0.4, changefreq: 'yearly' },
-  { path: '/en/cookie', itPath: '/cookie', priority: 0.4, changefreq: 'yearly' },
-  { path: '/en/terms-of-service', itPath: '/termini-di-servizio', priority: 0.4, changefreq: 'yearly' },
+  { path: '/en', itPath: '/', priority: 0.3, changefreq: 'monthly' },
+  { path: '/en/industries', itPath: '/settori', priority: 0.2, changefreq: 'monthly' },
+  { path: '/en/industries/ecommerce', itPath: '/settori/ecommerce', priority: 0.2, changefreq: 'monthly' },
+  { path: '/en/case-studies', itPath: '/casi-studio', priority: 0.2, changefreq: 'monthly' },
+  { path: '/en/contact-us', itPath: '/contatti', priority: 0.2, changefreq: 'monthly' },
+  { path: '/en/privacy', itPath: '/privacy', priority: 0.1, changefreq: 'yearly' },
+  { path: '/en/cookie', itPath: '/cookie', priority: 0.1, changefreq: 'yearly' },
+  { path: '/en/terms-of-service', itPath: '/termini-di-servizio', priority: 0.1, changefreq: 'yearly' },
 ];
 
 function generateSitemap() {
