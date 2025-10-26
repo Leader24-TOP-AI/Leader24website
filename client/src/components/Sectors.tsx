@@ -14,6 +14,7 @@ export default function Sectors() {
   const { t, i18n } = useTranslation(['sectors']);
   const [isMobile, setIsMobile] = useState(false);
   const { theme } = useTheme();
+  const lang = i18n.language.startsWith('en') ? 'en' : 'it';
   
   // Usa le industrie dal nostro array con traduzione dinamica dei nomi
   const [selectedIndustry, setSelectedIndustry] = useState(industries[0]);
@@ -172,30 +173,34 @@ export default function Sectors() {
           {industries.map((industry, index) => {
             // Cerco di convertire il nome dell'icona al formato di Lucide
             const IconComponent = (LucideIcons as any)[formatIconName(industry.icon)] || LucideIcons.Briefcase;
-            
-            return (
-              <Card 
+
+            // Per E-commerce, usa un vero link HTML per SEO
+            const isEcommerce = industry.nameKey === 'ecommerce';
+            const ecommerceUrl = lang === 'en' ? '/en/industries/ecommerce' : '/settori/ecommerce';
+
+            const cardContent = (
+              <Card
                 key={index}
                 className={`
                   cursor-pointer transition-all backdrop-blur-sm
-                  ${theme === 'dark' 
-                    ? 'border border-white/5 hover:bg-white/10' 
+                  ${theme === 'dark'
+                    ? 'border border-white/5 hover:bg-white/10'
                     : 'border border-slate-200 hover:bg-slate-50'
                   }
-                  ${selectedIndustry.nameKey === industry.nameKey 
-                    ? `ring-2 ring-[#3662e3] ${theme === 'dark' ? 'bg-white/10' : 'bg-blue-50/50'}` 
+                  ${selectedIndustry.nameKey === industry.nameKey
+                    ? `ring-2 ring-[#3662e3] ${theme === 'dark' ? 'bg-white/10' : 'bg-blue-50/50'}`
                     : theme === 'dark' ? 'bg-white/5' : 'bg-white'
                   }
                 `}
-                onClick={() => handleIndustryClick(industry)}
+                onClick={isEcommerce ? undefined : () => handleIndustryClick(industry)}
               >
                 <CardContent className="p-3 md:p-4 text-center">
                   <div className={`
                     mx-auto w-10 h-10 rounded-full flex items-center justify-center mb-2 md:mb-3
-                    ${selectedIndustry.nameKey === industry.nameKey 
-                      ? 'bg-[#3662e3]/20 text-[#3662e3]' 
-                      : theme === 'dark' 
-                        ? 'bg-white/10 text-white/70' 
+                    ${selectedIndustry.nameKey === industry.nameKey
+                      ? 'bg-[#3662e3]/20 text-[#3662e3]'
+                      : theme === 'dark'
+                        ? 'bg-white/10 text-white/70'
                         : 'bg-slate-100 text-slate-600'
                     }
                   `}>
@@ -204,7 +209,7 @@ export default function Sectors() {
                   <h3 className={`text-sm font-medium leading-tight ${
                     theme === 'dark' ? 'text-white' : 'text-slate-800'
                   }`}>{getTranslatedIndustryName(industry)}</h3>
-                  
+
                   {/* Indicatore di scorrimento visibile solo su mobile */}
                   {isMobile && (
                     <div className="mt-2 text-xs text-[#3662e3] flex items-center justify-center">
@@ -215,6 +220,13 @@ export default function Sectors() {
                 </CardContent>
               </Card>
             );
+
+            // Wrap con Link se è e-commerce
+            return isEcommerce ? (
+              <Link key={index} href={ecommerceUrl}>
+                {cardContent}
+              </Link>
+            ) : cardContent;
           })}
         </div>
         
