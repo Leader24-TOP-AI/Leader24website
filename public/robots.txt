@@ -1,0 +1,12 @@
+# robots.txt for leader24.ai
+# Primary language: Italian (it)
+# Secondary language: English (en)
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://leader24.ai/sitemap.xml
+
+# Crawl-delay for polite bots
+Crawl-delay: 1
