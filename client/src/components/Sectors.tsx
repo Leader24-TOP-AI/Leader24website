@@ -22,6 +22,22 @@ export default function Sectors() {
   const getTranslatedIndustryName = (industry: any) => {
     return industry.nameKey ? t(`industryNames.${industry.nameKey}`) : industry.name;
   };
+
+  // Funzione per ottenere la descrizione tradotta dell'industria
+  const getTranslatedIndustryDescription = (industry: any) => {
+    const index = industries.findIndex(ind => ind.nameKey === industry.nameKey);
+    return index !== -1 ? t(`industries.${index}.description`) : industry.description;
+  };
+
+  // Funzione per ottenere i benefits tradotti dell'industria
+  const getTranslatedIndustryBenefits = (industry: any): string[] => {
+    const index = industries.findIndex(ind => ind.nameKey === industry.nameKey);
+    if (index === -1) return industry.benefits;
+
+    return industry.benefits.map((_: any, benefitIndex: number) =>
+      t(`industries.${index}.benefits.${benefitIndex}`)
+    );
+  };
   const detailsRef = useRef<HTMLDivElement>(null);
   const isInitialRender = useRef(true);
   
@@ -234,7 +250,7 @@ export default function Sectors() {
               
               <p className={`mb-6 text-lg ${
                 theme === 'dark' ? 'text-gray-300' : 'text-slate-600'
-              }`}>{selectedIndustry.description}</p>
+              }`}>{getTranslatedIndustryDescription(selectedIndustry)}</p>
               
               <div className="flex flex-wrap gap-2 mb-6">
                 <Badge variant="outline" className="bg-[#3662e3]/10 text-[#3662e3] border-[#3662e3]/20">
@@ -286,7 +302,7 @@ export default function Sectors() {
               </h4>
               
               <ul className="space-y-3">
-                {selectedIndustry.benefits.map((benefit, index) => (
+                {getTranslatedIndustryBenefits(selectedIndustry).map((benefit, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <span className="mt-1 text-[#60a5fa]">
                       <LucideIcons.Check className="h-4 w-4" />
