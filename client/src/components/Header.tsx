@@ -46,9 +46,9 @@ export default function Header() {
     >
       <nav className="container mx-auto px-4 md:px-6 flex justify-between items-center">
         <div className="flex items-center">
-          <Link href={window.location.pathname.includes('/en') ? '/en/' : '/'} onClick={(e) => {
+          <Link href="/" onClick={(e) => {
             // Se siamo già in homepage, scrolliamo all'inizio della pagina
-            if (window.location.pathname === '/' || window.location.pathname === '/en' || window.location.pathname === '/en/') {
+            if (window.location.pathname === '/') {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: 'smooth' });
               console.log('Header: click sul logo - scrollato in cima');
@@ -65,17 +65,17 @@ export default function Header() {
         </div>
         
         <div className="hidden md:flex items-center space-x-8">
-          <a 
-            href={window.location.pathname.includes('/en') ? '/en/#funzionalita-anchor' : '/#funzionalita-anchor'}
+          <a
+            href="/#funzionalita-anchor"
             className={navItemClasses}
             onClick={(e) => {
               // Solo se siamo già in homepage, preveniamo il comportamento predefinito
-              if (window.location.pathname === '/' || window.location.pathname === '/en' || window.location.pathname === '/en/') {
+              if (window.location.pathname === '/') {
                 e.preventDefault();
-                
+
                 // Usa l'elemento ancora dedicato per lo scroll
                 const element = document.getElementById('funzionalita-anchor');
-                
+
                 if (element) {
                   element.scrollIntoView({ behavior: 'smooth' });
                   console.log('Header: scroll a funzionalita-anchor');

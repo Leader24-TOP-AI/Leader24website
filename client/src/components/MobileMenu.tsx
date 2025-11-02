@@ -61,7 +61,7 @@ export default function MobileMenu() {
       {/* Logo in alto */}
       <div className="absolute top-6 left-6">
         <Link 
-          href={window.location.pathname.includes('/en') ? '/en/' : '/'} 
+          href={'/'} 
           onClick={handleClose}
           aria-label="Home"
         >
@@ -79,11 +79,11 @@ export default function MobileMenu() {
       
       <div className="flex flex-col space-y-6 text-center">
         <a 
-          href={window.location.pathname.includes('/en/') ? '/en/#funzionalita-anchor' : '/#funzionalita-anchor'}
+          href={'/#funzionalita-anchor'}
           className="text-xl font-medium text-[color:var(--foreground)]"
           onClick={(e) => {
             // Solo se siamo già in homepage, preveniamo il comportamento predefinito
-            if (window.location.pathname === '/' || window.location.pathname === '/en/') {
+            if (window.location.pathname === '/' || window.location.pathname === '/') {
               e.preventDefault();
               
               // Chiudi prima il menu

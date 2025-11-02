@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -20,8 +20,8 @@ export default function EcommercePage() {
   const { theme } = useTheme();
   const { t, i18n } = useTranslation(['ecommerce']);
   const currentLanguage = i18n.language;
-  const lang = i18n.language.startsWith('en') ? 'en' : 'it';
-  const metadata = getMetadata('ecommerce', lang);
+  const lang = useMemo(() => i18n.language.startsWith('en') ? 'en' : 'it', [i18n.language]);
+  const metadata = useMemo(() => getMetadata('ecommerce', lang), [lang]);
 
   // I passaggi chiave del processo di customer care AI per e-commerce
   const automationSteps = [
@@ -140,7 +140,7 @@ export default function EcommercePage() {
 
   return (
     <>
-      <SEO metadata={metadata} lang={lang} />
+      <SEO key={lang} metadata={metadata} lang={lang} />
 
       {/* Structured Data JSON-LD for SEO */}
       <script

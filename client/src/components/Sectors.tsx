@@ -176,7 +176,7 @@ export default function Sectors() {
 
             // Per E-commerce, usa un vero link HTML per SEO
             const isEcommerce = industry.nameKey === 'ecommerce';
-            const ecommerceUrl = lang === 'en' ? '/en/industries/ecommerce' : '/settori/ecommerce';
+            const ecommerceUrl = '/settori/ecommerce';
 
             const cardContent = (
               <Card
@@ -302,7 +302,7 @@ export default function Sectors() {
               </div>
               
               <a 
-                href={i18n.language === 'en' ? '/en/contact-us' : '/contatti'} 
+                href={'/contatti'} 
                 onClick={() => window.scrollTo(0, 0)}
               >
                 <Button className="bg-[#3662e3] hover:bg-[#3662e3] hover:opacity-90 text-white px-6">
@@ -379,12 +379,12 @@ export default function Sectors() {
             {t('notFound')}
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center">
-            <a href={i18n.language === 'en' ? '/en/industries' : '/settori'} onClick={() => window.scrollTo(0, 0)}>
+            <a href={'/settori'} onClick={() => window.scrollTo(0, 0)}>
               <Button className="bg-[#3662e3] text-white hover:bg-[#3662e3] hover:opacity-90 w-full md:w-auto">
                 {t('viewAllSectors')}
               </Button>
             </a>
-            <a href={i18n.language === 'en' ? '/en/contact-us' : '/contatti'} onClick={() => window.scrollTo(0, 0)}>
+            <a href={'/contatti'} onClick={() => window.scrollTo(0, 0)}>
               <Button variant="outline" className="border-[#3662e3] text-[#3662e3] hover:bg-[#3662e3]/10 w-full md:w-auto">
                 {t('requestCustomDemo')}
               </Button>

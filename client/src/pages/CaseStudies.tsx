@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useMemo } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
@@ -13,8 +13,10 @@ import { getMetadata } from "@/lib/metadata";
 export default function CaseStudies() {
   const { theme } = useTheme();
   const { t, i18n } = useTranslation('casestudies');
-  const lang = i18n.language.startsWith('en') ? 'en' : 'it';
-  const metadata = getMetadata('caseStudies', lang);
+
+  // Ricalcola lang e metadata quando cambia i18n.language
+  const lang = useMemo(() => i18n.language.startsWith('en') ? 'en' : 'it', [i18n.language]);
+  const metadata = useMemo(() => getMetadata('caseStudies', lang), [lang]);
   
   // Otteniamo i case study dalle traduzioni
   const extendedCaseStudies = t('caseStudies', { returnObjects: true }) as any[];
@@ -43,7 +45,7 @@ export default function CaseStudies() {
 
   return (
     <>
-      <SEO metadata={metadata} lang={lang} />
+      <SEO key={lang} metadata={metadata} lang={lang} />
       <Header />
       <MobileMenu />
       <main className="flex flex-col min-h-screen">

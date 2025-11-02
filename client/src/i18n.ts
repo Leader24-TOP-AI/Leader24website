@@ -17,9 +17,10 @@ i18n
       loadPath: '/locales/{{lng}}/{{ns}}.json',
     },
     detection: {
-      order: ['path', 'localStorage', 'cookie', 'navigator'],
-      caches: ['localStorage', 'cookie'],
-      lookupFromPathIndex: 0,
+      // Priorità: localStorage > navigator (browser) > fallback
+      // Rimosso 'path' perché non abbiamo più route /en/*
+      order: ['localStorage', 'navigator'],
+      caches: ['localStorage'],
     },
     defaultNS: 'common',
     ns: ['common', 'home', 'sectors', 'ecommerce', 'casestudies', 'contact', 'privacy', 'cookie', 'terms'],

@@ -1,4 +1,4 @@
-import { hydrateRoot } from "react-dom/client";
+import { createRoot } from "react-dom/client";
 import { HelmetProvider } from 'react-helmet-async';
 import App from "./App";
 import "./index.css";
@@ -10,7 +10,6 @@ const updateHtmlLang = (language: string) => {
   const htmlElement = document.getElementById('html-root');
   if (htmlElement) {
     htmlElement.setAttribute('lang', language);
-    console.log(`Lingua HTML impostata a: ${language}`);
   }
 };
 
@@ -22,9 +21,12 @@ i18n.on('languageChanged', (lang) => {
   updateHtmlLang(lang);
 });
 
-// Hydrate instead of render for SSR
-hydrateRoot(
-  document.getElementById("root")!,
+// Client-side rendering (no SSR needed for Vercel static deployment)
+// Meta tags are still crawlable by search engines with this approach
+const rootElement = document.getElementById("root")!;
+const root = createRoot(rootElement);
+
+root.render(
   <HelmetProvider>
     <App />
   </HelmetProvider>

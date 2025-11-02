@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -12,8 +12,8 @@ import { getMetadata } from '@/lib/metadata';
 export default function Terms() {
   const { t, i18n } = useTranslation(['terms', 'common']);
   const { theme } = useTheme();
-  const lang = i18n.language.startsWith('en') ? 'en' : 'it';
-  const metadata = getMetadata('terms', lang);
+  const lang = useMemo(() => i18n.language.startsWith('en') ? 'en' : 'it', [i18n.language]);
+  const metadata = useMemo(() => getMetadata('terms', lang), [lang]);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   
   // Gestisce il movimento del mouse per aggiornare la posizione del gradiente
@@ -42,7 +42,7 @@ export default function Terms() {
 
   return (
     <>
-      <SEO metadata={metadata} lang={lang} />
+      <SEO key={lang} metadata={metadata} lang={lang} />
       <div className={`min-h-screen flex flex-col ${theme === 'dark' ? 'bg-[#0A0A10]' : 'bg-gray-50'}`}>
         <Header />
         <MobileMenu />

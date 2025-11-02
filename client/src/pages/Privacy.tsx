@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState, useMemo } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import MobileMenu from '@/components/MobileMenu';
@@ -10,8 +10,8 @@ import { getMetadata } from '@/lib/metadata';
 export default function Privacy() {
   const { theme } = useTheme();
   const { i18n } = useTranslation();
-  const lang = i18n.language.startsWith('en') ? 'en' : 'it';
-  const metadata = getMetadata('privacy', lang);
+  const lang = useMemo(() => i18n.language.startsWith('en') ? 'en' : 'it', [i18n.language]);
+  const metadata = useMemo(() => getMetadata('privacy', lang), [lang]);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   
   // Gestisce il movimento del mouse per aggiornare la posizione del gradiente
@@ -40,7 +40,7 @@ export default function Privacy() {
 
   return (
     <>
-      <SEO metadata={metadata} lang={lang} />
+      <SEO key={lang} metadata={metadata} lang={lang} />
       <div className={`min-h-screen flex flex-col ${theme === 'dark' ? 'bg-[#0A0A10]' : 'bg-gray-50'}`}>
         <Header />
         <MobileMenu />

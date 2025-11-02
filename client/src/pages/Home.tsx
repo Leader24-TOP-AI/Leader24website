@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Introduction from "@/components/Introduction";
@@ -16,8 +16,8 @@ import { getMetadata } from "@/lib/metadata";
 export default function Home() {
   const [location] = useLocation();
   const { i18n } = useTranslation();
-  const lang = i18n.language.startsWith('en') ? 'en' : 'it';
-  const metadata = getMetadata('home', lang);
+  const lang = useMemo(() => i18n.language.startsWith('en') ? 'en' : 'it', [i18n.language]);
+  const metadata = useMemo(() => getMetadata('home', lang), [lang]);
 
   // Scroll to section if hash is present in URL
   useEffect(() => {
@@ -45,7 +45,7 @@ export default function Home() {
 
   return (
     <>
-      <SEO metadata={metadata} lang={lang} />
+      <SEO key={lang} metadata={metadata} lang={lang} />
       <div className="min-h-screen bg-[#0A0A10] font-sans overflow-x-hidden">
         <Header />
         <MobileMenu />

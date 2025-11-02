@@ -2,7 +2,6 @@ import { Switch, Route, useLocation } from "wouter";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./lib/queryClient";
 import { Toaster } from "@/components/ui/toaster";
-import { HelmetProvider } from 'react-helmet-async';
 
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Home from "@/pages/Home";
@@ -33,27 +32,25 @@ function Router() {
   
   return (
     <Switch>
+      {/* Homepage */}
       <Route path="/" component={Home} />
-      <Route path="/en" component={Home} />
-      <Route path="/en/" component={Home} />
+
+      {/* Main pages - Italian only */}
       <Route path="/settori" component={SectorsPage} />
-      <Route path="/en/industries" component={SectorsPage} />
       <Route path="/settori/ecommerce" component={EcommercePage} />
-      <Route path="/en/industries/ecommerce" component={EcommercePage} />
       <Route path="/contatti" component={Contacts} />
-      <Route path="/en/contact-us" component={Contacts} />
       <Route path="/casi-studio" component={CaseStudies} />
-      <Route path="/en/case-studies" component={CaseStudies} />
+
+      {/* Legal pages - Italian primary + aliases */}
       <Route path="/informativa-cookie" component={Cookie} />
       <Route path="/cookie" component={Cookie} />
-      <Route path="/en/cookie" component={Cookie} />
       <Route path="/informativa-privacy" component={Privacy} />
       <Route path="/privacy" component={Privacy} />
-      <Route path="/en/privacy" component={Privacy} />
       <Route path="/termini-di-servizio" component={Terms} />
       <Route path="/terms-of-service" component={Terms} />
-      <Route path="/en/terms-of-service" component={Terms} />
       <Route path="/terms" component={Terms} />
+
+      {/* 404 */}
       <Route component={NotFound} />
     </Switch>
   );
@@ -73,16 +70,14 @@ function LoadingFallback() {
 
 function App() {
   return (
-    <HelmetProvider>
-      <QueryClientProvider client={queryClient}>
-        <ThemeProvider defaultTheme="dark">
-          <Suspense fallback={<LoadingFallback />}>
-            <Router />
-            <Toaster />
-          </Suspense>
-        </ThemeProvider>
-      </QueryClientProvider>
-    </HelmetProvider>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider defaultTheme="dark">
+        <Suspense fallback={<LoadingFallback />}>
+          <Router />
+          <Toaster />
+        </Suspense>
+      </ThemeProvider>
+    </QueryClientProvider>
   );
 }
 

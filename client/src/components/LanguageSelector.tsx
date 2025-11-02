@@ -12,70 +12,19 @@ import {
 export function LanguageSelector() {
   const { i18n, t } = useTranslation('common');
   const { theme } = useTheme();
-  
-  // Mappa diretta italiano -> inglese per le pagine più comuni
-  const pathMappingItalianToEnglish: Record<string, string> = {
-    '/': '/en/',
-    '/contatti': '/en/contact-us',
-    '/casi-studio': '/en/case-studies',
-    '/settori': '/en/industries',
-    '/settori/ecommerce': '/en/industries/ecommerce',
-    '/informativa-privacy': '/en/privacy',
-    '/informativa-cookie': '/en/cookie',
-    '/termini-di-servizio': '/en/terms-of-service'
-  };
-  
-  // Mappa diretta inglese -> italiano per le pagine più comuni
-  const pathMappingEnglishToItalian: Record<string, string> = {
-    '/en/': '/',
-    '/en': '/',
-    '/en/contact-us': '/contatti',
-    '/en/case-studies': '/casi-studio',
-    '/en/industries': '/settori',
-    '/en/industries/ecommerce': '/settori/ecommerce',
-    '/en/privacy': '/informativa-privacy',
-    '/en/cookie': '/informativa-cookie',
-    '/en/terms-of-service': '/termini-di-servizio'
-  };
-  
+
   const switchLanguage = (lang: string) => {
-    // Imposta la lingua subito
+    console.log(`[LanguageSelector] Switching language from ${i18n.language} to ${lang}`);
+
+    // Cambia solo la lingua i18next, senza cambiare URL
     i18n.changeLanguage(lang);
-    
-    // Ottieni il percorso corrente
-    const currentPath = window.location.pathname;
-    
-    // Semplifica la gestione delle traduzioni utilizzando solo la mappa diretta
-    let redirectPath;
-    
-    if (lang === 'it') {
-      // Stiamo passando all'italiano
-      redirectPath = pathMappingEnglishToItalian[currentPath];
-      
-      // Se non troviamo una traduzione diretta, torniamo alla home italiana
-      if (!redirectPath) {
-        redirectPath = '/';
-      }
-    } else {
-      // Stiamo passando all'inglese
-      redirectPath = pathMappingItalianToEnglish[currentPath];
-      
-      // Se non troviamo una traduzione diretta, creiamo un percorso inglese di base
-      if (!redirectPath) {
-        if (currentPath === '/' || currentPath === '') {
-          redirectPath = '/en/';
-        } else {
-          // Rimuovi lo slash iniziale
-          const pathSegment = currentPath.startsWith('/') ? currentPath.substring(1) : currentPath;
-          redirectPath = `/en/${pathSegment}`;
-        }
-      }
-    }
-    
-    // Reindirizza alla nuova URL
-    setTimeout(() => {
-      window.location.href = redirectPath;
-    }, 10);
+
+    // Salva la preferenza in localStorage
+    localStorage.setItem('i18nextLng', lang);
+
+    console.log(`[LanguageSelector] Language switched to: ${lang}`);
+    console.log(`[LanguageSelector] localStorage i18nextLng:`, localStorage.getItem('i18nextLng'));
+    console.log(`[LanguageSelector] i18n.language after change:`, i18n.language);
   };
   
   return (
@@ -94,7 +43,7 @@ export function LanguageSelector() {
             </svg>
           </span>
           <span className="font-medium text-slate-700 dark:text-slate-200">
-            {i18n.language === 'it' ? 'EN' : 'IT'}
+            {i18n.language.startsWith('it') ? 'EN' : 'IT'}
           </span>
         </Button>
       </DropdownMenuTrigger>
@@ -103,18 +52,18 @@ export function LanguageSelector() {
         sideOffset={8}
         className="rounded-xl p-2 min-w-[120px] bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700"
       >
-        <DropdownMenuItem 
+        <DropdownMenuItem
           onSelect={() => switchLanguage('it')}
           className={`rounded-lg px-3 py-2 mb-1 flex items-center hover:bg-slate-100 dark:hover:bg-slate-700 ${
-            i18n.language === 'it' ? 'bg-slate-100 dark:bg-slate-700' : ''
+            i18n.language.startsWith('it') ? 'bg-slate-100 dark:bg-slate-700' : ''
           }`}
         >
           <span className={`font-medium ${theme === 'dark' ? 'text-white' : 'text-slate-800'}`}>IT</span>
         </DropdownMenuItem>
-        <DropdownMenuItem 
+        <DropdownMenuItem
           onSelect={() => switchLanguage('en')}
           className={`rounded-lg px-3 py-2 flex items-center hover:bg-slate-100 dark:hover:bg-slate-700 ${
-            i18n.language === 'en' ? 'bg-slate-100 dark:bg-slate-700' : ''
+            i18n.language.startsWith('en') ? 'bg-slate-100 dark:bg-slate-700' : ''
           }`}
         >
           <span className={`font-medium ${theme === 'dark' ? 'text-white' : 'text-slate-800'}`}>EN</span>

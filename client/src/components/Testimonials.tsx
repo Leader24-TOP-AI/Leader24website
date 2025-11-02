@@ -68,7 +68,7 @@ export default function Testimonials() {
         </div>
         
         <div className="mt-12 text-center">
-          <a href={i18n.language === 'en' ? '/en/case-studies' : '/casi-studio'} onClick={() => window.scrollTo(0, 0)}>
+          <a href={'/casi-studio'} onClick={() => window.scrollTo(0, 0)}>
             <Button variant="outline" className="dark:text-white/70 text-slate-700 dark:border-white/20 border-slate-300 dark:hover:bg-white/10 hover:bg-slate-200">
               {t('testimonials.viewAllCaseStudies')}
             </Button>

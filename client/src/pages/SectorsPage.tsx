@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useMemo, useState, useEffect, useCallback } from 'react';
 import { Link } from 'wouter';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -17,7 +17,14 @@ import { getMetadata, getIndustryMetadata } from '@/lib/metadata';
 export default function SectorsPage() {
   const { theme } = useTheme();
   const { t, i18n } = useTranslation(['sectors']);
-  const lang = i18n.language.startsWith('en') ? 'en' : 'it';
+  const lang = useMemo(() => {
+    const newLang = i18n.language.startsWith('en') ? 'en' : 'it';
+    console.log('[SectorsPage] Lang recalculated:', {
+      'i18n.language': i18n.language,
+      'newLang': newLang
+    });
+    return newLang;
+  }, [i18n.language]);
   
   // Funzione per trovare l'industria dall'hash URL
   const findIndustryFromHash = () => {
@@ -42,10 +49,17 @@ export default function SectorsPage() {
   const [selectedIndustry, setSelectedIndustry] = useState(findIndustryFromHash());
 
   // Dynamic metadata based on selected industry or generic sectors page
-  const hasHash = typeof window !== 'undefined' && window.location.hash;
-  const metadata = hasHash && selectedIndustry?.nameKey
-    ? getIndustryMetadata(selectedIndustry.nameKey, lang)
-    : getMetadata('sectors', lang);
+  const metadata = useMemo(() => {
+    const hasHash = typeof window !== 'undefined' && window.location.hash;
+    const meta = hasHash && selectedIndustry?.nameKey
+      ? getIndustryMetadata(selectedIndustry.nameKey, lang)
+      : getMetadata('sectors', lang);
+    console.log('[SectorsPage] Metadata recalculated:', {
+      lang,
+      title: meta.title
+    });
+    return meta;
+  }, [selectedIndustry, lang]);
 
   // Funzione per ottenere il nome tradotto del settore
   const getTranslatedIndustryName = (industry: any) => {
@@ -176,7 +190,7 @@ export default function SectorsPage() {
 
   return (
     <>
-      <SEO metadata={metadata} lang={lang} />
+      <SEO key={lang} metadata={metadata} lang={lang} />
       <div className={`min-h-screen font-sans overflow-x-hidden ${theme === 'dark' ? 'bg-[#0A0A10]' : 'bg-gray-50'}`}>
         <Header />
       <MobileMenu />
@@ -304,9 +318,9 @@ export default function SectorsPage() {
                             : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100'
                       }`}
                       onClick={() => {
-                        // Per E-commerce, reindirizziamo alla pagina dedicata
+                        // Per E-commerce, reindirizziamo alla pagina dedicata italiana (uguale per tutte le lingue)
                         if (industry.nameKey === 'ecommerce') {
-                          window.location.href = lang === 'en' ? "/en/industries/ecommerce" : "/settori/ecommerce";
+                          window.location.href = "/settori/ecommerce";
                         } else {
                           // Aggiorna l'hash dell'URL con lo slug tradotto
                           window.location.hash = getTranslatedIndustrySlug(industry);

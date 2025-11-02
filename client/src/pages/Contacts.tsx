@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useMemo, useState, useCallback } from "react";
 import { Send, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -24,9 +24,24 @@ export default function Contacts() {
   const { toast } = useToast();
   const { theme } = useTheme();
   const { t, i18n } = useTranslation('contact');
-  const lang = i18n.language.startsWith('en') ? 'en' : 'it';
-  const metadata = getMetadata('contacts', lang);
-  
+  const lang = useMemo(() => {
+    const newLang = i18n.language.startsWith('en') ? 'en' : 'it';
+    console.log('[Contacts] Lang calculated:', {
+      'i18n.language': i18n.language,
+      'calculated lang': newLang
+    });
+    return newLang;
+  }, [i18n.language]);
+
+  const metadata = useMemo(() => {
+    const meta = getMetadata('contacts', lang);
+    console.log('[Contacts] Metadata calculated:', {
+      lang,
+      title: meta.title
+    });
+    return meta;
+  }, [lang]);
+
   // Scroll in cima alla pagina quando il componente viene montato
   React.useEffect(() => {
     window.scrollTo(0, 0);
@@ -194,7 +209,7 @@ export default function Contacts() {
 
   return (
     <>
-      <SEO metadata={metadata} lang={lang} />
+      <SEO key={lang} metadata={metadata} lang={lang} />
       <Header />
       <MobileMenu />
       <main className="flex flex-col min-h-screen">
