@@ -8,6 +8,7 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
+    lng: 'it', // Forza italiano come lingua iniziale
     fallbackLng: 'it',
     supportedLngs: ['it', 'en'],
     interpolation: {
@@ -17,10 +18,11 @@ i18n
       loadPath: '/locales/{{lng}}/{{ns}}.json',
     },
     detection: {
-      // Priorità: localStorage > navigator (browser) > fallback
-      // Rimosso 'path' perché non abbiamo più route /en/*
-      order: ['localStorage', 'navigator'],
+      // Priorità: SOLO localStorage (ignora navigator per mostrare sempre italiano ai crawler)
+      // L'utente può comunque cambiare lingua manualmente con LanguageSelector
+      order: ['localStorage'],
       caches: ['localStorage'],
+      // Se localStorage è vuoto, usa 'it' come default (definito in lng sopra)
     },
     defaultNS: 'common',
     ns: ['common', 'home', 'sectors', 'ecommerce', 'casestudies', 'contact', 'privacy', 'cookie', 'terms'],
