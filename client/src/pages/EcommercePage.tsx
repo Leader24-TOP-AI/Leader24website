@@ -680,7 +680,7 @@ export default function EcommercePage() {
                     </div>
                   </CardContent>
                   <CardFooter className="relative z-10">
-                    <Link href={currentLanguage === 'it' ? "/casi-studio" : "/en/casi-studio"}>
+                    <Link href="/casi-studio">
                       <Button 
                         variant="outline" 
                         className={`w-full ${
@@ -746,7 +746,7 @@ export default function EcommercePage() {
                 {t('finalCta.description')}
               </p>
               <div className="flex justify-center">
-                <Link href={currentLanguage === 'it' ? "/contatti" : "/en/contatti"}>
+                <Link href="/contatti">
                   <Button 
                     size="lg" 
                     className="bg-[#3662e3] hover:bg-[#3662e3]/90 text-white shadow-glow"
