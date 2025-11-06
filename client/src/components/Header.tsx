@@ -66,11 +66,12 @@ export default function Header() {
         
         <div className="hidden md:flex items-center space-x-8">
           <a
-            href="/#funzionalita-anchor"
+            href={i18n.language === 'en' ? '/en#funzionalita-anchor' : '/#funzionalita-anchor'}
             className={navItemClasses}
             onClick={(e) => {
-              // Solo se siamo già in homepage, preveniamo il comportamento predefinito
-              if (window.location.pathname === '/') {
+              // Solo se siamo già in homepage (italiana o inglese), preveniamo il comportamento predefinito
+              const currentPath = window.location.pathname;
+              if (currentPath === '/' || currentPath === '/en') {
                 e.preventDefault();
 
                 // Usa l'elemento ancora dedicato per lo scroll

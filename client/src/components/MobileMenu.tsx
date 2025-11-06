@@ -10,7 +10,7 @@ import logoImageWhite from '@/assets/images/Leader24-Logo-white.png';
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
-  const { t } = useTranslation('common');
+  const { t, i18n } = useTranslation('common');
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
@@ -78,22 +78,23 @@ export default function MobileMenu() {
 
       
       <div className="flex flex-col space-y-6 text-center">
-        <a 
-          href={'/#funzionalita-anchor'}
+        <a
+          href={i18n.language === 'en' ? '/en#funzionalita-anchor' : '/#funzionalita-anchor'}
           className="text-xl font-medium text-[color:var(--foreground)]"
           onClick={(e) => {
-            // Solo se siamo già in homepage, preveniamo il comportamento predefinito
-            if (window.location.pathname === '/' || window.location.pathname === '/') {
+            // Solo se siamo già in homepage (italiana o inglese), preveniamo il comportamento predefinito
+            const currentPath = window.location.pathname;
+            if (currentPath === '/' || currentPath === '/en') {
               e.preventDefault();
-              
+
               // Chiudi prima il menu
               handleClose();
-              
+
               // Aspetta la chiusura del menu e poi scorri
               setTimeout(() => {
                 // Usa l'elemento ancora dedicato per lo scroll
                 const element = document.getElementById('funzionalita-anchor');
-                
+
                 if (element) {
                   element.scrollIntoView({ behavior: 'smooth' });
                   console.log('MobileMenu: scroll a funzionalita-anchor');
