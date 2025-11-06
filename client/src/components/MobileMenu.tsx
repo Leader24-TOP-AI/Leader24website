@@ -159,8 +159,8 @@ export default function MobileMenu() {
               {t('header.login', 'Accedi')}
             </span>
           </a>
-          <a 
-            href="https://dash.leader24.it/signup" 
+          <a
+            href="https://dash.leader24.ai/"
             className="px-6 py-3 bg-[color:var(--btn-primary-bg)] text-[color:var(--btn-primary-text)] rounded-full text-lg font-medium hover:bg-[color:var(--btn-primary-bg)] hover:opacity-90 transition-colors"
           >
             {t('header.trial', 'Prova Gratis')}
