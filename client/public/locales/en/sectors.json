@@ -27,9 +27,9 @@
   "testimonialSource": "{{industry}} Customer",
   "readCaseStudy": "Read more Case Studies",
   "urls": {
-    "contacts": "/en/contacts",
+    "contacts": "/en/contact-us",
     "caseStudies": "/en/case-studies",
-    "contactsFaq": "/en/contacts#Frequently asked questions"
+    "contactsFaq": "/en/contact-us#Frequently asked questions"
   },
   "faqTitle": "FAQ: {{industry}}",
   "faq1Title": "How long does it take to implement Leader24?",

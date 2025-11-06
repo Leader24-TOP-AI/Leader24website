@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { Button } from '@/components/ui/button';
 import { useTheme } from '@/components/ThemeProvider';
 import { Globe } from 'lucide-react';
+import { useLocation } from 'wouter';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -9,22 +10,55 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 
+// URL mappings between Italian and English
+const urlMappings: Record<string, string> = {
+  // Italian to English
+  '/': '/en',
+  '/settori': '/en/industries',
+  '/settori/ecommerce': '/en/industries/ecommerce',
+  '/contatti': '/en/contact-us',
+  '/casi-studio': '/en/case-studies',
+  '/informativa-privacy': '/en/privacy',
+  '/informativa-cookie': '/en/cookie',
+  '/termini-di-servizio': '/en/terms-of-service',
+  // English to Italian
+  '/en': '/',
+  '/en/industries': '/settori',
+  '/en/industries/ecommerce': '/settori/ecommerce',
+  '/en/contact-us': '/contatti',
+  '/en/case-studies': '/casi-studio',
+  '/en/privacy': '/informativa-privacy',
+  '/en/cookie': '/informativa-cookie',
+  '/en/terms-of-service': '/termini-di-servizio',
+};
+
 export function LanguageSelector() {
   const { i18n, t } = useTranslation('common');
   const { theme } = useTheme();
+  const [location, setLocation] = useLocation();
 
   const switchLanguage = (lang: string) => {
     console.log(`[LanguageSelector] Switching language from ${i18n.language} to ${lang}`);
 
-    // Cambia solo la lingua i18next, senza cambiare URL
+    // Get current path
+    const currentPath = location;
+
+    // Find corresponding path in target language
+    const targetPath = urlMappings[currentPath] || (lang === 'en' ? '/en' : '/');
+
+    console.log(`[LanguageSelector] Current path: ${currentPath}, Target path: ${targetPath}`);
+
+    // Change language
     i18n.changeLanguage(lang);
 
-    // Salva la preferenza in localStorage
+    // Save preference to localStorage
     localStorage.setItem('i18nextLng', lang);
 
+    // Navigate to the corresponding URL
+    setLocation(targetPath);
+
     console.log(`[LanguageSelector] Language switched to: ${lang}`);
-    console.log(`[LanguageSelector] localStorage i18nextLng:`, localStorage.getItem('i18nextLng'));
-    console.log(`[LanguageSelector] i18n.language after change:`, i18n.language);
+    console.log(`[LanguageSelector] Navigated to: ${targetPath}`);
   };
   
   return (
