@@ -4,63 +4,6 @@
   "installCommand": "npm install",
   "cleanUrls": true,
   "trailingSlash": false,
-  "redirects": [
-    {
-      "source": "/en",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/en/industries",
-      "destination": "/settori",
-      "permanent": true
-    },
-    {
-      "source": "/en/industries/ecommerce",
-      "destination": "/settori/ecommerce",
-      "permanent": true
-    },
-    {
-      "source": "/en/case-studies",
-      "destination": "/casi-studio",
-      "permanent": true
-    },
-    {
-      "source": "/en/casi-studio",
-      "destination": "/casi-studio",
-      "permanent": true
-    },
-    {
-      "source": "/en/contact-us",
-      "destination": "/contatti",
-      "permanent": true
-    },
-    {
-      "source": "/en/contatti",
-      "destination": "/contatti",
-      "permanent": true
-    },
-    {
-      "source": "/en/privacy",
-      "destination": "/informativa-privacy",
-      "permanent": true
-    },
-    {
-      "source": "/en/cookie",
-      "destination": "/informativa-cookie",
-      "permanent": true
-    },
-    {
-      "source": "/en/terms-of-service",
-      "destination": "/termini-di-servizio",
-      "permanent": true
-    },
-    {
-      "source": "/en/:path*",
-      "destination": "/",
-      "permanent": true
-    }
-  ],
   "headers": [
     {
       "source": "/robots.txt",

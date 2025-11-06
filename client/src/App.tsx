@@ -32,23 +32,33 @@ function Router() {
   
   return (
     <Switch>
-      {/* Homepage */}
+      {/* Homepage - Italian (default) */}
       <Route path="/" component={Home} />
 
-      {/* Main pages - Italian only */}
+      {/* Main pages - Italian */}
       <Route path="/settori" component={SectorsPage} />
       <Route path="/settori/ecommerce" component={EcommercePage} />
       <Route path="/contatti" component={Contacts} />
       <Route path="/casi-studio" component={CaseStudies} />
 
-      {/* Legal pages - Italian primary + aliases */}
+      {/* Homepage - English */}
+      <Route path="/en" component={Home} />
+
+      {/* Main pages - English */}
+      <Route path="/en/industries" component={SectorsPage} />
+      <Route path="/en/industries/ecommerce" component={EcommercePage} />
+      <Route path="/en/contact-us" component={Contacts} />
+      <Route path="/en/case-studies" component={CaseStudies} />
+
+      {/* Legal pages - Italian */}
       <Route path="/informativa-cookie" component={Cookie} />
-      <Route path="/cookie" component={Cookie} />
       <Route path="/informativa-privacy" component={Privacy} />
-      <Route path="/privacy" component={Privacy} />
       <Route path="/termini-di-servizio" component={Terms} />
-      <Route path="/terms-of-service" component={Terms} />
-      <Route path="/terms" component={Terms} />
+
+      {/* Legal pages - English */}
+      <Route path="/en/cookie" component={Cookie} />
+      <Route path="/en/privacy" component={Privacy} />
+      <Route path="/en/terms-of-service" component={Terms} />
 
       {/* 404 */}
       <Route component={NotFound} />

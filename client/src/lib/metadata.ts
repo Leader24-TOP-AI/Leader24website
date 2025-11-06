@@ -39,7 +39,7 @@ export const metadata: MetadataConfig = {
       keywords: "whatsapp automation, AI chatbot, virtual assistant, automated customer service, artificial intelligence, whatsapp business",
       ogImage: defaultOgImage,
       ogType: "website",
-      canonical: baseUrl
+      canonical: `${baseUrl}/en`
     }
   },
   sectors: {
@@ -57,7 +57,7 @@ export const metadata: MetadataConfig = {
       keywords: "industry automation, AI for ecommerce, insurance chatbot, digital tourism, real estate AI, marketing automation",
       ogImage: defaultOgImage,
       ogType: "website",
-      canonical: `${baseUrl}/settori`
+      canonical: `${baseUrl}/en/industries`
     }
   },
   ecommerce: {
@@ -75,7 +75,7 @@ export const metadata: MetadataConfig = {
       keywords: "ecommerce automation, ecommerce chatbot, online customer support, automated orders, shipping tracking",
       ogImage: defaultOgImage,
       ogType: "article",
-      canonical: `${baseUrl}/settori/ecommerce`
+      canonical: `${baseUrl}/en/industries/ecommerce`
     }
   },
   contacts: {
@@ -93,7 +93,7 @@ export const metadata: MetadataConfig = {
       keywords: "leader24 contact, free demo, request information, AI consulting, whatsapp automation",
       ogImage: defaultOgImage,
       ogType: "website",
-      canonical: `${baseUrl}/contatti`
+      canonical: `${baseUrl}/en/contact-us`
     }
   },
   caseStudies: {
@@ -111,7 +111,7 @@ export const metadata: MetadataConfig = {
       keywords: "case studies, success stories, leader24 results, customer testimonials, automation ROI",
       ogImage: defaultOgImage,
       ogType: "website",
-      canonical: `${baseUrl}/casi-studio`
+      canonical: `${baseUrl}/en/case-studies`
     }
   },
   privacy: {
@@ -129,7 +129,7 @@ export const metadata: MetadataConfig = {
       keywords: "privacy policy, data protection, GDPR, privacy information",
       ogImage: defaultOgImage,
       ogType: "website",
-      canonical: `${baseUrl}/informativa-privacy`
+      canonical: `${baseUrl}/en/privacy`
     }
   },
   cookie: {
@@ -147,7 +147,7 @@ export const metadata: MetadataConfig = {
       keywords: "cookie policy, cookie management, cookie privacy",
       ogImage: defaultOgImage,
       ogType: "website",
-      canonical: `${baseUrl}/informativa-cookie`
+      canonical: `${baseUrl}/en/cookie`
     }
   },
   terms: {
@@ -165,7 +165,7 @@ export const metadata: MetadataConfig = {
       keywords: "terms of service, conditions of use, service contract",
       ogImage: defaultOgImage,
       ogType: "website",
-      canonical: `${baseUrl}/termini-di-servizio`
+      canonical: `${baseUrl}/en/terms-of-service`
     }
   }
 };
@@ -219,7 +219,7 @@ export function getIndustryMetadata(industryKey: string, lang: 'it' | 'en' = 'it
       keywords: `${name.en.toLowerCase()} automation, AI ${name.en.toLowerCase()}, ${name.en.toLowerCase()} chatbot, ${name.en.toLowerCase()} customer service`,
       ogImage: defaultOgImage,
       ogType: "article",
-      canonical: `${baseUrl}/settori#${industryKey}`
+      canonical: `${baseUrl}/en/industries#${industryKey}`
     };
   }
 }
