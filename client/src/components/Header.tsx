@@ -163,8 +163,8 @@ export default function Header() {
           </a>
           
           {/* Free Trial Button - Desktop */}
-          <a 
-            href="https://dash.leader24.it/signup" 
+          <a
+            href="https://dash.leader24.ai/"
             className="hidden md:block"
           >
             <Button 
